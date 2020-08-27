@@ -5,44 +5,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <title>Sigmaths - Sylwia Lachut</title>
+        <!-- Main CSS theme -->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Sigmaths</a> <!--<img src="sources/brand_logo.png" alt="Brand Logo">-->
-                <!--<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>-->
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
+        <nav class="navbar bg-primary" id="mainNav">
+            <div class="navbar__container" id="mainNav__Container">
+                <a class="navbar__logo" href="#page-top"><img id='brand_logo' src="sources/brand_logo_gray_cut.png" alt="Brand Logo"></a>
+                <div class="navbar__menu" id="navbarResponsive">
+                    <ul>
+                        <li><a class="rounded js-scroll-trigger" href="#portfolio">Maths Tuition</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#about">Bio</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#about">Pricing</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+        <!--<nav class="navbar bg-primary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-main js-scroll-trigger" href="#page-top"><img src="sources/brand_logo_cut.png" alt="Brand Logo"></a>
+                <div class="navbar-menu" id="navbarResponsive">
+                    <ul>
+                        <li><a class="rounded js-scroll-trigger" href="#portfolio">Maths Tuition</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#about">Bio</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#about">Pricing</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+        <div>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br>a</br></div>
+
+        <script>
+            // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+              if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("mainNav__Container").style.padding = "0px 10%";
+                /*document.getElementById("brand_logo").style.opacity = '0'
+                document.getElementById("brand_logo").src = 'sources/brand_logo_short_gray.png'
+                document.getElementById("brand_logo").style.opacity = '1'*/
+              } else {
+                document.getElementById("mainNav__Container").style.padding = "15px 10%";
+                /*document.getElementById("brand_logo").style.opacity = '0'
+                document.getElementById('brand_logo').src='sources/brand_logo_gray_cut.png'
+                document.getElementById("brand_logo").style.opacity = '1'*/
+              }
+            }
+        </script>
     </body>
 </html>
