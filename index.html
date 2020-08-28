@@ -16,7 +16,7 @@
                 <a class="navbar__logo" href="#page-top"><img id='brand_logo' src="sources/brand_logo_gray_cut.png" alt="Brand Logo"></a>
                 <div class="navbar__menu" id="navbarResponsive">
                     <ul>
-                        <li><a class="rounded js-scroll-trigger" href="#portfolio">Maths Tuition</a></li>
+                        <li><a class="rounded js-scroll-trigger" href="#maths-tuition">Maths Tuition</a></li>
                         <li><a class="rounded js-scroll-trigger" href="#about">Bio</a></li>
                         <li><a class="rounded js-scroll-trigger" href="#about">Pricing</a></li>
                         <li><a class="rounded js-scroll-trigger" href="#contact">Contact</a></li>
@@ -24,32 +24,53 @@
                 </div>
             </div>
         </nav>
-
-        <!--<nav class="navbar bg-primary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-main js-scroll-trigger" href="#page-top"><img src="sources/brand_logo_cut.png" alt="Brand Logo"></a>
-                <div class="navbar-menu" id="navbarResponsive">
-                    <ul>
-                        <li><a class="rounded js-scroll-trigger" href="#portfolio">Maths Tuition</a></li>
-                        <li><a class="rounded js-scroll-trigger" href="#about">Bio</a></li>
-                        <li><a class="rounded js-scroll-trigger" href="#about">Pricing</a></li>
-                        <li><a class="rounded js-scroll-trigger" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>-->
-
+        
         <section class="header header__bg">
             <div class="header__container">
                 <div class="header__avatar"><img src="sources/avatar_test.png"></div>
-                <div class="header__title">
+                <div class="header__text" id="header-text">
                     Hi! My name is Sylwia and I can call myself the luckiest person in the world because I have always known what I would like to do in my life. As a little girl I used to pretend to be a teacher and here I am now - my dream came true. As for today, I am a Maths teacher with over 10 years’ experience in tutoring.</br>
                     My adventure with teaching started when I was a high-school student. The choice of University and the degree course was pretty obvious then. I am a Bachelor with specialty in Mathematics and Education of children with intellectual disability and a Master of Mathematics. In my spare time I focus on self – development to improve more soft skills, as they enhance the quality of teaching tremendously.</br>
                     I tend to compare Math skills to child development: they need to start crawling, then take the first steps to finally learn how to run. It is the same with Maths. You cannot run if you do not learn how to walk first. 
                     If you feel like you have missed some steps on the way, you are struggling with certain subjects or you just want to improve your skills, do not hesitate to get in touch with me!</br>
+                    <div class="header__text__buttoncontainer">
+                        <button type="button" class="header__text__expand" onclick="expandText()" id="expand-header-text">Click to expand</button>
+                    </div>
                 </div>
             </div>
         </section>
+        
+        <section id="maths-tuition" class="maths_tuition">
+            <div class="maths_tuition__container">
+                <div class="maths_tuition__intro">
+                    In terms of my academic studies, training and development, I have acquired the QTS. </br>
+                    As a Maths Tutor both in the UK and Poland, my duty over the years has focused on creating interesting lessons that reflect Maths concepts, learning objectives and subject matter. Moreover I have worked on preparing both attractive teaching aids, and tests.</br>
+                    As a friendly, honest and hardworking person with high levels of concentration, my proactive</br>
+                    approach to tutoring has been very well received. In order to support learning and stimulate student engagement, I have participated in a range of Maths classes. They taught me how to develop unique learning methods that can refer to student’s hobby for instance or any other circumstances in order to help and ease the learning process.</br>
+                    </br>
+                    I am currently focused on 11+ and GCSC but the range of topics I can cover is way wider. Ask me what do you need and most likely I will be able to help you.</br>
+                    I provide all necessary educational materials, tests and homework for each lesson.</br>
+                    </br>
+                    Due to recent circumstances regarding the coronavirus outbreak, I'm taking the leap and fully transitioning to online tuition only.</br>
+                </div>
+                <div class="maths_tuition__pricing">
+                    <div class="maths_tuition__pricing__title">
+                        How much does it cost?
+                    </div>
+                    <div class="maths_tuition__pricing__container">
+                        <div class="maths_tuition__pricing__offer">
+                            <img src="sources/background/weekly_lessons.png" alt="weekly-lessons">
+                            <div class="maths_tuition__pricing__offer__text">Weekly lessons</div>
+                        </div>
+                        <div class="maths_tuition__pricing__offer">
+                            <img src="sources/background/package.png">
+                            Package
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="temp">
             <div style="">What is Lorem Ipsum?</br>
                 </br>
@@ -85,6 +106,21 @@
                 document.getElementById('brand_logo').src='sources/brand_logo_gray_cut.png'
                 document.getElementById("brand_logo").style.opacity = '1'*/
               }
+            }
+        </script>
+        <script>
+            function expandText() {
+                var element = document.getElementById('header-text'),
+                    style = window.getComputedStyle(element);
+                               
+                if( style.getPropertyValue('overflow') == 'hidden' ) {
+                    element.setAttribute("style", "overflow:visible;height:auto");
+                } else {
+                    element.setAttribute("style", "overflow:hidden;height:10rem");
+                }
+
+                var button_text = document.getElementById('expand-header-text').firstChild;
+                button_text.data = button_text.data == "Click to hide" ? "Click to expand" : "Click to hide";
             }
         </script>
     </body>
