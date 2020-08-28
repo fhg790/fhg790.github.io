@@ -91,7 +91,7 @@ body, html {
   left: 0;
   width: 100%;
   height: auto;
-  margin-top: 73px;
+  /*margin-top: 73px;*/
 }
 
 .header__bg {
@@ -163,6 +163,10 @@ body, html {
     visibility: hidden;
   }
 
+  .navbar__menu a {
+    font-size: 0px;
+  }
+
   .header__title {
     width: 100%;
   }
@@ -177,12 +181,16 @@ body, html {
     visibility: visible;
   }
 
+  .navbar__menu a {
+    font-size: 20px;
+  }
+
   .header__title {
     width: 50%;
   }
 
   .header__avatar img {
-    width: 75%;
+    width: 85%;
   }
 }
 
