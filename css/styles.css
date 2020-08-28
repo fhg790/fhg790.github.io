@@ -220,6 +220,10 @@ body, html {
 .maths_tuition__intro {
   padding: 1rem;
 
+  font-family: 'Alata', sans-serif;
+  font-size: 1rem;
+  color: var(--black);
+
   /*background-color: rgb(255,255,255,0.5);*/
   background-color: rgb(0,0,0,0.1);
   border-radius: 7.5px;
