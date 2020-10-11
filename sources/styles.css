@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Yanone+Kaffeesatz&display=swap');
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,700|Montserrat:700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,700|Montserrat:500,600,700');
 
 :root {
   --blue: #0096c7;
@@ -187,13 +187,6 @@ body, html {
   border-radius: 50%;
 }
 
-.bio__item__icon {
-  padding: 0.5rem;
-  text-align: center;
-  border: 1px;
-  border-color: black;
-}
-
 .bio__item__title {
   padding-top: 0.5rem;
   text-align: center;
@@ -321,7 +314,7 @@ body, html {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /*align-items: center;*/
   flex-wrap: wrap;
   max-width: 2000px;
   height: auto;
@@ -329,23 +322,126 @@ body, html {
   margin: auto;
 }
 
-/*
-.navbar__logo {
-  background-color: inherit;
-  width: auto;
+.contact__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;  
+}
+
+.contact__data {
+  padding: 0.25rem;
+  /*text-align: center;*/
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: #4F6C6B;
+  font-size: 1rem;
+}
+
+.contact__form {
+  padding-top: 2rem;
+  width: 50%;
+}
+
+.contact__form__title {
+  padding-top: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.contact__form > textarea {
+  width:100%;
+  padding: 10px;
+  font-size: 0.85rem;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat',sans-serif;
+  transition:all .3s;
+  border-bottom:2px solid #bebed2;
+}
+
+.contact__form > input {
+  width:100%;
+  padding:10px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat',sans-serif;
+  transition:all .3s;
+  border-bottom:2px solid #bebed2;
+}
+
+.contact__form > input:focus {
+  border-bottom:2px solid #78788c
+}
+
+.contact__form > textarea:focus {
+  border-bottom:2px solid #78788c
+}
+
+.contact__form > button {
+  float: left;
+  padding: 8px 12px;
+  margin: 12px 0 0;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.contact__form > button:hover{
+  background: #78788c;
+  color: #fff;
+}
+
+.footer {
+  right: 0;
+  left: 0;
+  background-color: #4F6C6B;
+}
+
+.footer__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  flex-wrap: wrap;
+  max-width: 2000px;
   height: auto;
+  padding: 25px 10%;
+  margin: auto;
 }
 
-.navbar__logo img {
-  height: 100%;
-  width: auto;
-
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+.footer__title {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  color: #EDEDED;
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
-*/
+
+.footer__description {
+  padding: 0.25rem;
+  /*text-align: center;*/
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: #EDEDED;
+  font-size: 1rem;
+}
+
 
 @media (max-width: 499.99px) {
   .navbar__menu {
@@ -359,16 +455,34 @@ body, html {
   .header__container {
     padding-left: 0%;
     padding-right: 0%;
+    padding-bottom: 15vw;
   }
 
   .header__title {
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 10.5vw;
   }
 
   .header__description {
     padding: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 4vw;
+  }
+
+  .slogan__text {
+    font-size: 12vw;
+  }
+
+  .bio__item {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  .bio__item__title {
+    font-size: 5vw;
+  }
+
+  .bio__item__description {
+    font-size: 3.5vw;
   }
 
   .about__container {
@@ -377,7 +491,13 @@ body, html {
   }
 
   .about__image {
+    width: 75vw;
+    height: 75vw;
     margin: auto;
+  }
+
+  .contact__form {
+    width: 95%;
   }
 
 }
