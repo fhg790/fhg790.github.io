@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nunito:wght@800&display=swap');
+
 
 :root {
   --blue: #0096c7;
@@ -14,10 +16,16 @@
 
 body {
   /*min-width: 500px;*/
+  /*background-image: url("../sources/background/love-to-learn-cutted.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;*/
 }
 
 body, html {
   height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
 }
 
 .navbar {
@@ -94,14 +102,18 @@ body, html {
 }
 
 .header__bg {
-  background-image: url("../sources/background/love-to-learn-cutted.jpg");
+  /*background-image: url("../sources/background/love-to-learn-cutted.jpg");*/
 
-  background-position: top center;
+  /*background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
   /*background-size: auto auto;*/
 
-  opacity: 0.8;
+  background-color: rgb(0,150,199,0.75);
+
+  /*color: var(--blue);*/
+
+  /*opacity: 0.8;*/
 }
 
 .header__container {
@@ -114,6 +126,7 @@ body, html {
   height: auto;
   padding: 50px 10%;
   padding-top: 100px;
+  padding-bottom: 75px;
   margin: auto;
 }
 
@@ -146,7 +159,7 @@ body, html {
 
   padding: 15px;
 
-  background-color: rgb(255,255,255,0.5);
+  background-color: rgb(255,255,255,0.75);
   border-radius: 7.5px;
 }
 
@@ -194,6 +207,10 @@ body, html {
   font-weight: bold;
 }
 
+#maths_tuition {
+  scroll-margin-top: 100px;
+}
+
 .maths_tuition {
   right: 0;
   left: 0;
@@ -217,16 +234,28 @@ body, html {
   margin: auto;
 }
 
+.maths_tuition__title {
+  padding: 1rem;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--black);
+
+  text-transform: uppercase;
+}
+
 .maths_tuition__intro {
   padding: 1rem;
 
-  font-family: 'Alata', sans-serif;
-  font-size: 1rem;
+  /*font-family: 'Alata', sans-serif;*/
+  font-family: 'Architects Daughter', sans-serif;
+  font-size: 1.2rem;
   color: var(--black);
 
   /*background-color: rgb(255,255,255,0.5);*/
-  background-color: rgb(0,0,0,0.1);
-  border-radius: 7.5px;
+  /*background-color: rgb(0,0,0,0.1);
+  border-radius: 7.5px;*/
 }
 
 .maths_tuition__pricing {
@@ -235,13 +264,15 @@ body, html {
 
   background-color: rgb(0,0,0,0.1);
   border-radius: 7.5px;
+
+  font-family: 'Alata', sans-serif;
 }
 
 .maths_tuition__pricing__title {
   position: relative;
   padding: 1rem;
 
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 
   text-align: center;
@@ -264,13 +295,15 @@ body, html {
 }
 
 .maths_tuition__pricing__offer {
-  background-color: rgb(0,150,199,0.5);
+  background-color: rgb(0,150,199,0.75);
   border-radius: 7.5px;
 
   height: 10rem;
   width: 15rem;
 
   margin: 2rem;
+
+  position: relative;
 
 }
 
@@ -286,14 +319,168 @@ body, html {
   -moz-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+
+  opacity: 0.75;
+}
+
+.maths_tuition__pricing__offer:hover > img {
+  opacity: 0.05;
+}
+
+.maths_tuition__pricing__offer:hover > .maths_tuition__pricing__offer__text {
+  opacity: 0;
 }
 
 .maths_tuition__pricing__offer img:hover {
-  opacity: 0.1;
+  /*opacity: 0.1;*/
 }
 
 .maths_tuition__pricing__offer__text { 
+  position: absolute;
 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2rem;
+  color: #1d3557;
+  /*font-weight: bold;*/
+  text-align: center;
+
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.pricing {
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  background-color: rgb(0,150,199,0.75);
+
+  /*max-width: 2000px;*/
+  height: auto;
+  
+  padding: 4rem 10%;
+  margin: auto;
+}
+
+.pricing__title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 1rem;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--black);
+
+  text-transform: uppercase;
+}
+
+.pricing__offer__title {
+  position: relative;
+  padding: 1rem;
+
+  font-family: 'Alata', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--black);
+  text-align: center;
+}
+
+.pricing__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /*align-items: center;*/
+
+  max-width: 2000px;
+  height: auto;
+  
+  padding: 2rem 10%;
+  margin: auto;
+}
+
+.pricing__offer {
+  position: relative;
+
+  display: block;
+  text-align: center;
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+  /*flex-wrap: wrap;*/
+
+  /*background-color: rgb(0,150,199,0.75);*/
+  border-radius: 50%; /*7.5px;*/
+
+  height: auto;
+  width: 20rem;
+
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.pricing__offer img {
+  position: relative;
+  top: 0px;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  object-fit: cover;
+
+  -webkit-filter: drop-shadow(3px 3px 3px #222);
+  filter: drop-shadow(3px 3px 3px #222);
+
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+
+  /*opacity: 0.75;*/
+}
+
+.pricing__offer__text {
+  position: relative;
+  padding-top: 2rem;
+  top: 0px;
+}
+
+.pricing__offer__text__title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  
+  /*height: auto;*/
+  
+  /*padding: 4rem 10%;*/
+  padding: 1rem;
+  /*margin: auto;*/
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.pricing__offer__text__description {
+  font-family: 'Architects Daughter', sans-serif;
+  font-size: 1.2rem;
+  color: var(--black);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .temp {
@@ -301,7 +488,7 @@ body, html {
   height: 100%;
   padding: 15px 10%;
 
-  background-color: rgb(0,150,199,0.5);
+  /*background-color: rgb(0,150,199,0.5);*/
 }
 
 @media (max-width: 899.98px) {
