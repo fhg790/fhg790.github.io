@@ -8,6 +8,8 @@
         <title>BHP - Edward Grzesik</title>
         <!-- Main CSS theme -->
         <link href="sources/styles.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -15,6 +17,21 @@
             <div class="navbar__container" id="mainNav__Container">
                 <!--<a class="navbar__logo" href="#page-top"><img id='brand_logo' src="sources/brand_logo_gray_cut.png" alt="Brand Logo"></a>-->
                 <div class="navbar__menu" id="navbarResponsive">
+                    <ul>
+                        <li><a href="#page-top" id="nav_page_top" style="color: #0096c7">Strona główna</a></li>
+                        <li><a href="#bio" id="nav_bio">O mnie</a></li>
+                        <li><a href="#offer" id="nav_offer">Oferta</a></li>
+                        <li><a href="#contact" id="nav_contact">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar__container__hamburger" id="navbar__container__hamburger">
+                <div class="navbar__menu__hamburger">
+                    <div class="navbar__menu__hamburger__top"></div>
+                    <div class="navbar__menu__hamburger__middle"></div>
+                    <div class="navbar__menu__hamburger__bottom"></div>
+                </div>
+                <div class="navbar__menu__hamburger__list" id="navbar__menu__hamburger__list">
                     <ul>
                         <li><a href="#page-top">Strona główna</a></li>
                         <li><a href="#bio">O mnie</a></li>
@@ -76,7 +93,7 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about" id="about">
             <div class="about__container">
                 <div class="about__image"></div>
                 <div class="about__title">
@@ -163,5 +180,61 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if ( $( window ).width() > 899.99 && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
+                    document.getElementById("mainNav__Container").style.padding = "15px 10%";
+                } else if ($( window ).width() > 899.99) {
+                    document.getElementById("mainNav__Container").style.padding = "30px 10%";
+                }
+            }
+
+            $(window).scroll(function () {
+                if( ($(window).scrollTop() < $("#bio").offset().top - 50 ) ) {
+                    document.getElementById("nav_page_top").style.color = "#0096c7";
+                    document.getElementById("nav_bio").style.color = "#EDEDED";
+                    document.getElementById("nav_offer").style.color = "#EDEDED";
+                    document.getElementById("nav_contact").style.color = "#EDEDED";
+                }
+                else if( ($(window).scrollTop() >= ($("#bio").offset().top - 50)) && ($(window).scrollTop() < ($("#offer").offset().top - 50))) {
+                    document.getElementById("nav_page_top").style.color = "#EDEDED";
+                    document.getElementById("nav_bio").style.color = "#0096c7";
+                    document.getElementById("nav_offer").style.color = "#EDEDED";
+                    document.getElementById("nav_contact").style.color = "#EDEDED";
+                }
+                else if( ($(window).scrollTop() >= ($("#offer").offset().top - 50)) && ($(window).scrollTop() < ($("#contact").offset().top - 50))) {
+                    document.getElementById("nav_page_top").style.color = "#EDEDED";
+                    document.getElementById("nav_bio").style.color = "#EDEDED";
+                    document.getElementById("nav_offer").style.color = "#0096c7";
+                    document.getElementById("nav_contact").style.color = "#EDEDED";
+                }
+                else {
+                    document.getElementById("nav_page_top").style.color = "#EDEDED";
+                    document.getElementById("nav_bio").style.color = "#EDEDED";
+                    document.getElementById("nav_offer").style.color = "#EDEDED";
+                    document.getElementById("nav_contact").style.color = "#0096c7";
+                }
+            });
+
+            
+            $( "#navbar__container__hamburger" ).click(function() {
+                if( $( "#navbar__menu__hamburger__list" ).css('visibility') == "hidden" ) {
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.visibility = "visible";
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.padding = "0 px";
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.width = "auto";
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.height = "auto";
+                }
+                else {
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.visibility = "hidden";
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.padding = "0px";
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.width = "0px";
+                    document.getElementById( "navbar__menu__hamburger__list" ).style.height = "0px";
+                }
+            });
+        </script>
     </body>
 </html>
