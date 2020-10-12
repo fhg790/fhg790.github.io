@@ -27,9 +27,9 @@
             </div>
             <div class="navbar__container__hamburger" id="navbar__container__hamburger">
                 <div class="navbar__menu__hamburger">
-                    <div class="navbar__menu__hamburger__top"></div>
-                    <div class="navbar__menu__hamburger__middle"></div>
-                    <div class="navbar__menu__hamburger__bottom"></div>
+                    <div class="navbar__menu__hamburger__top" id="navbar__menu__hamburger__top"></div>
+                    <div class="navbar__menu__hamburger__middle" id="navbar__menu__hamburger__middle"></div>
+                    <div class="navbar__menu__hamburger__bottom" id="navbar__menu__hamburger__bottom"></div>
                 </div>
                 <div class="navbar__menu__hamburger__list" id="navbar__menu__hamburger__list">
                     <ul>
@@ -227,12 +227,20 @@
                     document.getElementById( "navbar__menu__hamburger__list" ).style.padding = "0 px";
                     document.getElementById( "navbar__menu__hamburger__list" ).style.width = "auto";
                     document.getElementById( "navbar__menu__hamburger__list" ).style.height = "auto";
+                    
+                    document.getElementById( "navbar__menu__hamburger__top" ).style.backgroundColor = "#0096c7";
+                    document.getElementById( "navbar__menu__hamburger__middle" ).style.backgroundColor = "#0096c7";
+                    document.getElementById( "navbar__menu__hamburger__bottom" ).style.backgroundColor = "#0096c7";
                 }
                 else {
                     document.getElementById( "navbar__menu__hamburger__list" ).style.visibility = "hidden";
                     document.getElementById( "navbar__menu__hamburger__list" ).style.padding = "0px";
                     document.getElementById( "navbar__menu__hamburger__list" ).style.width = "0px";
                     document.getElementById( "navbar__menu__hamburger__list" ).style.height = "0px";
+                    
+                    document.getElementById( "navbar__menu__hamburger__top" ).style.backgroundColor = "#EDEDED";
+                    document.getElementById( "navbar__menu__hamburger__middle" ).style.backgroundColor = "#EDEDED";
+                    document.getElementById( "navbar__menu__hamburger__bottom" ).style.backgroundColor = "#EDEDED";
                 }
             });
         </script>
