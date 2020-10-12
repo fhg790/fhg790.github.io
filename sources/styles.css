@@ -79,7 +79,7 @@ body, html {
   visibility: hidden;
   position: relative;
   float: right;
-  padding: 30px 10%;
+  padding: 15px 10%;
   max-width: 2000px;
 }
 
@@ -94,21 +94,21 @@ body, html {
 
 .navbar__menu__hamburger__top {
   background-color: #EDEDED;
-  height: 17%;
+  height: 20%;
   width: 100%;
   border-radius: 4px;
 }
 
 .navbar__menu__hamburger__middle {
   background-color: #EDEDED;
-  height: 17%;
+  height: 20%;
   width: 100%;
   border-radius: 4px;
 }
 
 .navbar__menu__hamburger__bottom {
   background-color: #EDEDED;
-  height: 17%;
+  height: 20%;
   width: 100%;
   border-radius: 4px;
 }
