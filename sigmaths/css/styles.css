@@ -1,0 +1,610 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nunito:wght@800&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700|Martel:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Poppins&display=swap');
+
+:root {
+  --light-red: #DD7564;
+  --blue: #1FA5A6;
+  --light-blue: #B2DEDD;
+  --gray: #F0EDE6;
+  --dark-gray: #4F6C6B;
+  --font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+
+
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+hr.divider {
+  max-width: 3.25rem;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: var(--blue);
+  border-radius: 10px;
+
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+
+
+.navbar {
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+
+  background-color: rgba(31, 165, 166, 0.95);
+}
+
+#navbarResponsive > ul {
+  display: flex;
+  list-style: none;
+}
+
+#navbarResponsive > ul > li {
+  padding: 1rem 1rem;
+}
+
+#navbarResponsive > ul > li > a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+#navbarResponsive > ul > li:hover > a {
+  color: var(--dark-gray);
+}
+
+#navbarResponsive > ul > li:focus > a {
+  color: var(--dark-gray);
+}
+
+.navbar__menu__button {
+  display: none;
+  flex-direction: column;
+  float: right;
+  justify-content: space-between;
+
+  position: relative;
+  height: 100%;
+  
+  width: 4.5rem;
+  height: 3.5rem;
+  
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  border: none;
+  background-color: transparent;
+  border-radius: 0.5rem;
+}
+
+.navbar__menu__button__hamburger {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  background-color: white;
+}
+
+.header {
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--gray);
+
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+}
+
+.header__title {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; 
+  align-self: flex-end;
+}
+
+.header__description {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; 
+  align-self: baseline;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+#about {
+  height: 100%;
+  width: 100%;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.about__image {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  float: left;
+  shape-outside: circle();
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.about__image > img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.about__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.about__description {
+  padding: 0.25rem;
+  text-align: justify;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: var(--dark-gray);
+  text-align: left;
+  font-size: 1rem;
+}
+
+#maths-tuition {
+  height: 100%;
+  width: 100%;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  background-color: var(--gray);
+}
+
+.maths-tuition__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.maths-tuition__description {
+  padding: 0.25rem;
+  text-align: justify;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: var(--dark-gray);
+  text-align: center;
+  font-size: 1rem;
+}
+
+#pricing {
+  height: 100%;
+  width: 100%;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.pricing__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.pricing__offer__container {
+  position: relative;
+  width: 35rem;
+  height: auto;
+}
+
+.pricing__offer__container__img {
+  position: relative;
+  display: block;
+  
+  height: auto;
+  max-height: 100%;
+
+  width: auto;
+  max-width: 100%;
+}
+
+.pricing__offer__container__contents {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pricing__offer__container__contents__text {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing__offer__container__contents__text > p {
+  position: relative;
+  
+  width: 50%;
+  height: 50%;
+
+  padding: 2rem;
+  font-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: rgb(0, 0, 0, 0.75);
+  color: white;
+
+  cursor: pointer;
+}
+
+.pricing__offer__container__contents__text > p:hover {
+  background-color: rgb(0, 0, 0, 0.4);
+}
+
+.pricing__offer__container__contents > p {
+  
+  /*position: relative;
+
+  color: var(--blue);
+  font-size: 3rem;
+
+  background-color: rgb(0, 0, 0, 0.8);/*rgb(255, 255, 255, 0.8);*/
+  /*margin: auto;*/
+}
+
+#bio {
+  height: 100%;
+  width: 100%;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  background-color: var(--gray);
+}
+
+.bio__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.bio__description {
+  padding: 0.25rem;
+  text-align: justify;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: var(--dark-gray);
+  text-align: center;
+  font-size: 1rem;
+}
+
+#contact {
+  height: 100%;
+  width: 100%;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.contact__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.contact__data {
+  width: 35rem;
+  float: left;
+
+  color: var(--dark-gray);
+}
+
+.contact__data > div > img {
+  height: 100%;
+  width: auto;
+  margin-right: 1rem;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+}
+
+.contact__form__title {
+  padding-bottom: 2rem;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.contact__form > .form_field {
+  width: 100%;
+  height: 2rem;
+
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-width: 0.1rem;
+  margin-bottom: 1rem;
+
+  color: var(--dark-gray);
+}
+
+.contact__form > textarea {
+  background:none;
+  outline:none;
+  resize:none;
+}
+
+.contact__form > .form_field:focus, .form_field:hover {
+  border-bottom-width: 0.2rem;
+}
+
+.contact__form__submit {
+  width: 25%;
+  height: 3rem;
+
+  border: none;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.2rem;
+  color: var(--dark-gray);
+
+  background-color: var(--gray);
+
+  cursor: pointer;
+}
+
+.contact__form__submit:hover {
+  background-color: var(--blue);
+  color: var(--gray);
+}
+
+#footer {
+  height: 100%;
+  width: 100%;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  background-color: var(--blue);
+}
+
+.footer__title {
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.footer__description {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  text-align: justify;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-space-between {
+  justify-content: space-between !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+
+.color-transition {
+  -webkit-transition: color 0.1s ease-in-out;
+  -moz-transition: color 0.1s ease-in-out;
+  -o-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.background-color-transition {
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.active {
+  color: var(--dark-gray) !important;
+}
+
+@media (max-width: 301.98px) {
+  #navbarResponsive {
+    display: none;
+  }
+
+  .navbar__logo {
+    margin: auto;
+  }
+
+  .navbar__menu__button {
+    display: none;
+  }  
+}
+
+@media (max-width: 499.98px) {
+  .header__title > h1 {
+    font-size: 2.5rem;
+  }
+
+  .header__description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 599.98px) {
+  #about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__description {
+    text-align: center;
+  }
+
+  .contact__form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 991.98px) {
+  .header__title > h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+@media (min-width: 302px) and (max-width: 991.98px) {
+  #navbarResponsive {
+    display: none;
+  }
+
+  .navbar__menu__button {
+    display: flex;
+  }  
+}
+
+
+@media (min-width: 992px) {
+
+}
