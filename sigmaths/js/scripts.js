@@ -10,9 +10,15 @@
         $('html, body').animate({
           scrollTop: (target.offset().top - 72)
         }, 500, "easeInOutExpo");
+
         return false;
       }
     }
+  });
+
+  $('#navbar__menu__button').click(function () {
+    $('#navbarResponsive').toggleClass('menu_expand');
+    $('#navbar__menu__button').find('div').toggleClass('active_hamburger');
   });
 
   /*var link = $('#mainNav ul a');
