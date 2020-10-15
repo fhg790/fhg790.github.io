@@ -48,6 +48,10 @@ header, section {
   background-color: rgb(255, 255, 255, 0.85);
 }
 
+button {
+  outline: none;
+}
+
 
 hr {
   box-sizing: content-box;
