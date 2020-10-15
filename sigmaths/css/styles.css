@@ -455,7 +455,8 @@ hr.divider {
   border-left: 0;
   border-right: 0;
   border-bottom-width: 0.1rem;
-  border-color: var(--dark-gray);
+  border-color: var(--blue);
+  outline:none;
 
   margin-bottom: 1rem;
 
@@ -469,7 +470,6 @@ hr.divider {
 
 .contact__form > textarea {
   background:none;
-  outline:none;
   resize:none;
 }
 
@@ -490,7 +490,7 @@ hr.divider {
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: 0.2rem;
-  color: var(--dark-gray);
+  color: var(--blue);
 
   background-color: var(--gray);
 
