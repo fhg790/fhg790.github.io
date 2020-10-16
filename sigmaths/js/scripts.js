@@ -21,6 +21,28 @@
     $('#navbar__menu__button').find('div').toggleClass('active_hamburger');
   });
 
+  $('#pricing-weekly-lessons p').click(function () {
+    $('#weekly-lessons-modal').css("display", "block")
+  });
+
+  $('#pricing-package p').click(function () {
+    $('#package-modal').css("display", "block")
+  });
+
+  $( ".modal__container" ).click( function ( event ) {
+    if( event.target.id == "weekly-lessons-modal" ) {
+      $( "#weekly-lessons-modal" ).css("display", "none");
+    }
+    else if( event.target.id == "package-modal" ) {
+      $( "#package-modal" ).css("display", "none");
+    };
+  });
+
+
+  
+
+  
+
   /*var link = $('#mainNav ul a');
 
   var scrollSpy = function () {

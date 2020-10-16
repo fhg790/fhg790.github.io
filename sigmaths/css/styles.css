@@ -534,6 +534,51 @@ hr.divider {
 }
 
 
+.modal__container {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal__content {
+  position: relative;
+  background-color: #fefefe;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  margin: 15% auto;
+  padding: 20px;
+  height: auto;
+  width: 80%;
+}
+
+.modal__content__title {
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal__content__description {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  text-align: justify;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -657,6 +702,7 @@ hr.divider {
     display: none;
     flex-direction: column;
     flex-basis: 100%;
+    height: 0%;
   }
 
   #navbarResponsive > ul {
