@@ -532,6 +532,9 @@ hr.divider {
   position: relative;
   background-color: #fefefe;
 
+  display: flex;
+  flex-direction: column;
+
   border: none;
   border-radius: 0.5rem;
 
@@ -539,6 +542,21 @@ hr.divider {
   padding: 20px;
   height: auto;
   width: 80%;
+
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
 }
 
 .modal__content__title > h1 {
@@ -546,7 +564,7 @@ hr.divider {
   padding-bottom: 0.25rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -560,7 +578,51 @@ hr.divider {
   text-align: center;
 }
 
+.modal__button__container {
 
+}
+
+.modal__close__button {
+  float: right;
+  width: 2.5rem;
+  height: 2.1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  margin: 0;
+  padding: 0;
+}
+
+.modal__close__button > span {
+  position: absolute;
+  display: block;
+
+  width: 2.5rem;
+  height: 0.25rem;
+
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+}
+
+.modal__close__button > span:nth-child(1) {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.modal__close__button span:nth-child(2) {
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.modal__close__button:hover > span {
+  background-color: var(--dark-gray);
+  height: 0.3rem;
+}
 
 .container {
   width: 100%;
@@ -676,7 +738,10 @@ hr.divider {
   }
 
   .pricing__offer__container__contents__text > p {
-    font-size: 1.5rem;
+    font-size: 1.75em;
+    
+    width: 75%;
+    height: 75%;
   }
 }
 

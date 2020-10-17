@@ -98,7 +98,7 @@
                         <img class="pricing__offer__container__img" src="sources/87331.jpg">
                         <div class="pricing__offer__container__contents">
                             <div class="pricing__offer__container__contents__text">
-                                <p>Weekly Lessons</p>
+                                <p class="background-color-transition">Weekly Lessons</p>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                         <img class="pricing__offer__container__img" src="sources/8991291.jpg">
                         <div class="pricing__offer__container__contents">
                             <div class="pricing__offer__container__contents__text">
-                                <p>Package</p>
+                                <p class="background-color-transition">Package</p>
                             </div>
                         </div>
                     </div>
@@ -159,6 +159,7 @@
                             <input name="name" class="form_field" type="text" placeholder="Name (required)" required></input>
                             <input name="phone" class="form_field" type="tel" placeholder="Phone No (required)" required></input>
                             <input name="email" class="form_field" type="email" placeholder="E-mail"></input>
+                            <textarea id="subject" class="form_field" type="text" placeholder="Subject (required)" rows="1" required></textarea>
                             <textarea id="message" class="form_field" type="text" placeholder="Message (required)" rows="1" required></textarea>
                             <input class="contact__form__submit color-transition background-color-transition" type="submit" value="Send">
                         </form>
@@ -183,6 +184,12 @@
 
         <div id="weekly-lessons-modal" class="modal__container">
             <div class="modal__content">
+                <div>
+                    <button class="modal__close__button">
+                        <span class="background-color-transition"></span>
+                        <span class="background-color-transition"></span>
+                    </button>
+                </div>
                 <div class="modal__content__title">
                     <h1 class="font-weight-bold">Weekly lessons</h1>
                     <hr class="divider"/>
@@ -195,6 +202,12 @@
 
         <div id="package-modal" class="modal__container">
             <div class="modal__content">
+                <div>
+                    <button class="modal__close__button background-color-transition">
+                        <span class="background-color-transition"></span>
+                        <span class="background-color-transition"></span>
+                    </button>
+                </div>
                 <div class="modal__content__title">
                     <h1 class="font-weight-bold">Package</h1>
                     <hr class="divider"/>

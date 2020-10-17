@@ -37,4 +37,9 @@
       $( "#package-modal" ).css("display", "none");
     };
   });
+
+  $( ".modal__close__button" ).click( function () {
+    $( "#weekly-lessons-modal" ).css("display", "none");
+    $( "#package-modal" ).css("display", "none");
+  });
 })(jQuery); // End of use strict
