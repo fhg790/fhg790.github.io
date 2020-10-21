@@ -22,7 +22,6 @@
 html {
   font-family: sans-serif;
   line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -199,7 +198,7 @@ hr.divider {
   padding-right: 15px;
   padding-left: 15px; 
   align-self: baseline;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: var(--dark-gray);
 }
@@ -236,7 +235,6 @@ hr.divider {
   padding-bottom: 1rem;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  /*font-weight: 700;*/
   font-size: 2rem;
 }
 
@@ -247,7 +245,7 @@ hr.divider {
   font-weight: 300;
   color: var(--dark-gray);
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 #maths-tuition {
@@ -273,8 +271,8 @@ hr.divider {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   color: var(--dark-gray);
-  text-align: center;
-  font-size: 1rem;
+  text-align: left;
+  font-size: 1.2rem;
 }
 
 #pricing {
@@ -381,8 +379,52 @@ hr.divider {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   color: var(--dark-gray);
+  text-align: left;
+  font-size: 1.2rem;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bio__description__list {
+  max-width: 50rem;
+  width: auto;
+}
+
+.bio__description__list > ol {
+  counter-reset: li;
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.bio__description__list li {
+  width: 100%;
+  border-radius: 1rem 0 1rem 0;
+}
+
+.bio__description__list p {
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  margin: 0.4rem;
+  
+  color: var(--dark-gray);
+  text-decoration: none;
+
+  justify-content: center;
   text-align: center;
-  font-size: 1rem;
+}
+
+.bio__description__list li:nth-child(odd) {
+  background: rgba(31, 165, 166, 0.2);
+}
+
+.bio__description__list li:nth-child(even) {
+  background: rgba(31, 165, 166, 0.6);
 }
 
 #contact {
@@ -541,7 +583,7 @@ hr.divider {
   margin: 15% auto;
   padding: 20px;
   height: auto;
-  width: 80%;
+  width: 50%;
 
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -576,10 +618,6 @@ hr.divider {
   font-weight: 300;
   font-size: 1rem;
   text-align: center;
-}
-
-.modal__button__container {
-
 }
 
 .modal__close__button {
@@ -743,6 +781,10 @@ hr.divider {
     width: 75%;
     height: 75%;
   }
+
+  .modal__content {
+    width: 80%;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -752,9 +794,7 @@ hr.divider {
 
   #navbarResponsive {
     display: none;
-    flex-direction: column;
     flex-basis: 100%;
-    height: 0%;
   }
 
   #navbarResponsive > ul {
