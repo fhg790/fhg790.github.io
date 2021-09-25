@@ -31,7 +31,7 @@
             </a> -->
 
             <a class="navbar-item">
-                KBSF
+                <b>KBSF</b>
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -49,7 +49,7 @@
                         O kancelarii
                     </a>
 
-                    <div class="navbar-dropdown">
+                    <div class="navbar-dropdown is-hidden-mobile">
                         <a class="navbar-item">
                             Misja
                         </a>
@@ -73,7 +73,7 @@
                         Audyt
                     </a>
 
-                    <div class="navbar-dropdown">
+                    <div class="navbar-dropdown is-hidden-mobile">
                         <a class="navbar-item">
                             Oferta Audytorska
                         </a>
@@ -104,15 +104,26 @@
 <script>
     $(document).ready(function () {
 
-            // Check for click events on the navbar burger icon
-            $(".navbar-burger").click(function () {
+        // Check for click events on the navbar burger icon
+        $(".navbar-burger").click(function () {
 
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                $(".navbar-burger").toggleClass("is-active");
-                $(".navbar-menu").toggleClass("is-active");
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
 
-            });
         });
+    });
+
+    $(document).ready(function () {
+
+        // Check for click events on the navbar burger icon
+        $(".navbar-item.has-dropdown").find('.navbar-link').click(function () {
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(this).parent().find('.navbar-dropdown').toggleClass("is-hidden-mobile");
+
+        });
+    });
 </script>
 
 </html>
