@@ -3,6 +3,8 @@
 :root {
     /* --primary: #3298dc; */
     --background_primary: #475F92;
+    --background_nav: #003871;
+    --white: #ffffff;
 }
 
 .has-montserrat-font {
@@ -11,4 +13,17 @@
 
 .has-background-primary {
     background-color: var(--background_primary) !important;
+}
+
+.has-background-nav {
+    background-color: var(--background_nav) !important;
+}
+
+.has-text-color-white {
+    color: var(--white);
+}
+
+.navbar-link.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover {
+    background-color: #003266 !important;
+    color: #fafafa !important;
 }
