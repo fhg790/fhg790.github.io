@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="utf-8" />
@@ -32,16 +32,82 @@
 </head>
 
 <body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="header">
+    </div>
+    <nav class="navbar is-primary" style="background-color: transparent;" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <div class="navbar-item">
                     <img src="https://pliki.ad.kbsf.pl/webman/login_logo.png" width="50px" height="65px" style="max-height: 100% !important;">
                 </div>
 
-                <!-- <a class="navbar-item">
-                <b>KBSF</b>
-            </a> -->
+                <a role="button" class="navbar-burger is-align-self-center" aria-label="menu" aria-expanded="false" data-target="navbarKBSF">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarKBSF" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            O kancelarii
+                        </a>
+
+                        <div class="navbar-dropdown is-boxed is-hidden-touch">
+                            <a class="navbar-item">
+                                Misja
+                            </a>
+                            <a class="navbar-item">
+                                Zarząd
+                            </a>
+                            <a class="navbar-item">
+                                Dane Rejestrowe
+                            </a>
+                            <a class="navbar-item">
+                                Przedmiot Działalności
+                            </a>
+                            <a class="navbar-item">
+                                Usługi potwierdzające i atestacyjne
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Audyt
+                        </a>
+
+                        <div class="navbar-dropdown is-boxed is-hidden-touch">
+                            <a class="navbar-item">
+                                Oferta Audytorska
+                            </a>
+                        </div>
+                    </div>
+
+                    <a class="navbar-item">
+                        Księgowość
+                    </a>
+
+                    <a class="navbar-item">
+                        Doradztwo
+                    </a>
+
+                    <a class="navbar-item">
+                        Kontakt
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <img src="https://pliki.ad.kbsf.pl/webman/login_logo.png" width="50px" height="65px" style="max-height: 100% !important;">
+                </div>
 
                 <a role="button" class="navbar-burger is-align-self-center" aria-label="menu" aria-expanded="false" data-target="navbarKBSF">
                     <span aria-hidden="true"></span>
@@ -102,7 +168,9 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> -->
+
+    
 
     <div style="height: 2000px;">
 

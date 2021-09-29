@@ -7,6 +7,17 @@
     --white: #ffffff;
 }
 
+.header {
+    background: url(../img/bg_2.png);
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: absolute;
+    width: 100%;
+    min-height: 1024px;
+}
+
 /* .has-montserrat-font {
     font-family: 'Montserrat', sans-serif;
 }
@@ -19,9 +30,9 @@
     background-color: var(--background_nav) !important;
 } */
 
-.has-text-color-white {
+/* .has-text-color-white {
     color: var(--white);
-}
+} */
 
 /* .navbar-link.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover {
     background-color: #003266 !important;
