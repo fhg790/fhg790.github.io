@@ -7854,7 +7854,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-size: cover;
   position: absolute;
   width: 100%;
-  min-height: 1024px; }
+  height: 100%;
+  min-height: 1024px;
+  min-width: 300px; }
+
+body {
+  background-color: #003871; }
 
 h1.title {
   line-height: 1.5 !important; }
@@ -7862,6 +7867,13 @@ h1.title {
 .title,
 .subtitle {
   text-shadow: 1px 1px 2px #969696; }
+
+.button-custom {
+  border-color: rgba(255, 255, 255, 0.5) !important; }
+  .button-custom:hover, .button-custom:active {
+    color: #003871 !important;
+    background-color: rgba(0, 145, 168, 0.8) !important;
+    border-color: transparent !important; }
 
 .hr-short-centered {
   background-color: white;
@@ -7877,7 +7889,11 @@ h1.title {
   .navbar-menu.is-active {
     display: block;
     position: absolute;
-    width: inherit; } }
+    width: inherit; }
+  .button {
+    font-size: 1.25rem !important; }
+  h1 .title {
+    font-size: 2.5rem !important; } }
 
 @media screen and (max-width: 768px), print {
   .button.is-fullwidth-mobile {
