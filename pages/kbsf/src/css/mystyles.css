@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
 /*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
+@import url(../../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.min.css);
 .button, .input, .textarea, .select select, .file-cta,
 .file-name, .pagination-previous,
 .pagination-next,
@@ -7846,3 +7847,38 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+.header {
+  background: url(../img/bg_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  min-height: 1024px; }
+
+h1.title {
+  line-height: 1.5 !important; }
+
+.title,
+.subtitle {
+  text-shadow: 1px 1px 2px #969696; }
+
+.hr-short-centered {
+  background-color: white;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 1.5rem auto;
+  width: 2.5rem; }
+
+@media screen and (max-width: 1024px) {
+  .navbar-brand {
+    background-color: rgba(0, 56, 113, 0.85); }
+  .navbar-menu.is-active {
+    display: block;
+    position: absolute;
+    width: inherit; } }
+
+@media screen and (max-width: 768px), print {
+  .button.is-fullwidth-mobile {
+    margin-right: 0rem !important; } }

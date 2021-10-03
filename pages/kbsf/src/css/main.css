@@ -1,40 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
+@import "../../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.min.css";
+
 :root {
     /* --primary: #3298dc; */
     --background_primary: #475F92;
     --background_nav: #003871;
     --white: #ffffff;
 }
-
-.header {
-    background: url(../img/bg_2.png);
-    /* background-position: top; */
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    position: absolute;
-    width: 100%;
-    min-height: 1024px;
-}
-
-/* .has-montserrat-font {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.has-background-primary {
-    background-color: var(--background_primary) !important;
-} */
-
-/* .has-background-nav {
-    background-color: var(--background_nav) !important;
-} */
-
-/* .has-text-color-white {
-    color: var(--white);
-} */
-
-/* .navbar-link.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover {
-    background-color: #003266 !important;
-    color: #fafafa !important;
-} */
