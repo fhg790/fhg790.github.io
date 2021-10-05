@@ -133,6 +133,11 @@
         </div>
     </div>
 
+    <!-- <div class="bg"></div>
+    <div class="content">
+        content
+    </div> -->
+
     <div class="hero is-fullheight">
         <div class="parallax bg-image-1 hero-body">
             <div class="columns is-centered has-text-centered">
@@ -223,14 +228,17 @@
         });
     });
 
-    // var bg = $(".bg-image-1");
 
-    // function resizeBackground() {
-    //     bg.height($(window).height());
-    // }
+    var bg = $(".bg-image-1");
 
-    // $(window).resize(resizeBackground);
-    // resizeBackground();
+    function resizeBackground() {
+        bg.height($(window).height());
+
+        console.log($(window).height());
+    }
+
+    $(window).resize(resizeBackground);
+    resizeBackground();
 </script>
 
 </html>
