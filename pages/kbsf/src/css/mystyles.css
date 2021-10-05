@@ -7886,8 +7886,7 @@ body {
   background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: 0%; }
+  background-size: cover; }
 
 .bg-image-1 {
   background-image: url("../img/pexels-rodnae-productions-7821708-op35.jpg"); }
