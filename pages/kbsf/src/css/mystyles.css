@@ -1346,7 +1346,7 @@ a.box:active {
 .content h4,
 .content h5,
 .content h6 {
-  color: #363636;
+  color: whitesmoke;
   font-weight: 600;
   line-height: 1.125; }
 
@@ -4025,7 +4025,7 @@ body.has-navbar-fixed-bottom {
   overflow-y: hidden; }
 
 .navbar-burger {
-  color: white;
+  color: whitesmoke;
   cursor: pointer;
   display: block;
   height: 3.25rem;
@@ -4063,7 +4063,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-item,
 .navbar-link {
-  color: white;
+  color: whitesmoke;
   display: block;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
@@ -4082,7 +4082,7 @@ a.navbar-item,
   .navbar-link:hover,
   .navbar-link.is-active {
     background-color: #003871;
-    color: white; }
+    color: whitesmoke; }
 
 .navbar-item {
   flex-grow: 0;
@@ -4198,7 +4198,7 @@ a.navbar-item,
       background-color: transparent !important; }
     .navbar.is-transparent .navbar-dropdown a.navbar-item:focus, .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
       background-color: #003871;
-      color: white; }
+      color: whitesmoke; }
     .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
       background-color: whitesmoke;
       color: #485fc7; }
@@ -4254,7 +4254,7 @@ a.navbar-item,
       padding-right: 3rem; }
       .navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
         background-color: #003871;
-        color: white; }
+        color: whitesmoke; }
       .navbar-dropdown a.navbar-item.is-active {
         background-color: whitesmoke;
         color: #485fc7; }
@@ -7859,7 +7859,21 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   min-width: 300px; }
 
 body {
-  background-color: #003871; }
+  background-color: #003871;
+  color: whitesmoke; }
+  bodyh1 {
+    color: whitesmoke !important; }
+
+.parallax {
+  /* Set a specific height */
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bg-image-1 {
+  background-image: url("../img/pexels-rodnae-productions-7821708-op35.jpg"); }
 
 h1.title {
   line-height: 1.5 !important; }
@@ -7869,29 +7883,39 @@ h1.title {
   text-shadow: 1px 1px 2px #969696; }
 
 .button-custom {
-  border-color: rgba(255, 255, 255, 0.5) !important; }
+  border-color: rgba(245, 245, 245, 0.5) !important; }
   .button-custom:hover, .button-custom:active {
     color: #003871 !important;
     background-color: rgba(0, 145, 168, 0.8) !important;
     border-color: transparent !important; }
 
 .hr-short-centered {
-  background-color: white;
+  background-color: whitesmoke;
   border: none;
   display: block;
   height: 1px;
   margin: 1.5rem auto;
   width: 2.5rem; }
 
-@media (min-width: 1025px) {
+.hr-short-left {
+  background-color: whitesmoke;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 1.5rem 0;
+  width: 2.5rem; }
+
+@media (min-width: 1024px) {
   .is-size-4rem-desktop {
-    font-size: 4rem !important; } }
+    font-size: 4rem !important; }
+  .is-size-35rem-desktop {
+    font-size: 3.5rem !important; } }
 
 @media screen and (min-width: 769px) {
   .section.is-medium {
     padding: 9rem 4.5rem; } }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .navbar-brand {
     background-color: rgba(0, 56, 113, 0.85); }
   .navbar-menu.is-active {
@@ -7900,9 +7924,11 @@ h1.title {
     width: inherit; }
   .button {
     font-size: 1.25rem !important; }
-  h1.title {
+  h1 .title {
     font-size: 2.5rem !important; } }
 
-@media screen and (max-width: 768px), print {
+@media screen and (max-width: 768px) {
   .button.is-fullwidth-mobile {
-    margin-right: 0rem !important; } }
+    margin-right: 0rem !important; }
+  .section.is-medium {
+    padding: 3rem 0.5rem; } }
