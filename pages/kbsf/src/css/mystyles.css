@@ -7883,8 +7883,8 @@ body {
 .parallax {
   /* Set a specific height */
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: 50% 50px;
+  background-attachment: scroll;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
 
