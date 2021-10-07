@@ -7950,3 +7950,7 @@ h1.title {
     margin-right: 0rem !important; }
   .section.is-medium {
     padding: 3rem 0.5rem; } }
+
+.hero.is-fullheight-with-navbar {
+  min-height: calc(100vh - 80px);
+}
