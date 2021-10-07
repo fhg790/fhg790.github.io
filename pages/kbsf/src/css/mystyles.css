@@ -7859,6 +7859,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   min-width: 300px;
   z-index: 0; }
 
+.box {
+  background-color: rgba(245, 245, 245, 0.5) !important; }
+
 body {
   background-color: #003871;
   color: whitesmoke; }
