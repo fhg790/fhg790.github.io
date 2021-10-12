@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
-@import url(../../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.min.css);
-@import url(../../node_modules/boxicons/css/boxicons.min.css);
 .button, .input, .textarea, .select select, .file-cta,
 .file-name, .pagination-previous,
 .pagination-next,
@@ -1347,7 +1345,7 @@ a.box:active {
 .content h4,
 .content h5,
 .content h6 {
-  color: whitesmoke;
+  color: #363636;
   font-weight: 600;
   line-height: 1.125; }
 
@@ -7913,6 +7911,9 @@ h1.title {
 
 .card-content a:hover, .card-content a:active {
   color: inherit; }
+
+.modal-card {
+  border-radius: .35rem; }
 
 .read-more-button {
   cursor: pointer; }
