@@ -546,8 +546,8 @@
     });
 
     $(document).ready(function () {
-        $("#doradztwo-see-more-modal, #ksiegowosc-see-more-modal, #audyt-see-more-modal").find("button.modal-close").click(function () {
-            var modal_id = '#'+$(this).parent().attr('id');
+        $("#doradztwo-see-more-modal, #ksiegowosc-see-more-modal, #audyt-see-more-modal").find("button.delete").click(function () {
+            var modal_id = '#'+$(this).parent().parent().parent().attr('id');
             $(modal_id).css({'display': 'none', 'overflow': 'hidden'});
         });
     });
