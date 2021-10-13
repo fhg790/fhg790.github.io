@@ -35,7 +35,7 @@
 <body>
     <div class="header">
     </div>
-    <nav class="navbar is-primary" style="background-color: transparent;" role="navigation"
+    <nav id="navbar" class="navbar is-primary is-fixed-top has-background-transparent"  role="navigation"
         aria-label="main navigation">
         <div class="container" style="max-width: 1400px;">
             <div class="navbar-brand">
@@ -54,53 +54,18 @@
 
             <div id="navbarKBSF" class="navbar-menu">
                 <div class="navbar-end">
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            O kancelarii
-                        </a>
-
-                        <div class="navbar-dropdown is-boxed is-hidden-touch">
-                            <a class="navbar-item">
-                                Misja
-                            </a>
-                            <a class="navbar-item">
-                                Zarząd
-                            </a>
-                            <a class="navbar-item">
-                                Dane Rejestrowe
-                            </a>
-                            <a class="navbar-item">
-                                Przedmiot Działalności
-                            </a>
-                            <a class="navbar-item">
-                                Usługi potwierdzające i atestacyjne
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Audyt
-                        </a>
-
-                        <div class="navbar-dropdown is-boxed is-hidden-touch">
-                            <a class="navbar-item">
-                                Oferta Audytorska
-                            </a>
-                        </div>
-                    </div>
-
-                    <a class="navbar-item">
-                        Księgowość
+                    <a id="navbar-about" class="navbar-item">
+                        O Kancelarii
                     </a>
 
-                    <a class="navbar-item">
-                        Doradztwo
+                    <a id="navbar-services" class="navbar-item">
+                        Nasze Usługi
                     </a>
 
-                    <a href="./index-4.html#contact" class="navbar-item">
+                    <a id="navbar-contact" class="navbar-item">
                         Kontakt
                     </a>
+                    
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link is-arrowless">
                             
@@ -126,7 +91,7 @@
         </div>
     </nav>
 
-    <div class="hero is-fullheight-with-navbar">
+    <div class="hero is-fullheight">
         <div class="hero-body">
             <div class="container">
                 <div class="columns">
@@ -567,16 +532,64 @@
         });
     });
 
-
-
     $(document).ready(function (){
         $("#about_button, #contact_button").click(function (){
             var parent_id = $(this).attr('id').replace('_button', '');
             $('html, body').animate({
-                scrollTop: $("#"+parent_id).offset().top
+                scrollTop: $("#"+parent_id).offset().top-81
             }, 500, 'swing');
         });
     });
+
+    $(document).ready(function (){
+        $("#navbar-about, #navbar-services, #navbar-contact").click(function (){
+            var parent_id = $(this).attr('id').replace('navbar-', '');
+            $('html, body').animate({
+                scrollTop: $("#"+parent_id).offset().top-81
+            }, 500, 'swing');
+            $('#navbarKBSF').removeClass('is-active');
+        });
+    });
+
+    function navbar_bg_manage() {
+        // Get scroll pos
+        var scroll_position = $(window).scrollTop();
+        // Get navbar height
+        var navbar_height = $('#navbar').outerHeight();
+
+        if(scroll_position > navbar_height) {
+            $('#navbar').removeClass('has-background-transparent');
+        }
+        else {
+            $('#navbar').addClass('has-background-transparent');
+        }
+    };
+
+    // Navbar BG on load
+    $(document).ready(function (){
+        navbar_bg_manage()
+    });
+    // Navbar BG on scroll
+    $(window).scroll(function (){
+        navbar_bg_manage()
+    });
+
+    // $(window).scroll(function (){
+    //     // Scroll position
+    //     var scroll_position = $(window).scrollTop();
+
+    //     // ['#about', '#services', '#contact'].forEach(function(item){
+    //     //     if(scroll_position > $(item).offset().top-81 && scroll_position < $(item).outerHeight()-81) {
+
+    //     //     }
+    //     //     else {
+
+    //     //     }
+    //     //     // console.log($(item).offset().top);
+    //     //     // console.log($(item).outerHeight());
+    //     //     // console.log('');
+    //     // });
+    // });
 
     // var bg = $(".bg-image-1");
 
