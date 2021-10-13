@@ -3491,7 +3491,7 @@ button.dropdown-item {
 .modal-card-head,
 .modal-card-foot {
   align-items: center;
-  background-color: #0091A8;
+  background-color: #003871;
   display: flex;
   flex-shrink: 0;
   justify-content: flex-start;
@@ -7853,33 +7853,17 @@ body {
 h1.title {
   line-height: 1.5 !important; }
 
-.header {
-  background: url(../img/bg_2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  min-height: 150vh;
-  min-width: 300px; }
-
 .has-color-whitesmoke {
   color: whitesmoke; }
 
 .has-color-bluelight {
   color: #0091A8; }
 
-.navbar {
-  background-color: #003871; }
-  .navbar .navbar-item:active, .navbar .navbar-item:hover, .navbar .navbar-item:focus {
-    background-color: #003871 !important;
-    font-weight: 600; }
+.has-backgroundcolor-bluelight {
+  background-color: #0091A8 !important; }
 
-.has-background-transparent {
-  background-color: transparent !important; }
-  .has-background-transparent .navbar-item:active, .has-background-transparent .navbar-item:hover, .has-background-transparent .navbar-item:focus {
-    background-color: transparent !important;
-    font-weight: 600 !important; }
+.ni-is-active {
+  color: #0091A8 !important; }
 
 .has-auto-margin {
   margin: auto; }
@@ -7890,20 +7874,64 @@ h1.title {
 .has-font-weight-600 {
   font-weight: 600; }
 
-.button-custom {
-  border-color: rgba(245, 245, 245, 0.5) !important;
-  min-width: 12.5rem; }
-  .button-custom:hover, .button-custom:active, .button-custom:focus {
-    color: #003871 !important;
-    background-color: rgba(0, 145, 168, 0.8) !important;
-    border-color: transparent !important; }
+.bx-2rem {
+  font-size: 2rem !important; }
 
 .image-1 {
   border-radius: .75rem;
   margin: auto; }
 
+.header {
+  background: url(../img/bg_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 150vh;
+  min-width: 300px; }
+
+.button-custom {
+  border-color: rgba(245, 245, 245, 0.5) !important;
+  min-width: 12.5rem;
+  transition: background-color .25s, color .25s, border-color .25s; }
+  .button-custom:hover, .button-custom:active {
+    color: #003871 !important;
+    background-color: rgba(0, 145, 168, 0.8) !important;
+    border-color: transparent !important; }
+  .button-custom:focus {
+    color: whitesmoke !important;
+    background-color: transparent !important;
+    border-color: rgba(245, 245, 245, 0.5) !important;
+    box-shadow: none !important; }
+
 #navbar {
-  transition: background-color .25s; }
+  transition: background-color .25s;
+  background-color: #003871; }
+  #navbar .navbar-item {
+    transition: color .25s; }
+    #navbar .navbar-item:active, #navbar .navbar-item:hover, #navbar .navbar-item:focus {
+      background-color: #003871 !important;
+      color: #0091A8 !important; }
+      #navbar .navbar-item:active::after, #navbar .navbar-item:hover::after, #navbar .navbar-item:focus::after {
+        background-color: #0091A8 !important; }
+    #navbar .navbar-item.active-dot::after {
+      transition: background-color .25s;
+      content: '';
+      position: absolute;
+      bottom: 1.25rem;
+      left: 47.5%;
+      width: 5px;
+      height: 5px;
+      background-color: whitesmoke;
+      border-radius: 50%; }
+      #navbar .navbar-item.active-dot::after:active, #navbar .navbar-item.active-dot::after:hover, #navbar .navbar-item.active-dot::after:focus {
+        background-color: #0091A8 !important; }
+  #navbar.has-background-transparent {
+    background-color: transparent !important; }
+    #navbar.has-background-transparent .navbar-item:active, #navbar.has-background-transparent .navbar-item:hover, #navbar.has-background-transparent .navbar-item:focus {
+      background-color: transparent !important;
+      color: #0091A8 !important; }
 
 #about p, #target p {
   color: black;
@@ -7911,12 +7939,24 @@ h1.title {
   margin-bottom: 1rem; }
 
 #services .columns .card {
-  border-radius: .5rem; }
-
-#services .columns .custom_card_title {
-  padding: 1.5rem 1.5rem 0 1.5rem;
-  font-weight: 700;
-  font-size: 1.25rem; }
+  border-radius: .5rem;
+  transition: transform .25s, box-shadow .25s; }
+  #services .columns .card .custom_card_title {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    font-weight: 700;
+    font-size: 1.25rem; }
+  #services .columns .card .card-content a, #services .columns .card .card-content i {
+    color: #0091A8;
+    text-decoration: none; }
+  #services .columns .card .card-content .read-more-button {
+    cursor: pointer; }
+  #services .columns .card .card-content .read-more-button:hover a, #services .columns .card .card-content .read-more-button:hover i,
+  #services .columns .card .card-content .read-more-button:active a,
+  #services .columns .card .card-content .read-more-button:active i {
+    color: inherit; }
+  #services .columns .card:hover, #services .columns .card:focus {
+    transform: scale(1.015);
+    box-shadow: 0 0.5em 1em 0.5em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02); }
 
 #services .columns :first-child .card,
 #services .columns :last-child .card {
@@ -7925,28 +7965,37 @@ h1.title {
 #services .columns :nth-child(2) .card {
   min-height: 30rem; }
 
-.card-content a, .card-content i {
-  color: #0091A8;
-  text-decoration: none; }
+#contact .subtitle {
+  font-weight: 600; }
 
-.card-content .read-more-button:hover a, .card-content .read-more-button:hover i,
-.card-content .read-more-button:active a,
-.card-content .read-more-button:active i {
-  color: inherit; }
+#contact .label {
+  font-size: 1rem;
+  font-weight: 400; }
 
-.modal-card {
-  border-radius: .35rem; }
-
-.read-more-button {
-  cursor: pointer; }
+#contact .button {
+  transition: background-color .25s, color .25s, border-color .25s; }
+  #contact .button:active, #contact .button:hover, #contact .button:focus {
+    background-color: lavender !important;
+    color: #0091A8;
+    border-color: #0091A8 !important; }
 
 .triangle-bottomright {
   position: absolute;
-  top: -49px;
+  top: -49.5px;
   width: 100%;
   height: 0;
   border-bottom: 50px solid #003871;
   border-left: 100vw solid transparent; }
+
+.footer {
+  background-color: #003871; }
+  .footer .subtitle {
+    font-weight: 600; }
+  .footer p {
+    font-size: .85rem; }
+
+.modal-card {
+  border-radius: .35rem; }
 
 @media (min-width: 1024px) {
   .is-size-4rem-desktop {
