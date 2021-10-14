@@ -8038,20 +8038,24 @@ h1.title {
   .footer p {
     font-size: .85rem; }
 
-.modal-card {
+.modal .modal-background {
+  top: -50px;
+  bottom: -50px; }
+
+.modal .modal-card {
   border-radius: .35rem; }
   @media screen and (max-width: 1023px) {
-    .modal-card {
+    .modal .modal-card {
       padding: 2rem .5rem; } }
   @media (min-width: 1024px) {
-    .modal-card .modal-card-body .content {
+    .modal .modal-card .modal-card-body .content {
       margin: .5rem 1rem .5rem 1rem; } }
-  .modal-card .modal-card-body .content h4 {
+  .modal .modal-card .modal-card-body .content h4 {
     font-size: 1rem; }
-  .modal-card .modal-card-body .content p {
+  .modal .modal-card .modal-card-body .content p {
     font-size: .85rem;
     font-weight: 500; }
-  .modal-card .modal-card-body .content ul li {
+  .modal .modal-card .modal-card-body .content ul li {
     font-size: .85rem; }
 
 ::-webkit-scrollbar {
