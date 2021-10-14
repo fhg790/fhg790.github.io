@@ -20,17 +20,11 @@
     <!-- <meta name="robots" content="index, follow" /> -->
 
     <!-- jQuery import -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="src/js/jquery.min.js"></script>
-    <!--  -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!-- Main CSS -->
     <link rel="stylesheet" href="./src/css/mystyles-4.css">
-
-    <!-- <link rel="stylesheet" href="./src/css/external/boxicons.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> -->
+    <!-- Boxicons -->
     <link rel="stylesheet" href="src/css/boxicons/css/boxicons.min.css">
-
 
     <meta author="Maciej Łachut" />
 </head>
@@ -86,13 +80,13 @@
                         <h2 class="subtitle has-text-white">
                             <div class="is-flex is-align-items-center is-flex-wrap-wrap">
                                 <div class="is-flex is-align-items-center">
-                                    <i class='bx bx-chevrons-right bx-sm has-color-whitesmoke'></i> Audyt
+                                    <i class='bx bx-chevrons-right bx-sm has-color-bluelight'></i> Audyt
                                 </div>
                                 <div class="is-flex is-align-items-center">
-                                    <i class='bx bx-chevrons-right bx-sm has-color-whitesmoke'></i> Księgowość
+                                    <i class='bx bx-chevrons-right bx-sm has-color-bluelight'></i> Księgowość
                                 </div>
                                 <div class="is-flex is-align-items-center">
-                                    <i class='bx bx-chevrons-right bx-sm has-color-whitesmoke'></i> Doradztwo
+                                    <i class='bx bx-chevrons-right bx-sm has-color-bluelight'></i> Doradztwo
                                 </div>
                             </div>
                         </h2>
@@ -125,7 +119,6 @@
                         </p>
                     </div>
                     <div class="column is-flex">
-                        <!-- <img class="image-1" src="src/img/o-kancelarii.png"> -->
                         <img class="image-1" src="src/img/o-kancelarii.jpg">
                     </div>
                 </div>
@@ -171,7 +164,6 @@
                         </p>
                     </div>
                     <div class="column is-flex">
-                        <!-- <img class="image-1" src="src/img/misja.png"> -->
                         <img class="image-1" src="src/img/misja.jpg">
                     </div>
                 </div>
@@ -191,7 +183,6 @@
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <!-- <img src="src/img/audyt-blue.png"> -->
                                     <img src="src/img/audyt-blue.webp">
                                 </figure>
                             </div>
@@ -208,12 +199,14 @@
                         <div id="audyt-see-more-modal" class="modal">
                             <div class="modal-background"></div>
                             <div class="modal-card">
-                                <header class="modal-card-head is-justify-content-flex-end">
+                                <header class="modal-card-head is-justify-content-space-between">
+                                    <span></span>
+                                    <!-- <h2>Audyt</h2> -->
                                     <button class="delete" aria-label="close"></button>
                                 </header>
                                 <section class="modal-card-body">
                                     <div class="content" style="text-align: left;">
-                                        <h2>Audyt</h2>
+                                        <!-- <h2 class="has-text-centered">Audyt</h2> -->
                                         <h4>Usługi audytu sprawozdań finansowych</h4>
                                         <ul>
                                             <li>Badanie sprawozdań finansowych jednostkowych i skonsolidowanych według Ustawy o rachunkowości</li>
@@ -240,7 +233,6 @@
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <!-- <img src="src/img/ksiegowosc-blue.png"> -->
                                     <img src="src/img/ksiegowosc-blue.webp">
                                 </figure>
                             </div>
@@ -262,7 +254,8 @@
                                 </header>
                                 <section class="modal-card-body">
                                     <div class="content" style="text-align: left;">
-                                        <h2>Księgowość</h2>
+                                        <!-- <h2>Księgowość</h2> -->
+                                        <h4>Oferujemy:</h4>
                                         <ul>
                                             <li>Kompleksowe prowadzenie ksiąg rachunkowych i rozliczeń podatkowych</li>
                                             <li>Opracowanie i aktualizacja zasad (polityki) rachunkowości</li>
@@ -283,7 +276,6 @@
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <!-- <img src="src/img/doradztwo-blue.png"> -->
                                     <img src="src/img/doradztwo-blue.webp">
                                 </figure>
                             </div>
@@ -303,17 +295,18 @@
                                 <header class="modal-card-head is-justify-content-flex-end">
                                     <button class="delete" aria-label="close"></button>
                                 </header>
-                                <section class="modal-card-body">
+                                <div class="modal-card-body">
                                     <div class="content" style="text-align: left;">
-                                        <h2>Doradztwo</h2>
-                                        <ul>
+                                        <!-- <h2>Doradztwo</h2> -->
+                                        <h4>Oferujemy:</h4>
+                                        <ul class="is-size-6">
                                             <li>ekspertyzy i opinie ekonomiczne oraz finansowe</li>
                                             <li>konsultacje z zakresu podatków</li>
                                             <li>konsultacje z zakresu organizacji i informatyzacji rachunkowości</li>
                                             <li>działalność szkoleniowa z zakresu rachunkowości i finansów</li>
                                         </ul>
                                         <h4>Naszą pomoc i współpracę oferujemy także w przypadku:</h4>
-                                        <ul>
+                                        <ul class="is-size-6">
                                             <li>sporządzania planów przedsięwzięć (biznes planów)</li>
                                             <li>przygotowania informacji finansowych dla sporządzenia wniosków kredytowych</li>
                                             <li>zmian w organizacji rachunkowości</li>
@@ -325,7 +318,7 @@
                                             <li>elektronicznego przesyłu informacji dla celów rachunkowych oraz rozliczeń ZUS</li>
                                         </ul>
                                     </div>
-                                </section>
+                                </div>
                             </div>
                         </div>
                     </div>

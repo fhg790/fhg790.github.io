@@ -3491,7 +3491,7 @@ button.dropdown-item {
 .modal-card-head,
 .modal-card-foot {
   align-items: center;
-  background-color: #003871;
+  background-color: lavender;
   display: flex;
   flex-shrink: 0;
   justify-content: flex-start;
@@ -7895,7 +7895,11 @@ h1.title {
 .button-custom {
   border-color: rgba(245, 245, 245, 0.5) !important;
   min-width: 12.5rem;
-  transition: box-shadow .35s, border-color .35s, color .35s; }
+  -webkit-transition: box-shadow 0.35s, border-color 0.35s, color 0.35s;
+  -moz-transition: box-shadow 0.35s, border-color 0.35s, color 0.35s;
+  -ms-transition: box-shadow 0.35s, border-color 0.35s, color 0.35s;
+  -o-transition: box-shadow 0.35s, border-color 0.35s, color 0.35s;
+  transition: box-shadow 0.35s, border-color 0.35s, color 0.35s; }
   .button-custom:hover {
     color: #003871 !important;
     background-color: transparent !important;
@@ -7908,17 +7912,29 @@ h1.title {
     box-shadow: none !important; }
 
 #navbar {
-  transition: background-color .25s;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  -ms-transition: background-color 0.25s;
+  -o-transition: background-color 0.25s;
+  transition: background-color 0.25s;
   background-color: #003871; }
   #navbar .navbar-item {
-    transition: color .25s; }
+    -webkit-transition: color 0.25s;
+    -moz-transition: color 0.25s;
+    -ms-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    transition: color 0.25s; }
     #navbar .navbar-item:active, #navbar .navbar-item:hover, #navbar .navbar-item:focus {
       background-color: #003871 !important;
       color: #0091A8 !important; }
       #navbar .navbar-item:active::after, #navbar .navbar-item:hover::after, #navbar .navbar-item:focus::after {
         background-color: #0091A8 !important; }
     #navbar .navbar-item.active-dot::after {
-      transition: background-color .25s;
+      -webkit-transition: background-color 0.25s;
+      -moz-transition: background-color 0.25s;
+      -ms-transition: background-color 0.25s;
+      -o-transition: background-color 0.25s;
+      transition: background-color 0.25s;
       content: '';
       position: absolute;
       bottom: 1.25rem;
@@ -7942,7 +7958,11 @@ h1.title {
 
 #services .columns .card {
   border-radius: .5rem;
-  transition: transform .25s, box-shadow .25s; }
+  -webkit-transition: transform 0.25s, box-shadow 0.25s;
+  -moz-transition: transform 0.25s, box-shadow 0.25s;
+  -ms-transition: transform 0.25s, box-shadow 0.25s;
+  -o-transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s; }
   #services .columns .card .custom_card_title {
     padding: 1.5rem 1.5rem 0 1.5rem;
     font-weight: 700;
@@ -7975,11 +7995,19 @@ h1.title {
   font-weight: 400; }
 
 #contact .button {
-  transition: color .35s, border-color .35s, box-shadow .35s; }
-  #contact .button:active, #contact .button:hover, #contact .button:focus {
+  -webkit-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
+  -moz-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
+  -ms-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
+  -o-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
+  transition: color 0.35s, border-color 0.35s, box-shadow 0.35s; }
+  #contact .button:hover {
     color: #0091A8;
     border-color: #0091A8 !important;
     box-shadow: inset 10em 0 0 0 lavender; }
+  #contact .button:active, #contact .button:focus {
+    background-color: lavender !important;
+    color: #0091A8;
+    border-color: #0091A8 !important; }
 
 #contact .map-responsive {
   overflow: hidden;
@@ -8010,6 +8038,19 @@ h1.title {
 
 .modal-card {
   border-radius: .35rem; }
+  @media screen and (max-width: 1023px) {
+    .modal-card {
+      padding: 2rem .5rem; } }
+  @media (min-width: 1024px) {
+    .modal-card .modal-card-body .content {
+      margin: .5rem 1rem .5rem 1rem; } }
+  .modal-card .modal-card-body .content h4 {
+    font-size: 1rem; }
+  .modal-card .modal-card-body .content p {
+    font-size: .85rem;
+    font-weight: 500; }
+  .modal-card .modal-card-body .content ul li {
+    font-size: .85rem; }
 
 ::-webkit-scrollbar {
   width: .6rem;
