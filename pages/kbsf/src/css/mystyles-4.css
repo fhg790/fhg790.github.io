@@ -7895,15 +7895,16 @@ h1.title {
 .button-custom {
   border-color: rgba(245, 245, 245, 0.5) !important;
   min-width: 12.5rem;
-  transition: background-color .25s, color .25s, border-color .25s; }
-  .button-custom:hover, .button-custom:active {
+  transition: box-shadow .35s, border-color .35s, color .35s; }
+  .button-custom:hover {
     color: #003871 !important;
-    background-color: rgba(0, 145, 168, 0.8) !important;
-    border-color: transparent !important; }
-  .button-custom:focus {
-    color: whitesmoke !important;
     background-color: transparent !important;
-    border-color: rgba(245, 245, 245, 0.5) !important;
+    border-color: transparent !important;
+    box-shadow: inset 10em 0 0 0 rgba(0, 145, 168, 0.8); }
+  .button-custom:focus, .button-custom:active {
+    color: #003871 !important;
+    background-color: #0091A8 !important;
+    border-color: transparent !important;
     box-shadow: none !important; }
 
 #navbar {
@@ -7974,11 +7975,11 @@ h1.title {
   font-weight: 400; }
 
 #contact .button {
-  transition: background-color .25s, color .25s, border-color .25s; }
+  transition: color .35s, border-color .35s, box-shadow .35s; }
   #contact .button:active, #contact .button:hover, #contact .button:focus {
-    background-color: lavender !important;
     color: #0091A8;
-    border-color: #0091A8 !important; }
+    border-color: #0091A8 !important;
+    box-shadow: inset 10em 0 0 0 lavender; }
 
 #contact .map-responsive {
   overflow: hidden;
@@ -8009,6 +8010,15 @@ h1.title {
 
 .modal-card {
   border-radius: .35rem; }
+
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: #dadad7; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #c2c1bd;
+  border-radius: .5rem; }
 
 @media (min-width: 1024px) {
   .is-size-4rem-desktop {
