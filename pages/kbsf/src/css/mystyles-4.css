@@ -7945,6 +7945,8 @@ h1.title {
       border-radius: 50%; }
       #navbar .navbar-item.active-dot::after:active, #navbar .navbar-item.active-dot::after:hover, #navbar .navbar-item.active-dot::after:focus {
         background-color: #0091A8 !important; }
+  #navbar .navbar-burger:hover {
+    background-color: inherit !important; }
   #navbar.has-background-transparent {
     background-color: transparent !important; }
     #navbar.has-background-transparent .navbar-item:active, #navbar.has-background-transparent .navbar-item:hover, #navbar.has-background-transparent .navbar-item:focus {
