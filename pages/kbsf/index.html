@@ -22,7 +22,7 @@
     <!-- jQuery import -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!-- Main CSS -->
     <link rel="stylesheet" href="./src/css/mystyles-4.css">
 
@@ -122,7 +122,8 @@
                         </p>
                     </div>
                     <div class="column is-flex">
-                        <img class="image-1" src="src/img/o-kancelarii.png">
+                        <!-- <img class="image-1" src="src/img/o-kancelarii.png"> -->
+                        <img class="image-1" src="src/img/o-kancelarii.avif">
                     </div>
                 </div>
             </div>
@@ -167,7 +168,8 @@
                         </p>
                     </div>
                     <div class="column is-flex">
-                        <img class="image-1" src="src/img/misja.png">
+                        <!-- <img class="image-1" src="src/img/misja.png"> -->
+                        <img class="image-1" src="src/img/misja.avif">
                     </div>
                 </div>
             </div>
@@ -186,7 +188,8 @@
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="src/img/audyt-blue.png">
+                                    <!-- <img src="src/img/audyt-blue.png"> -->
+                                    <img src="src/img/audyt-blue.webp">
                                 </figure>
                             </div>
                             <div class="card-content has-text-centered is-size-7">
@@ -234,7 +237,8 @@
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="src/img/ksiegowosc-blue.png">
+                                    <!-- <img src="src/img/ksiegowosc-blue.png"> -->
+                                    <img src="src/img/ksiegowosc-blue.webp">
                                 </figure>
                             </div>
                             <div class="card-content has-text-centered is-size-7">
@@ -276,7 +280,8 @@
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="src/img/doradztwo-blue.png">
+                                    <!-- <img src="src/img/doradztwo-blue.png"> -->
+                                    <img src="src/img/doradztwo-blue.webp">
                                 </figure>
                             </div>
                             <div class="card-content has-text-centered is-size-7">
@@ -421,6 +426,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10255.235821999875!2d19.9008091!3d50.0149359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe83a939c9b9c0d8a!2sKancelaria%20Badania%20Sprawozda%C5%84%20Finansowych%20Sp.%20z%20o.o.!5e0!3m2!1spl!2spl!4v1634204112120!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -465,25 +473,25 @@
 </body>
 
 <script>
-    $(document).ready(function () {
+
+    function buger_button_manage() {
         // Check for click events on the navbar burger icon
         $(".navbar-burger").click(function () {
             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
             $(".navbar-burger").toggleClass("is-active");
             $(".navbar-menu").toggleClass("is-active");
         });
-    });
+    }
 
-    $(document).ready(function () {
-        // Check for click events on the navbar burger icon
-        $(".navbar-item.has-dropdown").find('.navbar-link').click(function () {
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            $(this).parent().find('.navbar-dropdown').toggleClass("is-hidden-touch");
-        });
-    });
+    // $(document).ready(function () {
+    //     // Check for click events on the navbar burger icon
+    //     $(".navbar-item.has-dropdown").find('.navbar-link').click(function () {
+    //         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    //         $(this).parent().find('.navbar-dropdown').toggleClass("is-hidden-touch");
+    //     });
+    // });
 
-    // Modal boxes
-    $(document).ready(function () {
+    function modal_box_manage() {
         // Display modal
         $(".read-more-button").click(function () {
             var modal_id = '#'+$(this).attr('id')+"-modal";
@@ -500,18 +508,18 @@
                 $(this).css({'display': 'none', 'overflow': 'hidden'});
             }
         });
-    });
+    }
 
-    $(document).ready(function (){
+    function title_buttons_manage(){
         $("#about_button, #contact_button").click(function (){
             var parent_id = $(this).attr('id').replace('_button', '');
             $('html, body').animate({
                 scrollTop: $("#"+parent_id).offset().top-81
             }, 500, 'swing');
         });
-    });
+    }
 
-    $(document).ready(function (){
+    function navbar_items_manage(){
         $("#navbar-about, #navbar-target, #navbar-services, #navbar-contact").click(function (){
             var parent_id = $(this).attr('id').replace('navbar-', '');
             $('html, body').animate({
@@ -520,7 +528,7 @@
             $('#navbarKBSF').removeClass('is-active');
             $(".navbar-burger").removeClass("is-active");
         });
-    });
+    }
 
     function navbar_bg_manage() {
         // Get scroll pos
@@ -536,11 +544,20 @@
         }
     };
 
-    // Navbar BG on load
+    // Functions on load
     $(document).ready(function (){
+        // Burger button handling
+        buger_button_manage();
+        // Modal handling
+        modal_box_manage();
+        // Title buttons handling
+        title_buttons_manage();
+        // Navbar items handling
+        navbar_items_manage();
+        // Navbar bg handling
         navbar_bg_manage()
     });
-    // Navbar BG on scroll
+    // Funsctions on scroll
     $(window).scroll(function (){
         navbar_bg_manage()
     });

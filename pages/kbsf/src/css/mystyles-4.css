@@ -7979,9 +7979,21 @@ h1.title {
     color: #0091A8;
     border-color: #0091A8 !important; }
 
+#contact .map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0; }
+  #contact .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+
 .triangle-bottomright {
   position: absolute;
-  top: -49.5px;
+  top: -49px;
   width: 100%;
   height: 0;
   border-bottom: 50px solid #003871;
