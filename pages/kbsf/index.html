@@ -20,7 +20,7 @@
     <!-- <meta name="robots" content="index, follow" /> -->
 
     <!-- jQuery import -->
-    <script src="src/js/jquery.min.js"></script>
+    <!-- <script src="src/js/jquery.min.js"></script> -->
     <!-- Main CSS -->
     <link rel="stylesheet" href="./src/css/mystyles-4.css">
     <!-- Boxicons -->
@@ -36,7 +36,7 @@
         aria-label="main navigation">
         <div class="container" style="max-width: 1400px;">
             <div class="navbar-brand">
-                <div class="navbar-item">
+                <div id="navbar-brand" class="navbar-item">
                     <img src="src/img/logo.png" width="50px" height="65px"
                         style="max-height: 100% !important;">
                 </div>
@@ -91,7 +91,7 @@
                             </div>
                         </h2>
                         <div class="buttons">
-                            <button id="about_button" class="button button-custom is-size-4-desktop is-info is-inverted is-outlined is-fullwidth-mobile">O kancelarii</button>
+                            <button id="about_button" class="button button-custom is-size-4-desktop is-info is-inverted is-outlined is-fullwidth-mobile">O Kancelarii</button>
                             <button id="contact_button" class="button button-custom is-size-4-desktop is-info is-inverted is-outlined">Kontakt</button>
                         </div>
                     </div>
@@ -469,155 +469,49 @@
 </body>
 
 <script>
+    // Exit modal on bg click
+    document.querySelectorAll('.modal-background').forEach(n => n.addEventListener('click', function () {
+        const modal_box_id = this.parentElement.id;
+        document.getElementById(modal_box_id).classList.remove('is-active');
+        document.getElementById(modal_box_id).classList.add('is-out');
+    }));
 
-    function buger_button_manage() {
-        // Check for click events on the navbar burger icon
-        $(".navbar-burger").click(function () {
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            $(".navbar-burger").toggleClass("is-active");
-            $(".navbar-menu").toggleClass("is-active");
-        });
-    }
+    // Close modal on button click
+    document.querySelectorAll('button.delete').forEach(n => n.addEventListener('click', function () {
+        const modal_box_id = this.parentElement.parentElement.parentElement.id;
+        document.getElementById(modal_box_id).classList.remove('is-active');
+        document.getElementById(modal_box_id).classList.add('is-out');
+    }));
 
-    // $(document).ready(function () {
-    //     // Check for click events on the navbar burger icon
-    //     $(".navbar-item.has-dropdown").find('.navbar-link').click(function () {
-    //         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    //         $(this).parent().find('.navbar-dropdown').toggleClass("is-hidden-touch");
-    //     });
-    // });
-
+    // Open modal box
     function modal_box_manage() {
-        // Display modal
-        $(".read-more-button").click(function () {
-            var modal_id = '#'+$(this).attr('id')+"-modal";
-            $(modal_id).css({'display': 'flex', 'overflow': 'visible'});
-        });
-        // Close modal on click
-        $(".modal").find("button.delete").click(function () {
-            var modal_id = '#'+$(this).parent().parent().parent().attr('id');
-            $(modal_id).css({'display': 'none', 'overflow': 'hidden'});
-        });
-        // Close modal on bg click
-        $(".modal").click(function (event) {
-            if($(event.target).attr('class') == 'modal-background') {
-                $(this).css({'display': 'none', 'overflow': 'hidden'});
-            }
-        });
-    }
-
-    function title_buttons_manage(){
-        $("#about_button, #contact_button").click(function (){
-            var parent_id = $(this).attr('id').replace('_button', '');
-            $('html, body').animate({
-                scrollTop: $("#"+parent_id).offset().top-81
-            }, 500, 'swing');
-        });
-    }
-
-    function navbar_items_manage(){
-        $("#navbar-about, #navbar-target, #navbar-services, #navbar-contact").click(function (){
-            var parent_id = $(this).attr('id').replace('navbar-', '');
-            $('html, body').animate({
-                scrollTop: $("#"+parent_id).offset().top-81
-            }, 500, 'swing');
-            $('#navbarKBSF').removeClass('is-active');
-            $(".navbar-burger").removeClass("is-active");
-        });
-    }
-
-    function navbar_bg_manage() {
-        // Get scroll pos
-        var scroll_position = $(window).scrollTop();
-        // Get navbar height
-        var navbar_height = $('#navbar').outerHeight();
-
-        if(scroll_position > navbar_height) {
-            $('#navbar').removeClass('has-background-transparent');
-        }
-        else {
-            $('#navbar').addClass('has-background-transparent');
-        }
+        const modal_box_id = this.id+'-modal';
+        document.getElementById(modal_box_id).classList.add('is-active');
+        document.getElementById(modal_box_id).classList.remove('is-out');
     };
+    document.querySelectorAll('.read-more-button').forEach(n => n.addEventListener('click', modal_box_manage));
 
-    // Functions on load
-    $(document).ready(function (){
-        // Burger button handling
-        buger_button_manage();
-        // Modal handling
-        modal_box_manage();
-        // Title buttons handling
-        title_buttons_manage();
-        // Navbar items handling
-        navbar_items_manage();
-        // Navbar bg handling
-        navbar_bg_manage()
-    });
-    // Funsctions on scroll
-    $(window).scroll(function (){
-        navbar_bg_manage()
+    // Burger button manage
+    document.querySelector('.navbar-burger').addEventListener('click', function () {
+        this.classList.toggle('is-active');
+        document.querySelector('.navbar-menu').classList.toggle('is-active');
     });
 
-    // var current_section = '';
+    // Navbar links manage
+    const nav_links = document.querySelectorAll('.navbar-menu > .navbar-end > .navbar-item, #about_button, #contact_button');
+    function nav_link_action() {
+        const section_id = this.id.replace('navbar-', '').replace('_button', '');
+        window.scrollTo({
+            top: document.getElementById(section_id).getBoundingClientRect().top+window.scrollY-81
+        });
+    }
+    nav_links.forEach(n => n.addEventListener('click', nav_link_action));
 
-    // $(document).ready(function (){
-    //     // Scroll position
-    //     var scroll_position = $(window).scrollTop();
-
-    //     ['#about', '#target', '#services', '#contact'].forEach(function(item){
-    //         if(scroll_position >= $(item).offset().top-81 && scroll_position < $(item).offset().top+$(item).outerHeight()-81) {
-    //             current_section = $(item).attr('id');
-    //         }
-    //     });
-
-    //     $('#navbar-'+current_section).addClass('ni-is-active');
-    // });
-
-    // $(window).scroll(function (){
-    //     // Scroll position
-    //     var scroll_position = $(window).scrollTop();
-
-    //     ['#about', '#target', '#services', '#contact'].forEach(function(item){
-    //         if(scroll_position >= $(item).offset().top-81 && scroll_position < $(item).offset().top+$(item).outerHeight()-81) {
-    //             $('#navbar-'+current_section).removeClass('ni-is-active');
-    //             current_section = $(item).attr('id');
-    //         }
-    //     });
-
-    //     $('#navbar-'+current_section).addClass('ni-is-active');
-
-    // });
-
-    // $(window).scroll(function (){
-    //     // Scroll position
-    //     var scroll_position = $(window).scrollTop();
-
-    //     // ['#about', '#services', '#contact'].forEach(function(item){
-    //     //     if(scroll_position > $(item).offset().top-81 && scroll_position < $(item).outerHeight()-81) {
-
-    //     //     }
-    //     //     else {
-
-    //     //     }
-    //     //     // console.log($(item).offset().top);
-    //     //     // console.log($(item).outerHeight());
-    //     //     // console.log('');
-    //     // });
-    // });
-
-    // var bg = $(".bg-image-1");
-
-    // function resizeBackground() {
-    //     bg.height($(window).height());
-
-    //     console.log($(window).height());
-    // }
-
-    // $(window).resize(resizeBackground);
-    // resizeBackground();
-
-    // $(window).bind('scroll', update);
-    // update();
+    // Navbar bg color manage
+    window.addEventListener('scroll', function () {
+        const nav = document.getElementById('navbar');
+        if(this.scrollY >= nav.clientHeight) nav.classList.remove('has-background-transparent'); else nav.classList.add('has-background-transparent')
+    });
 </script>
 
 </html>

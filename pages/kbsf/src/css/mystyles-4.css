@@ -7847,6 +7847,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   background-color: lavender;
   font-display: swap; }
@@ -7947,11 +7950,12 @@ h1.title {
         background-color: #0091A8 !important; }
   #navbar .navbar-burger:hover {
     background-color: inherit !important; }
-  #navbar.has-background-transparent {
-    background-color: transparent !important; }
-    #navbar.has-background-transparent .navbar-item:active, #navbar.has-background-transparent .navbar-item:hover, #navbar.has-background-transparent .navbar-item:focus {
-      background-color: transparent !important;
-      color: #0091A8 !important; }
+  @media (min-width: 769px) {
+    #navbar.has-background-transparent {
+      background-color: transparent !important; }
+      #navbar.has-background-transparent .navbar-item:active, #navbar.has-background-transparent .navbar-item:hover, #navbar.has-background-transparent .navbar-item:focus {
+        background-color: transparent !important;
+        color: #0091A8 !important; } }
 
 #about p, #target p {
   color: black;
@@ -8038,25 +8042,48 @@ h1.title {
   .footer p {
     font-size: .85rem; }
 
-.modal .modal-background {
-  top: -50px;
-  bottom: -50px; }
+@keyframes delay_scale {
+  0% {
+    transform: scale(1); }
+  90% {
+    transform: scale(0.99); }
+  100% {
+    transform: scale(0); } }
 
-.modal .modal-card {
-  border-radius: .35rem; }
-  @media screen and (max-width: 1023px) {
-    .modal .modal-card {
-      padding: 2rem .5rem; } }
-  @media (min-width: 1024px) {
-    .modal .modal-card .modal-card-body .content {
-      margin: .5rem 1rem .5rem 1rem; } }
-  .modal .modal-card .modal-card-body .content h4 {
-    font-size: 1rem; }
-  .modal .modal-card .modal-card-body .content p {
-    font-size: .85rem;
-    font-weight: 500; }
-  .modal .modal-card .modal-card-body .content ul li {
-    font-size: .85rem; }
+.modal {
+  display: flex;
+  transform: scale(0); }
+  .modal.is-active {
+    overflow: visible;
+    transform: scale(1); }
+    .modal.is-active .modal-background {
+      opacity: 1; }
+    .modal.is-active .modal-card {
+      transform: translateY(0); }
+  .modal.is-out {
+    animation: delay_scale .5s; }
+  .modal .modal-background {
+    top: -100px;
+    bottom: -100px;
+    opacity: 0;
+    transition: opacity .25s; }
+  .modal .modal-card {
+    border-radius: .35rem;
+    transform: translateY(100vh);
+    transition: transform .5s; }
+    @media screen and (max-width: 1023px) {
+      .modal .modal-card {
+        padding: 2rem .5rem; } }
+    @media (min-width: 1024px) {
+      .modal .modal-card .modal-card-body .content {
+        margin: .5rem 1rem .5rem 1rem; } }
+    .modal .modal-card .modal-card-body .content h4 {
+      font-size: 1rem; }
+    .modal .modal-card .modal-card-body .content p {
+      font-size: .85rem;
+      font-weight: 500; }
+    .modal .modal-card .modal-card-body .content ul li {
+      font-size: .85rem; }
 
 ::-webkit-scrollbar {
   width: .6rem;
