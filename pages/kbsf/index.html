@@ -19,8 +19,6 @@
 
     <!-- <meta name="robots" content="index, follow" /> -->
 
-    <!-- jQuery import -->
-    <!-- <script src="src/js/jquery.min.js"></script> -->
     <!-- Main CSS -->
     <link rel="stylesheet" href="./src/css/mystyles-4.css">
     <!-- Boxicons -->
@@ -336,59 +334,63 @@
                         <div>
                             <h2 class="subtitle mb-5"> Napisz do nas: </h2>
                         </div>
-                        <div>
-                            <div class="field">
+                        <form id="contact_form">
+                            <div id="email" class="field">
                                 <label class="label">Twój e-mail</label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="email" placeholder="adres@email.com">
+                                    <input class="input" type="text" placeholder="adres@email.com">
                                     <span class="icon is-small is-left">
                                         <i class='bx bxs-envelope'></i>
                                     </span>
                                 </div>
+                                <div class="error_box"></div>
                             </div>
 
-                            <div class="field">
+                            <div id="phone" class="field">
                                 <label class="label">Numer telefonu</label>
                                 <div class="control has-icons-left">
-                                    <input class="input" type="phone" placeholder="+48 500 500 500">
+                                    <input class="input" type="text" placeholder="+48 500 500 500">
                                     <span class="icon is-small is-left">
                                         <i class='bx bxs-phone'></i>
                                     </span>
                                 </div>
+                                <div class="error_box"></div>
                             </div>
 
-                            <div class="field">
-                                <label class="label">Tytuł</label>
+                            <div id="subject" class="field">
+                                <label class="label">Temat</label>
                                 <div class="control has-icons-left">
                                     <input class="input" type="text" placeholder="Pytanie w sprawie oferty">
                                     <span class="icon is-small is-left">
                                         <i class='bx bx-list-check bx-sm'></i>
                                     </span>
                                 </div>
+                                <div class="error_box"></div>
                             </div>
 
-                            <div class="field">
+                            <div id="message" class="field">
                                 <label class="label">Wiadomość</label>
                                 <div class="control">
                                     <textarea class="textarea" placeholder="Wiadomość"></textarea>
                                 </div>
+                                <div class="error_box"></div>
                             </div>
 
-                            <div class="field">
+                            <div id="send_mail_copy" class="field">
                                 <div class="control">
                                     <label class="checkbox">
-                                        <input type="checkbox">
-                                        Wyślij kopię wiadomości na mój e-mail.
+                                        <input type="checkbox"> Wyślij kopię wiadomości na mój e-mail.
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="field is-grouped">
+                            <div class="field">
                                 <div class="control">
-                                    <button class="button is-primary has-backgroundcolor-bluelight">Wyślij</button>
+                                    <input type="submit" value="Wyślij" class="button is-primary has-backgroundcolor-bluelight">
+                                    <!-- <button class="button is-primary has-backgroundcolor-bluelight">Wyślij</button> -->
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="column is-half is-flex is-flex-direction-column">
                         <div>
@@ -468,55 +470,7 @@
     </div>
 </body>
 
-<script>
-    // Exit modal on bg click
-    document.querySelectorAll('.modal-background').forEach(n => n.addEventListener('click', function () {
-        const modal_box_id = this.parentElement.id;
-        document.getElementById(modal_box_id).classList.remove('is-active');
-        document.getElementById(modal_box_id).classList.add('is-out');
-    }));
-
-    // Close modal on button click
-    document.querySelectorAll('button.delete').forEach(n => n.addEventListener('click', function () {
-        const modal_box_id = this.parentElement.parentElement.parentElement.id;
-        document.getElementById(modal_box_id).classList.remove('is-active');
-        document.getElementById(modal_box_id).classList.add('is-out');
-    }));
-
-    // Open modal box
-    function modal_box_manage() {
-        const modal_box_id = this.id+'-modal';
-        document.getElementById(modal_box_id).classList.add('is-active');
-        document.getElementById(modal_box_id).classList.remove('is-out');
-    };
-    document.querySelectorAll('.read-more-button').forEach(n => n.addEventListener('click', modal_box_manage));
-
-    // Burger button manage
-    document.querySelector('.navbar-burger').addEventListener('click', function () {
-        this.classList.toggle('is-active');
-        document.querySelector('.navbar-menu').classList.toggle('is-active');
-    });
-
-    // Navbar links manage
-    const nav_links = document.querySelectorAll('.navbar-menu > .navbar-end > .navbar-item, #about_button, #contact_button');
-    function nav_link_action() {
-        const section_id = this.id.replace('navbar-', '').replace('_button', '');
-        
-        // Close dropdown
-        document.querySelector('.navbar-burger').classList.remove('is-active');
-        document.querySelector('.navbar-menu').classList.remove('is-active');
-
-        window.scrollTo({
-            top: document.getElementById(section_id).getBoundingClientRect().top+window.scrollY-81
-        });
-    }
-    nav_links.forEach(n => n.addEventListener('click', nav_link_action));
-
-    // Navbar bg color manage
-    window.addEventListener('scroll', function () {
-        const nav = document.getElementById('navbar');
-        if(this.scrollY >= nav.clientHeight) nav.classList.remove('has-background-transparent'); else nav.classList.add('has-background-transparent')
-    });
-</script>
+<!-- Custom JS -->
+<script src="src/js/main.js"></script>
 
 </html>

@@ -7996,21 +7996,25 @@ h1.title {
 #contact .subtitle {
   font-weight: 600; }
 
-#contact .label {
+#contact form .label {
   font-size: 1rem;
   font-weight: 400; }
 
-#contact .button {
+#contact form .error_box {
+  font-size: .85rem;
+  color: #f14668; }
+
+#contact form .button {
   -webkit-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
   -moz-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
   -ms-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
   -o-transition: color 0.35s, border-color 0.35s, box-shadow 0.35s;
   transition: color 0.35s, border-color 0.35s, box-shadow 0.35s; }
-  #contact .button:hover {
+  #contact form .button:hover {
     color: #0091A8;
     border-color: #0091A8 !important;
     box-shadow: inset 10em 0 0 0 lavender; }
-  #contact .button:active, #contact .button:focus {
+  #contact form .button:active, #contact form .button:focus {
     background-color: lavender !important;
     color: #0091A8;
     border-color: #0091A8 !important; }
