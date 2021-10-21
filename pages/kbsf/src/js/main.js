@@ -27,6 +27,13 @@ document.querySelector('.navbar-burger').addEventListener('click', function () {
     document.querySelector('.navbar-menu').classList.toggle('is-active');
 });
 
+// Brand button manage
+document.querySelector('#navbar-brand').addEventListener('click', function () {
+    window.scrollTo({
+        top: 0
+    });
+});
+
 // Navbar links manage
 const nav_links = document.querySelectorAll('.navbar-menu > .navbar-end > .navbar-item, #about_button, #contact_button');
 function nav_link_action() {
