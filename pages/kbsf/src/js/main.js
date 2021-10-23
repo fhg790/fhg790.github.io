@@ -49,10 +49,41 @@ function nav_link_action() {
 }
 nav_links.forEach(n => n.addEventListener('click', nav_link_action));
 
-// Navbar bg color manage
+// Animate elements
+function animate_element(element, detect_top=true, detect_bottom=true) {
+    if(detect_top == true && detect_bottom == true) {
+        if(element.getBoundingClientRect().top < window.screen.height*3/4 && element.getBoundingClientRect().bottom > window.screen.height*1/4) {
+            element.classList.add('is-active');
+        }
+    }
+    else if(detect_top == true) {
+        if(element.getBoundingClientRect().top < window.screen.height*3/4) {
+            element.classList.add('is-active');
+        }
+    }
+    else if(detect_bottom == true) {
+        if(element.getBoundingClientRect().bottom > window.screen.height*1/4) {
+            element.classList.add('is-active');
+        }
+    }
+};
+
+// Navbar bg color manage + scroll animations
 window.addEventListener('scroll', function () {
     const nav = document.getElementById('navbar');
     if(this.scrollY >= nav.clientHeight) nav.classList.remove('has-background-transparent'); else nav.classList.add('has-background-transparent')
+
+    // For animate on top and bottom
+    const animate_both = ['#about_text', '#about_img', '#target_text', '#target_img', '#services_title', '#services_audyt', '#services_ksiegowosc', '#services_doradztwo', '#services_audyt'];
+    animate_both.forEach(function(element) {
+        animate_element(document.querySelector(element));
+    });
+
+    // For only animate on top 
+    const animate_top = ['#contact_title', '#contact_form_container', '#contact_data'];
+    animate_top.forEach(function(element) {
+        animate_element(document.querySelector(element), true, false);
+    });
 });
 
 // Checking form fields
@@ -157,3 +188,29 @@ document.getElementById("contact_form").addEventListener("submit", function(e){
         }
     }
 });
+
+// Animation on load
+window.addEventListener("load", function () {
+    // Add animation on title section
+    document.querySelector('#title').classList.add('is-active');
+});
+
+// Animation on scroll
+// window.addEventListener('scroll', function () {
+    
+//     var about_text = document.querySelector('#about_text');
+
+//     console.log(about_text.getBoundingClientRect().top);
+//     console.log(this.screenY);
+
+//     if(about_text.getBoundingClientRect().top + 100 > this.sc) {
+//         about_text.classList.add('is-active');
+//     }
+
+//     var about_img = document.querySelector('#about_img');
+//     if(about_img.getBoundingClientRect().top > this.scrollY) {
+//         about_img.classList.add('is-active');
+//     }
+
+
+// });
