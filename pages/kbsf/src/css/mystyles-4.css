@@ -7907,7 +7907,7 @@ h1.title {
     color: #003871 !important;
     background-color: transparent !important;
     border-color: transparent !important;
-    box-shadow: inset 10em 0 0 0 rgba(0, 145, 168, 0.8) !important; }
+    box-shadow: inset 10em 0 0 0 rgba(0, 145, 168, 0.8); }
   .button-custom:focus, .button-custom:active {
     color: #003871 !important;
     background-color: #0091A8 !important;
@@ -7957,76 +7957,10 @@ h1.title {
         background-color: transparent !important;
         color: #0091A8 !important; } }
 
-#title {
-  transform: translateX(-100%);
-  opacity: 0; }
-  #title.is-active {
-    -webkit-transition: transform 0.75s, opacity 0.75s;
-    -moz-transition: transform 0.75s, opacity 0.75s;
-    -ms-transition: transform 0.75s, opacity 0.75s;
-    -o-transition: transform 0.75s, opacity 0.75s;
-    transition: transform 0.75s, opacity 0.75s;
-    transform: translateX(0);
-    opacity: 1; }
-
 #about p, #target p {
   color: black;
   font-size: .85rem;
   margin-bottom: 1rem; }
-
-#about #about_text {
-  opacity: 0; }
-  #about #about_text.is-active {
-    animation: fade-lft .75s;
-    animation-fill-mode: forwards; }
-
-#about #about_img {
-  opacity: 0; }
-  #about #about_img.is-active {
-    animation: fade-rght .75s;
-    animation-fill-mode: forwards; }
-
-#target #target_text {
-  opacity: 0; }
-  #target #target_text.is-active {
-    animation: fade-rght .75s;
-    animation-fill-mode: forwards; }
-
-#target #target_img {
-  opacity: 0; }
-  #target #target_img.is-active {
-    animation: fade-lft .75s;
-    animation-fill-mode: forwards; }
-
-#services #services_title {
-  opacity: 0; }
-  #services #services_title.is-active {
-    animation: fade-opcty .75s;
-    animation-fill-mode: forwards; }
-
-#services #services_audyt {
-  opacity: 0; }
-  #services #services_audyt.is-active {
-    animation: fade-opcty-light .75s;
-    animation-fill-mode: forwards; }
-
-#services #services_ksiegowosc {
-  opacity: 0; }
-  #services #services_ksiegowosc.is-active {
-    animation: fade-opcty-light .75s;
-    animation-fill-mode: forwards; }
-    @media (min-width: 1024px) {
-      #services #services_ksiegowosc.is-active {
-        animation-delay: .25s; } }
-
-#services #services_doradztwo {
-  opacity: 0; }
-  #services #services_doradztwo.is-active {
-    animation: fade-opcty-light .75s;
-    animation-fill-mode: forwards; }
-    @media (min-width: 1024px) {
-      #services #services_doradztwo.is-active {
-        animation-delay: .5s; } }
 
 #services .columns .card {
   border-radius: .5rem;
@@ -8061,24 +7995,6 @@ h1.title {
 
 #contact .subtitle {
   font-weight: 600; }
-
-#contact #contact_title {
-  opacity: 0; }
-  #contact #contact_title.is-active {
-    animation: fade-opcty .75s;
-    animation-fill-mode: forwards; }
-
-#contact #contact_form_container {
-  opacity: 0; }
-  #contact #contact_form_container.is-active {
-    animation: fade-lft .75s;
-    animation-fill-mode: forwards; }
-
-#contact #contact_data {
-  opacity: 0; }
-  #contact #contact_data.is-active {
-    animation: fade-rght .75s;
-    animation-fill-mode: forwards; }
 
 #contact form .label {
   font-size: 1rem;
@@ -8137,52 +8053,6 @@ h1.title {
     transform: scale(0.99); }
   100% {
     transform: scale(0); } }
-
-@keyframes fade-lft {
-  0% {
-    transform: translateX(-50%);
-    opacity: 0; }
-  99% {
-    transform: translateX(0);
-    opacity: 1; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade-rght {
-  0% {
-    transform: translateX(50%);
-    opacity: 0; }
-  99% {
-    transform: translateX(0);
-    opacity: 1; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade-opcty {
-  0% {
-    opacity: 0;
-    transform: scale(0); }
-  80% {
-    opacity: 1;
-    transform: scale(1.1); }
-  99% {
-    opacity: 1;
-    transform: scale(1); }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade-opcty-light {
-  0% {
-    opacity: 0;
-    transform: scale(0); }
-  80% {
-    opacity: 1;
-    transform: scale(1.05); }
-  99% {
-    opacity: 1;
-    transform: scale(1); }
-  100% {
-    opacity: 1; } }
 
 .modal {
   display: flex;
