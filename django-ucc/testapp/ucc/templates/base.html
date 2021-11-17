@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <!-- Bulma Version 0.9.0-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/common/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="../css/documentation.css" /> -->
+    <!-- <script src="https://kit.fontawesome.com/2828f7885a.js"
+        integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
+        crossorigin="anonymous"></script> -->
+    <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" /> -->
+    {% block title %}
+    {% endblock %}
+</head>
+
+<body class="has-montserrat-font has-bg-gray">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarburger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarburger" class="navbar-menu">
+        <div class="navbar-end">
+          {% if user.is_authenticated %}
+            <a class="navbar-item" href="/ucc/"> Home </a>
+            <a class="navbar-item" href="/ucc/admin/"> Admin Panel </a>
+            <a class="navbar-item" href="/ucc/feeds_center/"> Feeds Center </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">Account</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item">Settings</a>    
+                  <a class="navbar-item" href="/ucc/logout/">Logout</a>
+              </div>
+            </div>
+          {% else %}
+            <a class="navbar-item" href="/ucc/login/">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+  {% block content %}
+  {% endblock %}
+  <footer class="footer">
+    <div class="container">
+      <div class="content">
+        <div class="links">
+          <!-- <div class="level-item"> -->
+          <div class="level-item">
+            <a href="/ucc/"> Home </a>
+          </div>
+          <!-- <div class="level-item"> -->
+          <div class="level-item">
+            <a href="/ucc/feeds_center/"> Feeds Center </a>
+          </div>
+          <!-- <div class="level-item"> -->
+          <div class="level-item">
+            <a href="#"> Contact </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Hamburger menu functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });  
+  </script>
+  {% block scripts %}
+  {% endblock %}
+</body>
+
+</html>

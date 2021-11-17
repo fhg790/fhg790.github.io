@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin_panel.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero is-info is-medium is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <!-- <h1 class="title">Admin Panel</h1> -->
+            <!-- <h2 class="subtitle">Feed Manager by Hurra Support</h2> -->
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- START ARTICLE FEED -->
+    <section class="articles" style="margin-top: -350px;">
+        <div class="column is-8 is-offset-2">
+            <!-- START ARTICLE -->
+            <div class="card article">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content has-text-centered">
+                            <p class="title article-title">Mapping</p>
+                            <nav class="breadcrumb has-bullet-separator is-centered" aria-label="breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Feeds Center</a></li>
+                                    <li><a href="#">Test</a></li>
+                                    <li><a href="#">Mapping</a></li>
+                                    <li class="is-active"><a href="#" aria-current="page">hurracss_0</a></li>
+                                </ul>
+                            </nav>
+                            <div class="tags has-addons level-item">
+                                <span class="tag is-rounded is-info">Last-modified</span>
+                                <span class="tag is-rounded">May 10, 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content article-body">
+                        <div class="columns is-multiline">
+                            <div class="column is-full">
+                                <!-- <hr class="custom-hr"> -->
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        articlecode
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label class="label" for="mapping_data.{{ x }}.field_syntax">field_syntax:</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control">
+                                                        <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                        <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label class="label" for="mapping_data.{{ x }}.field_syntax">filters.skip:</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control">
+                                                        <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                        <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label class="label" for="mapping_data.{{ x }}.field_syntax">filters.replace:</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control">
+                                                        <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                        <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-full">
+                                <hr class="custom-hr">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        articlecode
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label class="label" for="mapping_data.{{ x }}.field_syntax">field_syntax:</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control">
+                                                        <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                        <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label class="label" for="mapping_data.{{ x }}.field_syntax">filters.skip:</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control">
+                                                        <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                        <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label class="label" for="mapping_data.{{ x }}.field_syntax">filters.replace:</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <p class="control">
+                                                        <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                        <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- !!! COMMENT !!! -->
+{% comment %}
+{% extends 'base.html' %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero is-medium is-fullwidth" style="background-color: white;">
+    <div class="hero-body has-text-centered">
+        <div class="container">
+            <h1 class="title is-2">Universe Control Center</h1>
+            <h2 class="title is-5">By Hurra Support</h2>
+            <!-- <div class="field has-addons has-addons-centered">
+                    <div class="control">
+                        <input class="input is-medium" type="text" placeholder="Search..." />
+                    </div>
+                    <div class="control">
+                        <a class="button is-primary is-medium">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+</section>
+<div class="container is-max-desktop has-text-centered">
+    <div>
+        <h1 class="title">
+            Dashboard/Monitoring
+        </h1>
+    </div>
+</div>
+<div class="container is-max-desktop">
+    <section class="hero-body has-text-centered">
+        <div class="columns is-multiline has-text-centered is-centered">
+            {% for x in feeds %}
+            <div class="column is-4">
+                <div class="box">
+                    {{ x }}
+                </div>
+                <!-- <p class="bd-notification is-primary">
+                            {{ x }}
+                        </p> -->
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% endcomment %}

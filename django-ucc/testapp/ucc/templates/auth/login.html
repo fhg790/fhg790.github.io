@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- <link rel="stylesheet" href="bulma-divider.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- Import base css styles for Login page -->
+        <!-- <link rel="stylesheet" type="text/css" href="../../sources/css/login.css"> -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    </head>
+    <body>
+        <section class="hero is-fullheight" style="background-color: #f5f3f4;">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="column is-4 is-offset-4">
+                        <h3 class="title has-montserrat-font has-text-dark">Universe Control Center</h3>
+                        <hr class="login-hr">
+                        <p class="subtitle has-text-grey">Please login to proceed</p>
+                        <form class="box" method="post">
+                            {% csrf_token %}
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input type="text" name="{{ form.username.name }}" placeholder="e.g. name.surname@hurra.com" class="input {% if form.username.errors %} is-danger {% endif %}" id="{{ form.username.id_for_label }}" autocomplete="off" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>
+                                {% if form.username.errors %}
+                                    <span class="has-text-left has-text-danger">{{ form.username.errors }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input type="password" name="{{ form.password.name }}" placeholder="*******" class="input {% if form.password.errors %} is-danger {% endif %}" id="{{ form.password.id_for_label }}" autocomplete="off" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                                {% if form.password.errors %}
+                                    <span class="has-text-left has-text-danger">{{ form.password.errors }}</span>
+                                {% endif %}
+                                {% if form_custom_errors.error %}
+                                    <span class="has-text-left has-text-danger">{{ form_custom_errors.error }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="field">
+                                <label class="checkbox has-montserrat-font has-text-dark">
+                                    <input type="checkbox" name="{{ form.remember_me.name }}" id="{{ form.remember_me.id_for_label }}">
+                                        Remember me
+                                </label>
+                            </div>
+                            <div class="field">
+                                <button class="button is-info is-fullwidth is-size-5">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <p>
+                        <a class="has-text-info">Sign Up</a> &nbsp;·&nbsp;
+                        <a class="has-text-info">Forgot Password</a>
+                        <!-- &nbsp;·&nbsp; -->
+                        <!-- <a class="has-text-info" href="../">Need Help?</a> -->
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

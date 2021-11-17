@@ -1,0 +1,358 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/mapping.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero is-info is-medium is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <!-- <h1 class="title">Admin Panel</h1> -->
+            <!-- <h2 class="subtitle">Feed Manager by Hurra Support</h2> -->
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- START ARTICLE FEED -->
+    <section class="articles" style="margin-top: -350px;">
+        <div class="column is-8 is-offset-2">
+            <!-- START ARTICLE -->
+            <div class="card article">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content has-text-centered">
+                            <p class="title article-title">Mapping</p>
+                            <nav class="breadcrumb has-bullet-separator is-centered" aria-label="breadcrumbs">
+                                <ul>
+                                    <li><a href="#">Feeds Center</a></li>
+                                    <li><a href="#">Test</a></li>
+                                    <li><a href="#">Mapping</a></li>
+                                    <li class="is-active"><a href="#" aria-current="page">hurracss_0</a></li>
+                                </ul>
+                            </nav>
+                            <div class="tags has-addons level-item">
+                                <span class="tag is-rounded is-info">Last-modified</span>
+                                <span class="tag is-rounded">May 10, 2018</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content article-body">
+                        <form id="mapping_form" method="post" style="padding-top: 2rem; padding-bottom: 2rem;">
+                            {% csrf_token %}
+                            {% for x, y in mapping_data.items %}
+                                {% if not forloop.first %}
+                                    <hr class="custom-hr">
+                                {% endif %}
+                                <div class="columns is-multiline">
+                                    <div class="column is-full">
+                                        <div class="columns">
+                                            <div class="column is-3">
+                                                <div class="columns is-multiline">
+                                                    <div class="column is-full">
+                                                        <h2 class="has-justify-content">{{ x }}</h2>
+                                                        {% if y.state|lower == 'required' %}
+                                                            <span class="tag is-danger">
+                                                                Required
+                                                            </span>
+                                                        {% elif y.state|lower == 'optional' %}
+                                                            <span class="tag is-warning">
+                                                                Optional
+                                                            </span>
+                                                        {% endif %}
+                                                    </div>
+                                                    <!-- <h2 class="has-justify-content"> -->
+                                                </div>
+                                            </div>
+                                            <div class="column is-9">
+                                                <div class="field is-horizontal">
+                                                    <div class="field-label is-normal">
+                                                        <label class="label" for="mapping_data.{{ x }}.field_syntax">field_syntax:</label>
+                                                    </div>
+                                                    <div class="field-body">
+                                                        <div class="field">
+                                                            <p class="control">
+                                                                <input type="text" list="mapping_data.{{ x }}.field_syntax_options" class="input" id="mapping_data.{{ x }}.field_syntax" name="mapping_data.{{ x }}.field_syntax" value="{{ y.field_syntax }}" placeholder="field_syntax" autocomplete="off" {% if y.state|lower == 'required' %} required {% endif %}>
+                                                                <datalist id="mapping_data.{{ x }}.field_syntax_options"></datalist>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="field is-horizontal">
+                                                    <div class="field-label is-normal">
+                                                        <label class="label" for="mapping_data.{{ x }}.filters.skip">filters.skip:</label>
+                                                    </div>
+                                                    <div class="field-body">
+                                                        <div class="field">
+                                                            <p class="control">
+                                                                <input type="text" class="input" id="mapping_data.{{ x }}.filters.skip" name="mapping_data.{{ x }}.filters.skip" value="{{ y.filters.skip }}" placeholder="filter.skip" autocomplete="off">
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="field is-horizontal">
+                                                    <div class="field-label is-normal mr-2">
+                                                        <label class="label" for="mapping_data.{{ x }}.filters.replace">filters.replace:</label>
+                                                    </div>
+                                                    <div class="field-body">
+                                                        <div class="box" id="mapping_data.{{ x }}.filters.replace">
+                                                            {% for repl_k, repl_v in y.filters.replace.items %}
+                                                                <div class="field is-horizontal mb-1" id="mapping_data.{{ x }}.filters.replace.{{ forloop.counter0 }}">
+                                                                    <div class="field-body">
+                                                                        <div class="field">
+                                                                            <p class="control">
+                                                                                <input type="text" class="input" id="mapping_data.{{ x }}.filters.replace.{{ forloop.counter0 }}.from" name="mapping_data.{{ x }}.filters.replace.{{ forloop.counter0 }}.from" value="{{ repl_k }}" placeholder="from" autocomplete="off">
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="field-body">
+                                                                        <div class="field">
+                                                                            <p class="control">
+                                                                                <input type="text" class="input" id="mapping_data.{{ x }}.filters.replace.{{ forloop.counter0 }}.to" name="mapping_data.{{ x }}.filters.replace.{{ forloop.counter0 }}.to" value="{{ repl_v }}" placeholder="to" autocomplete="off">
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="button is-danger" onclick="remove_filter_element('mapping_data.{{ x }}.filters.replace.{{ forloop.counter0 }}', '{{ forloop.counter0 }}')" >Remove</div>
+                                                                </div>
+                                                            {% empty %}
+                                                                <div class="field is-horizontal mb-1" id="mapping_data.{{ x }}.filters.replace.0">
+                                                                    <div class="field-body">
+                                                                        <div class="field">
+                                                                            <p class="control">
+                                                                                <input type="text" class="input" id="mapping_data.{{ x }}.filters.replace.0.from" name="mapping_data.{{ x }}.filters.replace.0.from" value="" placeholder="from" autocomplete="off">
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="field-body">
+                                                                        <div class="field">
+                                                                            <p class="control">
+                                                                                <input type="text" class="input" id="mapping_data.{{ x }}.filters.replace.0.to" name="mapping_data.{{ x }}.filters.replace.0.to" value="" placeholder="to" autocomplete="off">
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="button is-danger" onclick="remove_filter_element('mapping_data.{{ x }}.filters.replace.0', '0')" >Remove</div>
+                                                                </div>
+                                                            {% endfor %}
+                                                            <div class="button is-success" id="mapping_data.{{ x }}.filters.replace.button" onclick="add_filter_element('mapping_data.{{ x }}.filters.replace')">Add</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            <div class="field has-text-centered is-hidden-desktop">
+                                <button class="button is-success is-size-5">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    function remove_filter_element(id_prefix, count_number) {
+        if( count_number === '0' ) {
+            document.getElementById(id_prefix + '.from').value = '';
+            document.getElementById(id_prefix + '.to').value = '';
+        }
+        else {
+            document.getElementById(id_prefix).remove();
+        }
+    }
+
+    function add_filter_element(id_prefix) {
+        // New element counter
+        var new_element_counter = document.getElementById(id_prefix).childElementCount - 1;
+        // Element copy and adjusting
+        var new_element = document.getElementById(id_prefix + '.0').outerHTML;
+        // Counter change
+        new_element = new_element.replaceAll(id_prefix + '.0', id_prefix + '.' + new_element_counter);
+        new_element = new_element.replaceAll(", '0')", ", '" + new_element_counter + "')");
+        // Clearing the values
+        new_element = new_element.replaceAll(/value=".*?"/g, /value=""/);
+        // Adding new element
+        document.getElementById(id_prefix + ".button").insertAdjacentHTML('beforebegin', new_element);
+    }
+
+    $(document).ready(function() {
+        $(":input[required]").focusout(function() {
+            if($(this).val() == '') {
+                $(this).addClass("is-danger");
+            }
+            else {
+                $(this).removeClass("is-danger");
+            }
+        });
+        $(":input[required]").focusin(function() {
+            if(!($(this).val() == '')) {
+                $(this).removeClass("is-danger");
+            }
+        });
+    });
+
+    function test(data, mapping) {
+        var input_ids = [];
+        
+        mapping.split(',').forEach(function(element) {
+            input_ids = input_ids.concat('mapping_data.' + element +'.field_syntax');
+        });
+
+        return input_ids;
+    };
+
+    // test('{{ header|join:"," }}', '{{ mapping_data|join:"," }}');
+
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()[\]\\]/g, '\\$&'); // $& means the whole matched string
+    }
+
+    ['input', 'focus'].forEach(function(e) {
+        test('{{ header|join:"," }}', '{{ mapping_data|join:"," }}').forEach(function(f) {
+            document.getElementById(f).addEventListener(e, function() {
+                // Available fields
+                var available_fields = ['${id}', '${merchant_id}', '${availability}', '${price}'];
+            
+                // Already provided phrases
+                var words = this.value.split(' ');
+                
+                // Get last word
+                var last_word = words[words.length-1];
+                
+                // Special signs removing
+                if(last_word.match(/^\$\{/)) {
+                    last_word = last_word.replace(/^\$\{(.*?)\}|^\$\{/, '$1');
+                }
+
+                // Add available autocomplition if or provided
+                if(last_word.match(/\|/)) {
+                    // Const add
+                    available_fields = available_fields.concat(['const::<value>']);
+
+                    pre_fields = escapeRegExp(last_word).replace(/(.*)\|.*/, '$1');
+                    available_fields.forEach(function (item){
+                        available_fields = available_fields.concat(['${' + pre_fields + '|' + item.replace(/\$\{(.*?)\}/, '$1') + '}']);
+                    });
+                }
+                
+                // Matches
+                var words_to_complete = available_fields.filter(available_fields => available_fields.match(escapeRegExp(last_word)));
+                        
+                var dtlist = document.getElementById(f + '_options');
+                
+                dtlist.innerHTML = '';
+                
+                words_to_complete.forEach(function(item) {
+                    // Create new options
+                    var option = document.createElement('option');
+                    
+                    var no_brackets_item = item.replace(/\$\{(.*?)\}/, '$1');
+
+                    if(words.length < 2) {
+                        var values = item;
+                        var labels = no_brackets_item;
+                    }
+                    else {
+                        var values = words.slice(0,-1).join(" ") + " " + item;
+                        var labels = words.slice(0,-1).join(" ") + " " + no_brackets_item;
+                    }
+                    
+                    option.value = values;
+                    option.label = labels;
+
+                    dtlist.appendChild(option);
+                });
+            })
+        });
+    });
+
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- !!! COMMENT !!! -->
+{% comment %}
+{% extends 'base.html' %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero is-medium is-fullwidth" style="background-color: white;">
+    <div class="hero-body has-text-centered">
+        <div class="container">
+            <h1 class="title is-2">Universe Control Center</h1>
+            <h2 class="title is-5">By Hurra Support</h2>
+            <!-- <div class="field has-addons has-addons-centered">
+                    <div class="control">
+                        <input class="input is-medium" type="text" placeholder="Search..." />
+                    </div>
+                    <div class="control">
+                        <a class="button is-primary is-medium">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+</section>
+<div class="container is-max-desktop has-text-centered">
+    <div>
+        <h1 class="title">
+            Dashboard/Monitoring
+        </h1>
+    </div>
+</div>
+<div class="container is-max-desktop">
+    <section class="hero-body has-text-centered">
+        <div class="columns is-multiline has-text-centered is-centered">
+            {% for x in feeds %}
+            <div class="column is-4">
+                <div class="box">
+                    {{ x }}
+                </div>
+                <!-- <p class="bd-notification is-primary">
+                            {{ x }}
+                        </p> -->
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% endcomment %}

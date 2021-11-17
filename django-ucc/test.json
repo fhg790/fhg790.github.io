@@ -1,0 +1,106 @@
+{
+    "fetch_id": "main_fetch",
+    "mapping": {
+        "articlecode": {
+            "field_syntax": "${merchant_product_id}",
+            "filters": {
+                "skip": "543033",
+                "replace": {}
+            },
+            "state": "REQUIRED"
+        },
+        "category": {
+            "field_syntax": "${merchant_category|category_name|merchant_product_category_path|const::Elektronik}",
+            "filters": {
+                "skip": "",
+                "replace": {
+                    "Elektronik": "Electronics"
+                }
+            },
+            "state": "REQUIRED"
+        },
+        "imageurl": {
+            "field_syntax": "${merchant_image_url|const::https://www.default-image.com/}",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "REQUIRED"
+        },
+        "price": {
+            "field_syntax": "${product_price_old}",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "REQUIRED"
+        },
+        "availability": {
+            "field_syntax": "${in_stock}",
+            "filters": {
+                "skip": "",
+                "replace": {
+                    "1": "in stock",
+                    "0": "out of stock"
+                }
+            },
+            "state": "REQUIRED"
+        },
+        "sale_price": {
+            "field_syntax": "${search_price}",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "OPTIONAL"
+        },
+        "producturl": {
+            "field_syntax": "${merchant_deep_link}",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "REQUIRED"
+        },
+        "thumburl": {
+            "field_syntax": "",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "OPTIONAL"
+        },
+        "title": {
+            "field_syntax": "${product_name}",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "REQUIRED"
+        },
+        "description": {
+            "field_syntax": "${product_name} + ${description}",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "REQUIRED"
+        },
+        "brand": {
+            "field_syntax": "${brand_name}",
+            "filters": {
+                "skip": "((?!realme|OnePlus).)*",
+                "replace": {}
+            },
+            "state": "OPTIONAL"
+        },
+        "gpc_id": {
+            "field_syntax": "",
+            "filters": {
+                "skip": "",
+                "replace": {}
+            },
+            "state": "OPTIONAL"
+        }
+    }
+}

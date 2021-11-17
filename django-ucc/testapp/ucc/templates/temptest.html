@@ -1,0 +1,72 @@
+<input id="test" list="test_options" type="text">
+<datalist id="test_options"></datalist>
+
+<input id="test_1" list="test_1_options" type="text">
+<datalist id="test_1_options"></datalist>
+
+
+
+<script>
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()[\]\\]/g, '\\$&'); // $& means the whole matched string
+    }
+
+    ['input', 'focus'].forEach(function(e) {
+        ['test', 'test_1'].forEach(function(f) {
+            document.getElementById(f).addEventListener(e, function() {
+                // Available fields
+                var available_fields = ['${id}', '${merchant_id}', '${availability}', '${price}'];
+            
+                // Already provided phrases
+                var words = this.value.split(' ');
+                
+                // Get last word
+                var last_word = words[words.length-1];
+                
+                // Special signs removing
+                if(last_word.match(/^\$\{/)) {
+                    last_word = last_word.replace(/^\$\{(.*?)\}|^\$\{/, '$1');
+                }
+
+                // Add available autocomplition if or provided
+                if(last_word.match(/\|/)) {
+                    // Const add
+                    available_fields = available_fields.concat(['const::<value>']);
+
+                    pre_fields = escapeRegExp(last_word).replace(/(.*)\|.*/, '$1');
+                    available_fields.forEach(function (item){
+                        available_fields = available_fields.concat(['${' + pre_fields + '|' + item.replace(/\$\{(.*?)\}/, '$1') + '}']);
+                    });
+                }
+                
+                // Matches
+                var words_to_complete = available_fields.filter(available_fields => available_fields.match(escapeRegExp(last_word)));
+                        
+                var dtlist = document.getElementById(f + '_options');
+                
+                dtlist.innerHTML = '';
+                
+                words_to_complete.forEach(function(item) {
+                    // Create new options
+                    var option = document.createElement('option');
+                    
+                    var no_brackets_item = item.replace(/\$\{(.*?)\}/, '$1');
+
+                    if(words.length < 2) {
+                        var values = item;
+                        var labels = no_brackets_item;
+                    }
+                    else {
+                        var values = words.slice(0,-1).join(" ") + " " + item;
+                        var labels = words.slice(0,-1).join(" ") + " " + no_brackets_item;
+                    }
+                    
+                    option.value = values;
+                    option.label = labels;
+
+                    dtlist.appendChild(option);
+                });
+            })
+        });
+    });
+</script>
