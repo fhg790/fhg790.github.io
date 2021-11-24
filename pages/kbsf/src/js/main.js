@@ -144,7 +144,7 @@ document.querySelector('#contact_form > #message > div > textarea').addEventList
 });
 
 // Contact form manage
-document.getElementById("contact_form").addEventListener("submit", function(e){
+document.getElementById("contact_form_button").addEventListener("click", function(e){
     // Prevent default form behaviour
     e.preventDefault();
     // Just get the form element
@@ -168,7 +168,7 @@ document.getElementById("contact_form").addEventListener("submit", function(e){
             '.\+',
             'To pole jest wymagane.'
         ),
-        // Check subject field
+        // Check message field
         is_field_correct(
             form.querySelector('#message'),
             '.\+',
@@ -176,16 +176,35 @@ document.getElementById("contact_form").addEventListener("submit", function(e){
         )
     ];
 
+    var mail_modal = document.querySelector('#thank-you-modal');
+
     // Send form if all good
     if(form_fields.filter(function (flag) {return flag == false}).length == 0) {
-        const send_mail_copy_flag = form.querySelector('#send_mail_copy').querySelector('input').checked;
-        // 
-        if(form.querySelector('#send_mail_copy').querySelector('input').checked) {
-            console.log('All good, sending form! Also to sender.');
-        }
-        else {
-            console.log('All good, sending form!');
-        }
+        const send_mail_copy_flag = form.querySelector('#send_mail_copy').querySelector('input').checked ? 1 : 0;
+        
+        $.ajax({
+            type: "POST",
+            url: '../src/php/contact/contact_form_handler.php',
+            data: $('#contact_form').serialize() + "&send_mail_copy="+send_mail_copy_flag, // serializes the form's elements.
+            success: function(data) {
+                if(data.search('Message could not be sent. Mailer Error:') > -1) {
+                    console.log(data);
+                    mail_modal.querySelector('.content h5').innerText = 'Przepraszamy ale nie możemy w tym momencie wysłać wiadomości. Spróbuj napisać wiadomość później lub bezpośrednio na nasz adres e-mail: kancelaria@kbsf.pl!';
+                    mail_modal.classList.add('is-active');
+                }
+                else {
+                    console.log(data);
+                    $('#contact_form')[0].reset();
+                    mail_modal.querySelector('.content h5').innerText = 'Dziękujemy za wiadomość!';
+                    mail_modal.classList.add('is-active');
+                }
+            },
+            error: function(data) {
+                console.log(data);
+                mail_modal.querySelector('.content h5').innerText = 'Przepraszamy ale nie możemy w tym momencie wysłać wiadomości. Spróbuj napisać wiadomość później lub bezpośrednio na nasz adres e-mail: kancelaria@kbsf.pl!';
+                mail_modal.classList.add('is-active');
+            }
+        });
     }
 });
 
@@ -194,23 +213,3 @@ window.addEventListener("load", function () {
     // Add animation on title section
     document.querySelector('#title').classList.add('is-active');
 });
-
-// Animation on scroll
-// window.addEventListener('scroll', function () {
-    
-//     var about_text = document.querySelector('#about_text');
-
-//     console.log(about_text.getBoundingClientRect().top);
-//     console.log(this.screenY);
-
-//     if(about_text.getBoundingClientRect().top + 100 > this.sc) {
-//         about_text.classList.add('is-active');
-//     }
-
-//     var about_img = document.querySelector('#about_img');
-//     if(about_img.getBoundingClientRect().top > this.scrollY) {
-//         about_img.classList.add('is-active');
-//     }
-
-
-// });
