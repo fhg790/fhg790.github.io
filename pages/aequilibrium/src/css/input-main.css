@@ -5,3 +5,14 @@
 .main-bg {
     background: linear-gradient(135deg, rgb(236, 230, 234) 0%, rgb(255, 255, 255) 100%);
 }
+
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: theme(colors.light_gray_bg);
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: theme(colors.dark_gray);
+    border-radius: .5rem;
+}

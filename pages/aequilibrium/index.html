@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body class="w-full h-full min-h-screen main-bg text-dark_gray">
-    <section id="header" class="flex flex-col w-full h-full min-h-screen bg-[url('../files/pexels-aleksandar-pasaric-325185.jpg')] bg-no-repeat bg-cover drop-shadow-2xl">
+    <section id="header" class="flex flex-col w-full h-full min-h-screen bg-[url('../files/pexels-aleksandar-pasaric-325185.jpg')] bg-no-repeat bg-cover bg-top drop-shadow-2xl">
         <div id="header--nav" class="bg-transparent text-dark_gray w-full h-full select-none">
             <div id="header--nav--bar" class="relative flex flex-row w-full h-[75px] justify-between items-center max-w-screen-xl mx-auto">
                 <div id="header--nav--bar--logo" class="flex h-fit m-2">
@@ -63,7 +63,7 @@
                 <div id="header--content--text--title" class="text-6xl max-sm:text-3xl font-semibold">
                     <span class="text-dark_green">Aequilibrium</span> Biuro Księgowe
                 </div>
-                <div id="header--content--text--subtitle" class="text-4xl max-sm:text-2xl text-light_gray_text">
+                <div id="header--content--text--subtitle" class="text-4xl max-sm:text-2xl text-dark_gray font-medium">
                     Nie martw się o finanse, zajmiemy się nimi za Ciebie.
                 </div>
             </div>
@@ -83,7 +83,7 @@
     </section>
     <section id="about" class="flex justify-center items-center pt-20 pb-32 max-sm:pb-20 ">
         <div id="about--container" class="relative flex flex-row max-w-screen-xl h-full items-center justify-around flex-wrap">
-            <div id="about--container--image" class="basis-1/2 max-w-[425px] relative h-1/2 bg-light_gray max-[900px]:hidden">
+            <div id="about--container--image" class="max-w-[425px] relative h-1/2 bg-light_gray max-[900px]:hidden max-sm:p-5 min-[900px]:basis-1/2">
                 <div class="absolute bg-dark_green w-full h-3/4 top-52 right-10 rounded-md opacity-75"></div>
                 <img src="src/files/about-img.jpg" alt="" class="h-full w-auto relative rounded-md">
             </div>
@@ -100,7 +100,7 @@
             <img src="src/files/dots.png" alt="" class="absolute opacity-20 top-28 -left-20 rotate-90 -z-10">
         </div>
     </section>
-    <section id="services" class="flex justify-center items-start pt-20 pb-32 bg-light_gray_bg">
+    <section id="services" class="flex justify-center items-start py-20 bg-light_gray_bg">
         <div id="services--container" class="relative flex flex-col max-w-screen-xl w-full items-center justify-around space-y-24 p-5">
             <div id="services--container--title" class="font-semibold text-5xl max-sm:text-4xl">
                 Nasza oferta
@@ -158,7 +158,7 @@
             <img src="src/files/dots.png" alt="" class="absolute opacity-20 top-28 -left-20 rotate-90 max-sm:hidden">
         </div>
     </section>
-    <section id="team" class="flex justify-center items-start pt-20 pb-32">
+    <section id="team" class="flex justify-center items-start py-20">
         <div id="team--container" class="relative flex flex-col max-w-screen-xl w-full items-center justify-around space-y-24">
             <div id="team--container--title" class="font-semibold text-5xl max-sm:text-4xl">
                 Nasz zespół
@@ -182,7 +182,7 @@
                 <div id="team--container--content--card--2" class="flex flex-col h-[300px] w-[300px] justify-between space-y-3 my-10">
                     <div id="team--container--content--card--2--img" class="relative basis-3/4">
                         <div id="team--container--content--card--2--img--bg" class="absolute bottom-0 w-full h-3/4 bg-dark_green z-10 opacity-50"></div>
-                        <img src="src/files/dots.png" alt="" class="absolute opacity-50 rotate-90 z-20 translate-x-[80%] -translate-y-[30%]">
+                        <img src="src/files/dots.png" alt="" class="absolute opacity-50 rotate-90 z-20 right-0 -translate-y-[30%]">
                         <img src="src/files/person-2.png" alt="" class="absolute z-30 bottom-0">
                     </div>
                     <div id="team--container--content--card--2--text" class="flex flex-col space-y-1 basis-1/4 text-center">
@@ -213,7 +213,7 @@
             <img src="src/files/dots.png" alt="" class="absolute opacity-20 top-28 -left-20 rotate-90 max-sm:hidden translate-y-[50%]">
         </div>
     </section>
-    <section id="contact" class="flex justify-center items-start pt-20 pb-32 bg-light_gray_bg">
+    <section id="contact" class="flex justify-center items-start py-20 bg-light_gray_bg">
         <div id="contact--container" class="relative flex flex-col max-w-screen-xl w-full items-center justify-around space-y-24 max-sm:space-y-10">
             <div id="contact--container--title" class="font-semibold text-5xl max-sm:text-4xl">
                 Kontakt
@@ -238,11 +238,11 @@
     </section>
     <section id="footer" class="flex justify-center bg-dark_green w-full">
         <div id="footer--container" class="max-w-screen-xl w-full flex flex-row flex-wrap justify-around max-sm:space-y-5">
-            <div id="footer--container--main_data" class="max-sm:w-full p-5">
+            <div id="footer--container--main_data" class="max-sm:w-full space-y-2 p-5">
                 <div id="footer--container--main_data--title" class="text-light_gray_bg font-semibold text-3xl">
                     Dane rejestrowe
                 </div>
-                <div id="footer--container--main_data--text" class="text-light_gray_bg">
+                <div id="footer--container--main_data--text" class="text-light_gray_bg leading-5">
                     KRS: 0000000000<br>
                     NIP: 000-00-00-000<br>
                     REGON: 000000000<br>
@@ -253,11 +253,11 @@
                     sprawozdań finansowych: 1000<br>
                 </div>
             </div>
-            <div id="footer--container--services" class="max-sm:w-full p-5">
+            <div id="footer--container--services" class="max-sm:w-full space-y-2 p-5">
                 <div id="footer--container--main_data--title" class="text-light_gray_bg font-semibold text-3xl">
                     Usługi
                 </div>
-                <div id="footer--container--main_data--text" class="text-light_gray_bg">
+                <div id="footer--container--main_data--text" class="text-light_gray_bg leading-5">
                     Audyt<br>
                     Księgowość<br>
                     Doradztwo<br>
@@ -269,10 +269,10 @@
                     Kontakt
                 </div>
                 <div id="footer--container--contact--text" class="flex flex-col text-light_gray_bg">
-                    <div id="footer--container--contact--text--company_name">
+                    <div id="footer--container--contact--text--company_name" class="font-medium">
                         Aequilibrium Sp. z o.o.
                     </div>
-                    <div id="footer--container--contact--text--details" class="">
+                    <div id="footer--container--contact--text--details" class="leading-5">
                         ul. nazwa ulicy 12<br>
                         30-000 Kraków<br>
                         +48 500 500 500<br>
