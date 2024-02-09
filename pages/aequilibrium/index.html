@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/css/main.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="w-full h-full min-h-screen main-bg text-dark_gray">
+    <section id="header" class="flex flex-col w-full h-full min-h-screen bg-[url('../files/pexels-aleksandar-pasaric-325185.jpg')] bg-no-repeat bg-cover drop-shadow-2xl">
+        <div id="header--nav" class="bg-transparent text-dark_gray w-full h-full select-none">
+            <div id="header--nav--bar" class="relative flex flex-row w-full h-[75px] justify-between items-center max-w-screen-xl mx-auto">
+                <div id="header--nav--bar--logo" class="flex h-fit m-2">
+                    <a href="#">
+                        <img src="./src/files/aequilibrium_kwadrat-kolor-czarnelitery-rgb.png" alt="" class="max-w-[40px] h-auto">
+                    </a>
+                </div>
+                <div id="header--nav--bar--elements" class="flex flex-row max-sm:hidden space-x-10 font-semibold text-xl tracking-wide">
+                    <a href="#about">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all">
+                            O kancelarii
+                        </div>
+                    </a>
+                    <a href="#services">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all">
+                            Oferta
+                        </div>
+                    </a>
+                    <a href="#team">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all">
+                            Poznaj nas
+                        </div>
+                    </a>
+                    <a href="#contact">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all">
+                            Kontakt
+                        </div>
+                    </a>
+                </div>
+                <div id="header--nav--bar--hamburger" class="flex flex-col w-[45px] h-[35px] sm:hidden justify-between m-2">
+                    <div id="header--nav--bar--hamburger--1" class="w-full h-[4px] bg-dark_green rounded-md"></div>
+                    <div id="header--nav--bar--hamburger--2" class="w-full h-[4px] bg-dark_green rounded-md transition-all"></div>
+                    <div id="header--nav--bar--hamburger--3" class="w-full h-[4px] bg-dark_green rounded-md transition-all"></div>
+                </div>
+                <div id="header--nav--mobile--elements" class="absolute top-[75px] flex flex-col w-full text-2xl bg-dark_green text-light_gray_bg transition-all overflow-hidden h-0">
+                    <a href="#about">
+                        <div id="header--nav--mobile--elements--about" class="m-2 text-center">O nas</div>
+                    </a>
+                    <a href="#services">
+                        <div id="header--nav--mobile--elements--services" class="m-2 text-center">Oferta</div>
+                    </a>
+                    <a href="#team">
+                        <div id="header--nav--mobile--elements--team" class="m-2 text-center">Poznaj nas</div>
+                    </a>
+                    <a href="#contact">
+                        <div id="header--nav--mobile--elements--contact" class="m-2 text-center">Kontakt</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="header--content" class="flex flex-col flex-wrap w-full justify-center items-center my-auto select-none">
+            <div id="header--content--text" class="flex flex-col justify-center items-center space-y-3 my-10 max-w-screen-xl text-center">
+                <div id="header--content--text--title" class="text-6xl max-sm:text-3xl font-semibold">
+                    <span class="text-dark_green">Aequilibrium</span> Biuro Księgowe
+                </div>
+                <div id="header--content--text--subtitle" class="text-4xl max-sm:text-2xl text-light_gray_text">
+                    Nie martw się o finanse, zajmiemy się nimi za Ciebie.
+                </div>
+            </div>
+            <div id="header--content--buttons" class="flex flex-row my-10 text-3xl max-w-screen-xl space-x-5 max-sm:text-2xl max-sm:w-full max-sm:justify-center">
+                <a href="#about" class="flex justify-center items-center min-w-48 max-sm:min-w-28 bg-dark_green hover:bg-transparent rounded-md text-light_gray hover:text-dark_gray border-2 border-dark_green transition-colors max-sm:basis-1/3">
+                    <div class="px-5 py-3">
+                        O Nas
+                    </div>
+                </a>
+                <a href="#contact" class="flex justify-center items-center min-w-48 max-sm:min-w-28 bg-transparent hover:bg-dark_green hover:text-light_gray rounded-md border-2 border-dark_green transition-colors max-sm:basis-1/3">
+                    <div class="px-5 py-3">
+                        Kontakt
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="flex justify-center items-center pt-20 pb-32 max-sm:pb-20 ">
+        <div id="about--container" class="relative flex flex-row max-w-screen-xl h-full items-center justify-around flex-wrap">
+            <div id="about--container--image" class="basis-1/2 max-w-[425px] relative h-1/2 bg-light_gray max-[900px]:hidden">
+                <div class="absolute bg-dark_green w-full h-3/4 top-52 right-10 rounded-md opacity-75"></div>
+                <img src="src/files/about-img.jpg" alt="" class="h-full w-auto relative rounded-md">
+            </div>
+            <div id="about--container--text" class="flex flex-col space-y-6 p-10 max-sm:p-5 min-[900px]:basis-1/2 max-[900px]:text-center">
+                <div id="about--container--text--title" class="font-semibold text-5xl max-sm:text-4xl">
+                    O Kancelarii
+                </div>
+                <div id="about--container--text--subtitle" class="text-justify text-2xl max-sm:text-xl text-light_gray_text">
+                    <span class="font-semibold text-dark_green opacity-75">Aequilibrium Sp. z o.o.</span> istnieje na rynku usług audytorskich oraz księgowych od 2022 roku. Nasza ekspertyza koncentruje się na obszarach księgowości i finansów, obejmując prowadzenie ksiąg rachunkowych oraz udzielanie porad finansowych. Zespół naszej firmy składa się z wysoko wykwalifikowanych specjalistów posiadających wieloletnie doświadczenie. Oferujemy szeroki wachlarz usług finansowych i księgowych, dostosowanych do potrzeb naszych klientów.
+                </div>
+            </div>
+            <img src="src/files/dots.png" alt="" class="absolute opacity-50 -bottom-10 max-sm:hidden -z-10">
+            <img src="src/files/dots.png" alt="" class="absolute opacity-40 top-0 right-14 rotate-90 max-sm:right-3 max-sm:opacity-20 -z-10">
+            <img src="src/files/dots.png" alt="" class="absolute opacity-20 top-28 -left-20 rotate-90 -z-10">
+        </div>
+    </section>
+    <section id="services" class="flex justify-center items-start pt-20 pb-32 bg-light_gray_bg">
+        <div id="services--container" class="relative flex flex-col max-w-screen-xl w-full items-center justify-around space-y-24 p-5">
+            <div id="services--container--title" class="font-semibold text-5xl max-sm:text-4xl">
+                Nasza oferta
+            </div>
+            <div id="services--container--content" class="flex flex-row flex-wrap justify-around items-center w-full max-sm:space-y-20">
+                <div id="services--container--content--card--1" class="relative flex flex-col h-[300px] w-[300px] justify-between">
+                    <div id="services--container--content--card--1--icon">
+                        <svg width="75px" height="75px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_901_1299)"> <path d="M21.4327 25.6768L26.2927 30.5348C26.6837 30.9258 27.3167 30.9258 27.7067 30.5348L30.5357 27.7068C30.9257 27.3168 30.9257 26.6838 30.5357 26.2928L23.3337 19.0918C23.3337 19.0918 24.9997 15.6558 24.9997 12.9998C24.9997 6.37276 19.6267 0.999756 12.9997 0.999756C6.37269 0.999756 0.999687 6.37276 0.999687 12.9998C0.999687 19.6268 6.37269 24.9998 12.9997 24.9998C16.3067 24.9998 19.2997 23.6628 21.4697 21.4998M7.00009 11.0001H19.0001M7.00009 15.0001H12.0001" stroke="#4A9D9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_901_1299"> <rect width="32" height="32" fill="white"></rect> </clipPath> </defs> </g></svg>
+                    </div>
+                    <div id="services--container--content--card--1--text" class="flex flex-col space-y-4">
+                        <div id="services--container--content--card--1--title" class="text-dark_green text-4xl font-semibold">
+                            Audyt
+                        </div>
+                        <div id="services--container--content--card--1--description" class="text-light_gray_text text-lg leading-5">
+                            Usługi audytu sprawozdań finansowych oraz audyt systemów kontroli wewnętrznej.
+                        </div>
+                    </div>
+                    <div id="services--container--content--card--1--bg_number" class="absolute bottom-0 right-0 text-dark_green opacity-5 text-[300px] select-none leading-none">
+                        1
+                    </div>
+                </div>
+                <div id="services--container--content--card--2" class="relative flex flex-col h-[300px] w-[300px] justify-between">
+                    <div id="services--container--content--card--2--icon">
+                        <svg width="75px" height="75px" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 3.99995C12.8839 2.91716 14.9355 2.15669 17.07 1.74995C17.551 1.63467 18.0523 1.63283 18.5341 1.74458C19.016 1.85632 19.4652 2.07852 19.8464 2.39375C20.2276 2.70897 20.5303 3.10856 20.7305 3.56086C20.9307 4.01316 21.0229 4.50585 21 4.99995V13.9999C20.9699 15.117 20.5666 16.1917 19.8542 17.0527C19.1419 17.9136 18.1617 18.5112 17.07 18.7499C14.9355 19.1567 12.8839 19.9172 11 20.9999" stroke="#4A9D9C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10.9995 3.99995C9.1156 2.91716 7.06409 2.15669 4.92957 1.74995C4.44856 1.63467 3.94731 1.63283 3.46546 1.74458C2.98362 1.85632 2.53439 2.07852 2.15321 2.39375C1.77203 2.70897 1.46933 3.10856 1.26911 3.56086C1.0689 4.01316 0.976598 4.50585 0.999521 4.99995V13.9999C1.0296 15.117 1.433 16.1917 2.14533 17.0527C2.85767 17.9136 3.83793 18.5112 4.92957 18.7499C7.06409 19.1567 9.1156 19.9172 10.9995 20.9999" stroke="#4A9D9C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 21V4" stroke="#4A9D9C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div>
+                    <div id="services--container--content--card--2--text" class="flex flex-col space-y-4">
+                        <div id="services--container--content--card--2--title" class="text-dark_green text-4xl font-semibold">
+                            Księgowość
+                        </div>
+                        <div id="services--container--content--card--2--description" class="text-light_gray_text text-lg leading-5">
+                            Profesjonalne Usługi Księgowe, zarządzanie Firmą przez siedem dni w tygodniu i dwadzieścia cztery godziny na dobę z dowolnego miejsca na świecie jakby księgowość była prowadzona na miejscu w firmie
+                        </div>
+                    </div>
+                    <div id="services--container--content--card--2--bg_number" class="absolute bottom-0 right-0 text-dark_green opacity-5 text-[300px] select-none leading-none">
+                        2
+                    </div>
+                </div>
+                <div id="services--container--content--card--3" class="relative flex flex-col h-[300px] w-[300px] justify-between">
+                    <div id="services--container--content--card--3--icon">
+                        <svg width="75px" height="75px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 16H17.8C18.9201 16 19.4802 16 19.908 15.782C20.2843 15.5903 20.5903 15.2843 20.782 14.908C21 14.4802 21 13.9201 21 12.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3H9.2C8.07989 3 7.51984 3 7.09202 3.21799C6.71569 3.40973 6.40973 3.71569 6.21799 4.09202C6.01338 4.49359 6.00082 5.01165 6.00005 6M18 6L13 11L10 8M18 6V9M18 6H15M9 12C9 13.1046 8.10457 14 7 14C5.89543 14 5 13.1046 5 12C5 10.8954 5.89543 10 7 10C8.10457 10 9 10.8954 9 12ZM7 17C7.92997 17 8.39496 17 8.77646 17.1022C9.81173 17.3796 10.6204 18.1883 10.8978 19.2235C11 19.605 11 20.07 11 21H3C3 20.07 3 19.605 3.10222 19.2235C3.37962 18.1883 4.18827 17.3796 5.22354 17.1022C5.60504 17 6.07003 17 7 17Z" stroke="#4A9D9C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    </div>
+                    <div id="services--container--content--card--3--text" class="flex flex-col space-y-4">
+                        <div id="services--container--content--card--3--title" class="text-dark_green text-4xl font-semibold">
+                            Doradztwo
+                        </div>
+                        <div id="services--container--content--card--3--description" class="text-light_gray_text text-lg leading-5">
+                            Ekspertyzy, opinie, konsultacje z zakresu podatków, organizacji i informatyzacji rachunkowości oraz działalność szkoleniowa
+                        </div>
+                    </div>
+                    <div id="services--container--content--card--3--bg_number" class="absolute bottom-0 right-0 text-dark_green opacity-5 text-[300px] select-none leading-none">
+                        3
+                    </div>
+                </div>
+            </div>
+            <img src="src/files/dots.png" alt="" class="absolute opacity-20 top-28 -left-20 rotate-90 max-sm:hidden">
+        </div>
+    </section>
+    <section id="team" class="flex justify-center items-start pt-20 pb-32">
+        <div id="team--container" class="relative flex flex-col max-w-screen-xl w-full items-center justify-around space-y-24">
+            <div id="team--container--title" class="font-semibold text-5xl max-sm:text-4xl">
+                Nasz zespół
+            </div>
+            <div id="team--container--content" class="flex flex-row flex-wrap justify-around items-center w-full max-sm:space-y-20 p-5">
+                <div id="team--container--content--card--1" class="flex flex-col h-[300px] w-[300px] justify-between space-y-3 my-10">
+                    <div id="team--container--content--card--1--img" class="relative basis-3/4">
+                        <div id="team--container--content--card--1--img--bg" class="absolute bottom-0 w-full h-3/4 bg-dark_green z-10 opacity-75"></div>
+                        <img src="src/files/dots.png" alt="" class="absolute opacity-20 rotate-90 z-20">
+                        <img src="src/files/person-1.png" alt="" class="absolute z-30 bottom-0">
+                    </div>
+                    <div id="team--container--content--card--1--text" class="flex flex-col space-y-1 basis-1/4 text-center">
+                        <div id="team--container--content--card--1--title" class="text-dark_green text-3xl font-semibold">
+                            Walter White
+                        </div>
+                        <div id="team--container--content--card--1--description" class="text-light_gray_text text-lg leading-4">
+                            CEO
+                        </div>
+                    </div>
+                </div>
+                <div id="team--container--content--card--2" class="flex flex-col h-[300px] w-[300px] justify-between space-y-3 my-10">
+                    <div id="team--container--content--card--2--img" class="relative basis-3/4">
+                        <div id="team--container--content--card--2--img--bg" class="absolute bottom-0 w-full h-3/4 bg-dark_green z-10 opacity-50"></div>
+                        <img src="src/files/dots.png" alt="" class="absolute opacity-50 rotate-90 z-20 translate-x-[80%] -translate-y-[30%]">
+                        <img src="src/files/person-2.png" alt="" class="absolute z-30 bottom-0">
+                    </div>
+                    <div id="team--container--content--card--2--text" class="flex flex-col space-y-1 basis-1/4 text-center">
+                        <div id="team--container--content--card--2--title" class="text-dark_green text-3xl font-semibold">
+                            Marina Martin
+                        </div>
+                        <div id="team--container--content--card--2--description" class="text-light_gray_text text-lg leading-4">
+                            Kierownik działu sprzedaży
+                        </div>
+                    </div>
+                </div>
+                <div id="team--container--content--card--3" class="flex flex-col h-[300px] w-[300px] justify-between space-y-3 my-10">
+                    <div id="team--container--content--card--3--img" class="relative basis-3/4">
+                        <div id="team--container--content--card--3--img--bg" class="absolute bottom-0 w-full h-3/4 bg-dark_green z-10 opacity-75"></div>
+                        <img src="src/files/dots.png" alt="" class="absolute opacity-20 rotate-90 z-20 right-0 translate-y-[25%]">
+                        <img src="src/files/person-3.png" alt="" class="absolute z-30 bottom-0">
+                    </div>
+                    <div id="team--container--content--card--3--text" class="flex flex-col space-y-1 basis-1/4 text-center">
+                        <div id="team--container--content--card--3--title" class="text-dark_green text-3xl font-semibold">
+                            Joe Hipple
+                        </div>
+                        <div id="team--container--content--card--3--description" class="text-light_gray_text text-lg leading-4">
+                            Główny księgowy
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="src/files/dots.png" alt="" class="absolute opacity-20 top-28 -left-20 rotate-90 max-sm:hidden translate-y-[50%]">
+        </div>
+    </section>
+    <section id="contact" class="flex justify-center items-start pt-20 pb-32 bg-light_gray_bg">
+        <div id="contact--container" class="relative flex flex-col max-w-screen-xl w-full items-center justify-around space-y-24 max-sm:space-y-10">
+            <div id="contact--container--title" class="font-semibold text-5xl max-sm:text-4xl">
+                Kontakt
+            </div>
+            <div id="contact--container--content" class="flex flex-row text-3xl text-light_gray_text justify-between w-full flex-wrap px-2 max-sm:space-y-5 max-sm:flex-col">
+                <div id="contact--container--content--address" class="px-5 py-3 border-l-4 border-dark_green">
+                    Adres
+                </div>
+                <div id="contact--container--content--phone" class="px-5 py-3 border-l-4 border-dark_green">
+                    Nr. Telefonu
+                </div>
+                <div id="contact--container--content--email" class="px-5 py-3 border-l-4 border-dark_green">
+                    e-mail adres
+                </div>
+            </div>
+            <div id="contact--container--map" class="sm:w-[640px] sm:h-[450px] md:w-[725px] md:h-[450px] max-sm:w-5/6 max-sm:h-[225px] bg-slate-500">
+
+            </div>
+            <img src="src/files/dots.png" alt="" class="absolute opacity-20 bottom-28 -left-20 rotate-90 max-sm:hidden translate-y-[50%]">
+            <img src="src/files/dots.png" alt="" class="absolute opacity-10 top-80 right-20 max-sm:hidden translate-y-[50%]">
+        </div>
+    </section>
+    <section id="footer" class="flex justify-center bg-dark_green w-full">
+        <div id="footer--container" class="max-w-screen-xl w-full flex flex-row flex-wrap justify-around max-sm:space-y-5">
+            <div id="footer--container--main_data" class="max-sm:w-full p-5">
+                <div id="footer--container--main_data--title" class="text-light_gray_bg font-semibold text-3xl">
+                    Dane rejestrowe
+                </div>
+                <div id="footer--container--main_data--text" class="text-light_gray_bg">
+                    KRS: 0000000000<br>
+                    NIP: 000-00-00-000<br>
+                    REGON: 000000000<br>
+                    <br>
+                    Kapitał zakładowy: 100.000 PLN<br>
+                    Nr wpisu na listę podmiotów <br>
+                    upranwionych do badania <br>
+                    sprawozdań finansowych: 1000<br>
+                </div>
+            </div>
+            <div id="footer--container--services" class="max-sm:w-full p-5">
+                <div id="footer--container--main_data--title" class="text-light_gray_bg font-semibold text-3xl">
+                    Usługi
+                </div>
+                <div id="footer--container--main_data--text" class="text-light_gray_bg">
+                    Audyt<br>
+                    Księgowość<br>
+                    Doradztwo<br>
+                    Usługi potwierdzające i atestacyjne<br>
+                </div>
+            </div>
+            <div id="footer--container--contact" class="flex flex-col space-y-2 max-sm:w-full p-5">
+                <div id="footer--container--contact--title" class="text-light_gray_bg font-semibold text-3xl">
+                    Kontakt
+                </div>
+                <div id="footer--container--contact--text" class="flex flex-col text-light_gray_bg">
+                    <div id="footer--container--contact--text--company_name">
+                        Aequilibrium Sp. z o.o.
+                    </div>
+                    <div id="footer--container--contact--text--details" class="">
+                        ul. nazwa ulicy 12<br>
+                        30-000 Kraków<br>
+                        +48 500 500 500<br>
+                        kontakt@aequilibrium.pl
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- For toggle burger
+        function burgerOn() {
+            document.getElementById('header--nav--bar--hamburger--1').classList.add("hidden");
+            document.getElementById('header--nav--bar--hamburger--2').classList.add("rotate-45", "translate-y-4", "bg-light_gray_bg");
+            document.getElementById('header--nav--bar--hamburger--3').classList.add("-rotate-45", "-translate-y-4", "bg-light_gray_bg");
+
+            document.getElementById('header--nav--bar').classList.add("bg-dark_green");
+            
+
+            document.getElementById('header--nav--mobile--elements').classList.remove("h-0");
+        }
+        function burgerOff() {
+            document.getElementById('header--nav--bar--hamburger--1').classList.remove("hidden");
+            document.getElementById('header--nav--bar--hamburger--2').classList.remove("rotate-45", "translate-y-4", "bg-light_gray_bg");
+            document.getElementById('header--nav--bar--hamburger--3').classList.remove("-rotate-45", "-translate-y-4", "bg-light_gray_bg");
+
+            document.getElementById('header--nav--bar').classList.remove("bg-dark_green");
+            document.getElementById('header--nav--mobile--elements').classList.add("h-0");
+        }
+
+        // --- Hamburger click
+        var hamburger_element = document.getElementById('header--nav--bar--hamburger');
+        hamburger_element.addEventListener('click', function () {            
+            document.getElementById('header--nav--bar--hamburger--1').classList.contains("hidden") ? burgerOff() : burgerOn();
+        });
+
+
+
+    </script>
+
+</body>
+</html>
+
