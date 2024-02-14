@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth overflow-hidden w-full">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="src/files/favicon.png">
     <title>Aequilibrium Sp. z o.o.</title>
 </head>
-<body class="fixed h-full main-bg text-dark_gray">
+<body class="h-full w-full main-bg text-dark_gray">
     <section id="header" class="flex flex-col w-full h-screen bg-[url('../files/pexels-aleksandar-pasaric-325185.jpg')] bg-no-repeat bg-cover bg-top drop-shadow-2xl">
         <div id="header--nav" class="bg-transparent text-dark_gray w-full h-[75px] select-none">
             <div id="header--nav--bar" class="relative flex flex-row w-full h-[75px] justify-between items-center max-w-screen-xl mx-auto">
@@ -289,6 +289,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
+            window.scrollTo(0,0);
+
             AOS.init({
                 duration: 650,
             });
