@@ -698,10 +698,6 @@ video {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .w-\[300px\] {
   width: 300px;
 }
@@ -1117,7 +1113,7 @@ html, body {
 }
 
 .h-dvh-full {
-  height: 100dvh;
+  height: 100lvh;
 }
 
 .main-bg {
@@ -1185,6 +1181,14 @@ html, body {
 
   .max-sm\:h-\[225px\] {
     height: 225px;
+  }
+
+  .max-sm\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .max-sm\:h-\[750px\] {
+    height: 750px;
   }
 
   .max-sm\:min-h-screen {
