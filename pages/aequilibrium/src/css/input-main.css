@@ -10,8 +10,8 @@ html, body {
     margin: 0;
 }
 
-.h-dvh-full {
-    height: 100lvh;
+.bg-image-header {
+    background-image: url("../files/pexels-aleksandar-pasaric-325185.webp");
 }
 
 .main-bg {
