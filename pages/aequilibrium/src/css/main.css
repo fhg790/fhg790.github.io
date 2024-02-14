@@ -1195,10 +1195,6 @@ video {
 }
 
 @media not all and (min-width: 640px) {
-  .max-sm\:visible {
-    visibility: visible;
-  }
-
   .max-sm\:right-3 {
     right: 0.75rem;
   }
@@ -1326,6 +1322,10 @@ video {
 }
 
 @media (min-width: 900px) {
+  .min-\[900px\]\:visible {
+    visibility: visible;
+  }
+
   .min-\[900px\]\:basis-1\/2 {
     flex-basis: 50%;
   }
