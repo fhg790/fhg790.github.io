@@ -288,18 +288,14 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            // window.scrollTo(0,0);
+        AOS.init({
+            duration: 650,
+        });
 
-            AOS.init({
-                duration: 650,
-            });
-
-            // --- Hamburger click
-            var hamburger_element = document.getElementById('header--nav--bar--hamburger');
-            hamburger_element.addEventListener('click', function () {            
-                document.getElementById('header--nav--bar--hamburger--1').classList.contains("hidden") ? burgerOff() : burgerOn();
-            });
+        // --- Hamburger click
+        var hamburger_element = document.getElementById('header--nav--bar--hamburger');
+        hamburger_element.addEventListener('click', function () {            
+            document.getElementById('header--nav--bar--hamburger--1').classList.contains("hidden") ? burgerOff() : burgerOn();
         });
 
         // --- For toggle burger
