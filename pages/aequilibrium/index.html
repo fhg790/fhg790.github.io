@@ -2,12 +2,13 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <title>Aequilibrium Sp. z o.o.</title>
+    <meta name="description" content="Biuro Księgowe Aequilibrium - Nie martw się o finanse, zajmiemy się nimi za Ciebie.">
+    <meta name="keywords" content="Księgowość, biuro Księgowe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/aos.css" />
     <link rel="icon" type="image/x-icon" href="src/files/favicon.png">
-    <script src="src/js/aos.js"></script>
-    <title>Aequilibrium Sp. z o.o.</title>
 </head>
 <body class="h-full w-full main-bg text-dark_gray">
     <section id="header" class="flex flex-col w-full h-full sm:h-screen bg-image-header bg-no-repeat bg-cover bg-top drop-shadow-2xl min-h-[750px]">
@@ -287,19 +288,19 @@
     </section>
 
 
+
+    <script src="src/js/aos.js"></script>
     <script>
-
-        document.addEventListener("DOMContentLoaded", () => {
-            AOS.init({
-                duration: 650,
-            });
-            // --- Hamburger click
-            var hamburger_element = document.getElementById('header--nav--bar--hamburger');
-            hamburger_element.addEventListener('click', function () {            
-                document.getElementById('header--nav--bar--hamburger--1').classList.contains("hidden") ? burgerOff() : burgerOn();
-            });
+        AOS.init({
+            duration: 650,
         });
-
+    </script>
+    <script>
+        // --- Hamburger click
+        var hamburger_element = document.getElementById('header--nav--bar--hamburger');
+        hamburger_element.addEventListener('click', function () {            
+            document.getElementById('header--nav--bar--hamburger--1').classList.contains("hidden") ? burgerOff() : burgerOn();
+        });
 
         // --- For toggle burger
         function burgerOn() {

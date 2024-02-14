@@ -915,10 +915,6 @@ video {
   background-color: transparent;
 }
 
-.bg-\[url\(\'\.\.\/files\/pexels-aleksandar-pasaric-325185\.jpg\'\)\] {
-  background-image: url('../files/pexels-aleksandar-pasaric-325185.jpg');
-}
-
 .bg-cover {
   background-size: cover;
 }
@@ -1177,14 +1173,6 @@ html, body {
 
   .max-sm\:h-\[225px\] {
     height: 225px;
-  }
-
-  .max-sm\:h-\[750px\] {
-    height: 750px;
-  }
-
-  .max-sm\:min-h-\[750px\] {
-    min-height: 750px;
   }
 
   .max-sm\:w-5\/6 {
