@@ -8,8 +8,81 @@
     <link rel="icon" type="image/x-icon" href="src/files/favicon.png">
     <title>Aequilibrium Sp. z o.o.</title>
 </head>
-<body class="w-full h-full min-h-screen main-bg text-dark_gray">
-    
+<body class="main-bg text-dark_gray">
+    <section id="header" class="flex flex-col w-full h-screen bg-[url('../files/pexels-aleksandar-pasaric-325185.jpg')] bg-no-repeat bg-cover bg-top drop-shadow-2xl">
+        <div id="header--nav" class="bg-transparent text-dark_gray w-full h-[75px] select-none">
+            <div id="header--nav--bar" class="relative flex flex-row w-full h-[75px] justify-between items-center max-w-screen-xl mx-auto">
+                <div id="header--nav--bar--logo" class="flex h-fit m-2">
+                    <a onclick="scrollToHeader()" >
+                        <img src="./src/files/aequilibrium_kwadrat-kolor-czarnelitery-rgb.png" alt="" class="max-w-[40px] h-auto">
+                    </a>
+                </div>
+                <div id="header--nav--bar--elements" class="flex flex-row max-sm:hidden space-x-10 font-semibold text-xl tracking-wide">
+                    <a onclick="scrollToAbout()">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all cursor-pointer">
+                            O kancelarii
+                        </div>
+                    </a>
+                    <a onclick="scrollToServices()">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all cursor-pointer">
+                            Oferta
+                        </div>
+                    </a>
+                    <a onclick="scrollToTeam()">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all cursor-pointer">
+                            Poznaj nas
+                        </div>
+                    </a>
+                    <a onclick="scrollToContact()">
+                        <div class="p-1 mx-2 my-3 hover:text-dark_green transition-all cursor-pointer">
+                            Kontakt
+                        </div>
+                    </a>
+                </div>
+                <div id="header--nav--bar--hamburger" class="flex flex-col w-[45px] h-[35px] sm:hidden justify-between m-2 cursor-pointer">
+                    <div id="header--nav--bar--hamburger--1" class="w-full h-[4px] bg-dark_green rounded-md"></div>
+                    <div id="header--nav--bar--hamburger--2" class="w-full h-[4px] bg-dark_green rounded-md transition-all"></div>
+                    <div id="header--nav--bar--hamburger--3" class="w-full h-[4px] bg-dark_green rounded-md transition-all"></div>
+                </div>
+                <div id="header--nav--mobile--elements" class="absolute top-[75px] flex flex-col w-full text-2xl bg-dark_green text-light_gray_bg transition-all overflow-hidden h-0">
+                    <a onclick="scrollToAbout()">
+                        <div id="header--nav--mobile--elements--about" class="m-2 text-center cursor-pointer">O nas</div>
+                    </a>
+                    <a onclick="scrollToServices()">
+                        <div id="header--nav--mobile--elements--services" class="m-2 text-center cursor-pointer">Oferta</div>
+                    </a>
+                    <a onclick="scrollToTeam()">
+                        <div id="header--nav--mobile--elements--team" class="m-2 text-center cursor-pointer">Poznaj nas</div>
+                    </a>
+                    <a onclick="scrollToContact()">
+                        <div id="header--nav--mobile--elements--contact" class="m-2 text-center cursor-pointer">Kontakt</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="header--content" class="flex flex-col flex-wrap w-full justify-center items-center my-auto select-none">
+            <div id="header--content--text" class="flex flex-col justify-center items-center space-y-3 my-10 max-w-screen-xl text-center">
+                <div id="header--content--text--title" class="text-6xl max-sm:text-3xl font-semibold"> <!-- data-aos="fade-right" -->
+                    <span class="text-dark_green">Aequilibrium</span> Biuro Księgowe
+                </div>
+                <div id="header--content--text--subtitle" class="text-4xl max-sm:text-2xl text-dark_gray font-medium"> <!-- data-aos="fade-right" data-aos-delay="200">  -->
+                    Nie martw się o finanse, zajmiemy się nimi za Ciebie.
+                </div>
+            </div>
+            <div id="header--content--buttons" class="flex flex-row p-10 text-3xl max-w-screen-xl sm:space-x-5 max-sm:flex-col max-sm:space-y-5 max-sm:text-2xl max-sm:w-full max-sm:justify-center"> <!-- data-aos="fade-right" data-aos-delay="400" -->
+                <!-- <a onclick="scrollToAbout()" class="flex justify-center items-center max-sm:mx-10 sm:min-w-48 max-sm:min-w-5 bg-dark_green hover:bg-transparent rounded-md text-light_gray hover:text-dark_gray border-2 border-dark_green transition-colors">
+                    <div class="px-5 py-3 cursor-pointer">
+                        O Nas
+                    </div>
+                </a>
+                <a onclick="scrollToContact()" class="flex justify-center items-center max-sm:mx-10 sm:min-w-48 max-sm:min-w-5 bg-transparent hover:bg-dark_green hover:text-light_gray rounded-md border-2 border-dark_green transition-colors">
+                    <div class="px-5 py-3 cursor-pointer">
+                        Kontakt
+                    </div>
+                </a> -->
+            </div>
+        </div>
+    </section>
     <section id="about" class="flex justify-center items-center pt-20 pb-32 overflow-auto max-sm:min-h-screen max-sm:pb-20">
         <div id="about--container" class="relative flex flex-row max-w-screen-xl h-full items-center justify-around flex-wrap">
             <div id="about--container--image" class="max-w-[425px] relative h-1/2 bg-light_gray max-[900px]:hidden max-sm:p-5 min-[900px]:basis-1/2" data-aos="fade-right">
