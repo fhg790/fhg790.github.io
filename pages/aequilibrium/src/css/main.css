@@ -698,6 +698,10 @@ video {
   height: 100%;
 }
 
+.min-h-\[750px\] {
+  min-height: 750px;
+}
+
 .w-\[300px\] {
   width: 300px;
 }
@@ -1179,6 +1183,10 @@ html, body {
     height: 750px;
   }
 
+  .max-sm\:min-h-\[750px\] {
+    min-height: 750px;
+  }
+
   .max-sm\:w-5\/6 {
     width: 83.333333%;
   }
@@ -1271,6 +1279,10 @@ html, body {
     --tw-space-x-reverse: 0;
     margin-right: calc(1.25rem * var(--tw-space-x-reverse));
     margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .sm\:p-10 {
+    padding: 2.5rem;
   }
 
   .sm\:pb-32 {
