@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+}
+
+.h-dvh-full {
+    height: 100dvh;
+}
+
 .main-bg {
     background: linear-gradient(135deg, rgb(236, 230, 234) 0%, rgb(255, 255, 255) 100%);
 }
