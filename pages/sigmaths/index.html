@@ -1,264 +1,706 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="MŁ" />
-        <title>Math Tutor - Sylwia Lachut</title>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- Main CSS theme -->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar" id="mainNav">
-            <div class="container flex-row justify-content-space-between align-items-center" id="mainNav__Container">
-                <a class="navbar__logo flex-row justify-content-center align-items-center js-scroll-trigger" href="#page-top"><img id='brand_logo' src="sources/brand_logo_white_blue_cut.png"></a>
-                <button id="navbar__menu__button" class="navbar__menu__button">
-                    <div class="navbar__menu__button__hamburger"></div>
-                    <div class="navbar__menu__button__hamburger"></div>
-                    <div class="navbar__menu__button__hamburger"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/output.css">
+    <title>Sigmaths - Math Tuition</title>
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="fixed flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+        <nav class="mt-6 relative max-w-[85rem] w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700" aria-label="Global">
+            <div class="flex items-center justify-between">
+                <a class="flex-none text-xl font-semibold dark:text-white" href="#" aria-label="Brand">Brand</a>
+                <div class="md:hidden">
+                <button type="button" class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+                    <svg class="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                    <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </button>
-                <div class="navbarresponsive" id="navbarResponsive">
-                    <ul>
-                        <li><a class="text-uppercase js-scroll-trigger" href="#about">About Me</a></li>
-                        <li><a class="text-uppercase js-scroll-trigger" href="#maths-tuition">Maths Tuition</a></li>
-                        <li><a class="text-uppercase js-scroll-trigger" href="#pricing">Pricing</a></li>
-                        <li><a class="text-uppercase js-scroll-trigger" href="#bio">Bio</a></li>
-                        <li><a class="text-uppercase js-scroll-trigger" href="#contact">Contact</a></li>
-                    </ul>
                 </div>
+            </div>
+            <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
+                <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+                <!-- <a class="font-medium text-purple-600 md:py-6 dark:text-purple-500" href="#" aria-current="page">About me</a> -->
+                <a class="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">About me</a>
+                <a class="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Math tuition</a>
+                <a class="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Pricing</a>
+                <a class="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Bio</a>
+                <a class="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Contact</a>
             </div>
         </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
 
-        <header id="header" class="header">
-            <div class="container">
-                <div class="flex-row align-items-center justify-content-center">
-                    <div class="header__title">
-                        <h1 class="font-weight-light text-1">Maths Tutoring</h1>
-                        <h1 class="font-weight-bold text-2">sig<span>Maths</span></h1>
-                        <h1 class="font-weight-light text-3">Sylwia Łachut</h1>
-                        <hr class="divider"/>
-                    </div>
-                    <div class="header__description">
-                        <p class="font-weight-bold" style="font-style: oblique;">„Success is the sum of small efforts, repeated day in and day out.”</p>
-                        <p class="font-weight-light">- Robert Collier</p>
-                        <!-- 
-                        <p class="font-weight-bold" style="font-style: oblique;">The essence of mathematics is not to make simple things complicated, but to make complicated things simple.</p>
-                        <p class="font-weight-light">- Stan Gudder</p>
-                        -->
-                    </div>
-                </div>
-            </div>
-        </header>
 
-        <section id="about">
-            <div id="about__container" class="container">
-                <div class="about__image">
-                    <img src="sources/avatar_test.png">
-                </div>
-                <div class="about__title">
-                    <h1 class="font-weight-bold">About Me</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="about__description">
-                    Hi! My name is Sylwia and I can call myself the luckiest person in the world because I have always known what I would like to do in my life. As a little girl I used to pretend to be a teacher and here I am now - my dream came true. As for today, I am a Maths teacher with over 10 years’ experience in tutoring.</br>
-                    My adventure with teaching started when I was a high-school student. The choice of University and the degree course was pretty obvious then. I am a Bachelor with specialty in Mathematics and Education of children with intellectual disability and a Master of Mathematics. In my spare time I focus on self – development to improve more soft skills, as they enhance the quality of teaching tremendously.</br>
-                    I tend to compare Math skills to child development: they need to start crawling, then take the first steps to finally learn how to run. It is the same with Maths. You cannot run if you do not learn how to walk first. If you feel like you have missed some steps on the way, you are struggling with certain subjects or you just want to improve your skills, do not hesitate to get in touch with me!
-                </div>
-            </div>
-        </section>
-
-        <section id="maths-tuition">
-            <div class="container">
-                <div class="maths-tuition__title">
-                    <h1 class="font-weight-bold">Maths Tuition</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="maths-tuition__description">
-                    In terms of my academic studies, training and development, I have acquired the QTS.</br>
-                    </br>
-                    As a Maths Tutor both in the UK and Poland, my duty over the years has focused on creating interesting lessons that reflect Maths concepts, learning objectives and subject matter. Moreover I have worked on preparing both attractive teaching aids, and tests.</br>
-                    </br>
-                    As a friendly, honest and hardworking person with high levels of concentration, my proactive</br>
-                    approach to tutoring has been very well received. In order to support learning and stimulate student engagement, I have participated in a range of Maths classes. They taught me how to develop unique learning methods that can refer to student’s hobby for instance or any other circumstances in order to help and ease the learning process.</br>
-                    </br>
-                    I am currently focused on 11+ and GCSC but the range of topics I can cover is way wider. Ask me what do you need and most likely I will be able to help you.</br>
-                    I provide all necessary educational materials, tests and homework for each lesson.</br>
-                    </br>
-                    Due to recent circumstances regarding the coronavirus outbreak, I'm taking the leap and fully transitioning to online tuition only.
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing">
-            <div class="container">
-                <div class="pricing__title">
-                    <h1 class="font-weight-bold">Pricing</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="container flex align-items-center justify-content-center">
-                    <div id="pricing-weekly-lessons" class="pricing__offer__container">
-                        <img class="pricing__offer__container__img" src="sources/87331.jpg">
-                        <div class="pricing__offer__container__contents">
-                            <div class="pricing__offer__container__contents__text">
-                                <p class="background-color-transition">Weekly Lessons</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="pricing-package" class="pricing__offer__container">
-                        <img class="pricing__offer__container__img" src="sources/8991291.jpg">
-                        <div class="pricing__offer__container__contents">
-                            <div class="pricing__offer__container__contents__text">
-                                <p class="background-color-transition">Package</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="bio">
-            <div class="container">
-                <div class="bio__title">
-                    <h1 class="font-weight-bold">Bio</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="bio__description">
-                    <div class="bio__description__list">
-                        <ol>
-                            <li><p>Qualified Teacher Status</p></li>
-                            <li><p>Mathematics with Oligophrenopedagogy, Spec. Teacher, Pedagogical University of Cracow</p></li>
-                            <li><p>Mathematics, Specialization Teacher, Pedagogical University of Cracow</p></li>
-                            <li><p>Financial Mathematics, AGH University of Science and Technology</p></li>
-                            <li><p>The Main Organizer of the 1st Nationwide conference BraveUp Toastmasters</p></li>
-                            <li><p>Lecturer at the Soft Skills Academy 6 with workshop „An old good marriage – the heart and mind as a perfect couple”</p></li>
-                            <li><p>Lecturer at the IX Nationwide symposium academic circles „Mathematics – an endless challenge”</p></li>
-                            <li><p>Vice President Membership one of the local Toastmasters International Clubs</p></li>
-                            <li><p>Certificate of Attendance course „Stress – student’s friend or enemy?”</p></li>
-                            <li><p>Certificate „Competent Leader Award”, Toastmasters International</p></li>
-                            <li><p>Certificate „Competent Communicator”, Toastmasters International</p></li>
-                            <li><p>Certificate „Advanced Communicator Bronze”, Toastmasters International</p></li>
-                            <li><p>CEO – BraveUp Toastmasters</p></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <div class="contact__title">
-                    <h1 class="font-weight-bold">Contact</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="container flex-row align-items-center">
-                    <div id="contact__data" class="contact__data">
-                        <div class="container flex-row align-items-center">
-                            <img src="sources/baseline_location_on_black.png">
-                            <p>Adress</p>
-                        </div>
-                        <div class="container flex-row align-items-center">
-                            <img src="sources/baseline_smartphone_black.png">
-                            <p>Phone</p>
-                        </div>
-                        <div class="container flex-row align-items-center">
-                            <img src="sources/baseline_email_black.png">
-                            <p>E-mail</p>
-                        </div>
-                        <div class="container flex-row align-items-center">
-                            <img src="sources/baseline_facebook_black.png">
-                            <p>Facebook</p>
-                        </div>
-                    </div>
-                    <div class="contact__form">
-                        <div class="contact__form__title">Have a question?</br>Send us a message!</div>
-                        <form id="contact__form" class="contact__form">
-                            <input name="name" class="form_field" type="text" placeholder="Name (required)" required></input>
-                            <input name="phone" class="form_field" type="tel" placeholder="Phone No (required)" required></input>
-                            <input name="email" class="form_field" type="email" placeholder="E-mail"></input>
-                            <textarea id="subject" name="subject" class="form_field" type="text" placeholder="Subject (required)" rows="1" required></textarea>
-                            <textarea id="message" name="message" class="form_field" type="text" placeholder="Message (required)" rows="1" required></textarea>
-                            <input class="contact__form__submit color-transition background-color-transition" type="submit" value="Send">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer id="footer">
-            <div class="container">
-                <div class="footer__title">
-                    Contact
-                </div>
-                <div class="footer__description">
-                    Sylwia Lachut</br>
-                    London 12345</br>
-                    Phone No. 888 999 111</br>
-                    E-mail: my.mail@mail.com</br>
-                </div>
-            </div>
-        </footer>
-
-        <div id="weekly-lessons-modal" class="modal__container">
-            <div class="modal__content">
-                <div>
-                    <button class="modal__close__button">
-                        <span class="background-color-transition"></span>
-                        <span class="background-color-transition"></span>
-                    </button>
-                </div>
-                <div class="modal__content__title">
-                    <h1 class="font-weight-bold">Weekly lessons</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="modal__content__description">
-                    <p class="font-weight-light">£40 per 60 minutes.<p>
+    <div class="relative flex flex-col-reverse pb-16 pt-32 lg:flex-col lg:pb-0">
+        <div class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
+          <svg class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block" viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
+            <path d="M50 0H100L50 100H0L50 0Z"></path>
+          </svg>
+          <img
+            class="object-cover object-left w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            alt=""
+          />
+        </div>
+        <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+            <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+                <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                    Maths Tutoring
+                    <br class="hidden md:block" />
+                    Sig<span class="inline-block text-purple-500">maths</span>
+                </h2>
+                <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
+                    <span class="italic">„Success is the sum of small efforts, repeated day in and day out.”</span>
+                    <br>
+                    - Robert Collier
+                </p>
+                <div class="flex items-center">
+                    <a href="/" class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-500 hover:bg-purple-700 focus:shadow-outline focus:outline-none">
+                        Learn more
+                    </a>
+                    <a href="/" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-purple-700">Contact</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="package-modal" class="modal__container">
-            <div class="modal__content">
-                <div>
-                    <button class="modal__close__button background-color-transition">
-                        <span class="background-color-transition"></span>
-                        <span class="background-color-transition"></span>
-                    </button>
-                </div>
-                <div class="modal__content__title">
-                    <h1 class="font-weight-bold">Package</h1>
-                    <hr class="divider"/>
-                </div>
-                <div class="modal__content__description">
-                    <p class="font-weight-light">A package of 10 tuition hours is available to be used throughout the year – £500.<p>
-                </div>
+    <div class="relative flex flex-col-reverse pb-16 pt-16 lg:flex-col lg:pb-0">
+        <div class="inset-y-0 top-0 left-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
+            <svg class="absolute right-0 hidden h-full text-white transform translate-x-1/2 lg:block" viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
+                <path d="M50 0H100L50 100H0L50 0Z"></path>
+            </svg>
+            <img
+                class="object-cover object-left-top w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+                src="https://images.pexels.com/photos/1181352/pexels-photo-1181352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+            />
+        </div>
+        <div class="relative flex flex-col items-end w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+            <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+                <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                    About
+                    <span class="inline-block text-purple-500">Me</span>
+                </h2>
+                <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
+                    <span class="inline-block text-purple-500">Hi!</span>
+                    My name is Sylwia and I can call myself the luckiest person in the world because I have always known what I would like to do in my life. 
+                    As a little girl I used to pretend to be a teacher and here I am now - my dream came true. As for today, I am a Maths teacher with over 10 years’ experience in tutoring.
+                    My adventure with teaching started when I was a high-school student. The choice of University and the degree course was pretty obvious then. 
+                    I am a Bachelor with specialty in Mathematics and Education of children with intellectual disability and a Master of Mathematics. 
+                    In my spare time I focus on self – development to improve more soft skills, as they enhance the quality of teaching tremendously.
+                    I tend to compare Math skills to child development: they need to start crawling, then take the first steps to finally learn how to run. 
+                    It is the same with Maths. You cannot run if you do not learn how to walk first. 
+                    If you feel like you have missed some steps on the way, you are struggling with certain subjects or you just want to improve your skills, 
+                    do not hesitate to get in touch with me!
+                </p>
             </div>
         </div>
+    </div>
 
-        <div id="mail-successfully-sent-modal" class="modal__container">
-            <div class="modal__content">
-                <div>
-                    <button class="modal__close__button background-color-transition">
-                        <span class="background-color-transition"></span>
-                        <span class="background-color-transition"></span>
-                    </button>
-                </div>
-                <div class="modal__content__title">
-                    <h1 class="font-weight-bold">Thank you! Your request has been successfully sent! We will contact you!</h1>
-                </div>
+    <div class="relative flex pb-16 pt-16 lg:flex-col lg:pb-0">
+        <div class="relative flex flex-col items-center text-center w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+            <div class="mb-16 lg:my-20 lg:pr-5">
+                <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                    Maths
+                    <span class="inline-block text-purple-500">Tuition</span>
+                </h2>
+                <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
+                    <p class="text-gray-500 dark:text-gray-400">
+                        In terms of my academic studies, training and development, I have acquired the QTS. <br><br>
+
+                        As a Maths Tutor both in the UK and Poland, my duty over the years has focused on creating interesting lessons that reflect Maths concepts, learning objectives and subject matter. Moreover I have worked on preparing both attractive teaching aids, and tests.<br><br>
+                    </p>
+                    <div id="hs-show-hide-collapse-heading" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-show-hide-collapse">
+                        <p class="text-gray-500 dark:text-gray-400">
+                            As a friendly, honest and hardworking person with high levels of concentration, my proactive
+                            approach to tutoring has been very well received. In order to support learning and stimulate student engagement, I have participated in a range of Maths classes. They taught me how to develop unique learning methods that can refer to student’s hobby for instance or any other circumstances in order to help and ease the learning process.<br><br>
+
+                            I am currently focused on 11+ and GCSC but the range of topics I can cover is way wider. Ask me what do you need and most likely I will be able to help you.<br>
+                            I provide all necessary educational materials, tests and homework for each lesson.<br><br>
+
+                            Due to recent circumstances regarding the coronavirus outbreak, I'm taking the leap and fully transitioning to online tuition only.<br><br>
+                        </p>
+                    </div>
+                    <p class="mt-2">
+                        <button type="button" class="hs-collapse-toggle inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-purple-600 hover:text-purple-800 disabled:opacity-50 disabled:pointer-events-none dark:text-purple-500 dark:hover:text-purple-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" id="hs-show-hide-collapse" data-hs-collapse="#hs-show-hide-collapse-heading">
+                            <span class="hs-collapse-open:hidden">Read more</span>
+                            <span class="hs-collapse-open:block hidden">Read less</span>
+                            <svg class="hs-collapse-open:rotate-180 flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </p>
+                </p>
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    <!-- Pricing -->
+    <div class="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <!-- Title -->
+        <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+            <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Pricing</h2>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">Find what you need in my offers.</p>
+        </div>
+        <!-- End Title -->
+
+        <!-- Grid -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:items-center">
+            <!-- Card -->
+            <div class="flex flex-col border border-gray-200 text-center rounded-xl p-8 dark:border-gray-700">
+                <h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">Test lesson</h4>
+                <span class="mt-7 font-bold text-5xl text-gray-800 dark:text-gray-200">Free</span>
+                <p class="mt-2 text-sm text-gray-500">One free lesson to show you what you can expect</p>
+        
+                <ul class="mt-7 space-y-2.5 text-sm">
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                            1 free lesson
+                        </span>
+                    </li>
+            
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                            Check what to expect
+                        </span>
+                    </li>
+                </ul>
+        
+                <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-purple-100 text-purple-800 hover:bg-purple-200 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-purple-900 dark:text-purple-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                Sign up
+                </a>
+            </div>
+            <!-- End Card -->
+        
+            <!-- Card -->
+            <div class="flex flex-col border border-gray-200 text-center rounded-xl p-8 dark:border-gray-700">
+                <h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">Weekly lessons</h4>
+                <span class="mt-5 font-bold text-5xl text-gray-800 dark:text-gray-200">
+                    <span class="font-bold text-2xl -me-2">£</span>
+                    40
+                </span>
+                <p class="mt-2 text-sm text-gray-500">One 60 minutes lesson</p>
+        
+                <ul class="mt-7 space-y-2.5 text-sm">
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                            1 lesson
+                        </span>
+                    </li>
+
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                            Quick catch-up
+                        </span>
+                    </li>
+
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                            Take lesson when you need
+                        </span>
+                    </li>
+                </ul>
+        
+                <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-purple-100 text-purple-800 hover:bg-purple-200 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-purple-900 dark:text-purple-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                Sign up
+                </a>
+            </div>
+            <!-- End Card -->
+
+            <!-- Card -->
+            <div class="flex flex-col border-2 border-purple-500 text-center shadow-xl rounded-xl p-8 dark:border-purple-700">
+                <p class="mb-3"><span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs uppercase font-semibold bg-purple-100 text-purple-800 dark:bg-purple-600 dark:text-white">Most popular</span></p>
+                <h4 class="font-medium text-lg text-gray-800 dark:text-gray-200">Package</h4>
+                <span class="mt-5 font-bold text-5xl text-gray-800 dark:text-gray-200">
+                    <span class="font-bold text-2xl -me-2">£</span>
+                    500
+                </span>
+                <p class="mt-2 text-sm text-gray-500">A package of 10 tuition hours is available to be used throughout the year</p>
+        
+                <ul class="mt-7 space-y-2.5 text-sm">
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                        10 lessons
+                        </span>
+                    </li>
+            
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                        To be used throughout the year
+                        </span>
+                    </li>
+            
+                    <li class="flex space-x-2">
+                        <svg class="flex-shrink-0 mt-0.5 size-4 text-purple-600 dark:text-purple-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="text-gray-800 dark:text-gray-400">
+                        15% less cost
+                        </span>
+                    </li>
+                </ul>
+        
+                <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-purple-600 text-white hover:bg-purple-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="https://github.com/htmlstreamofficial/preline/tree/main/examples/html">
+                    Sign up
+                </a>
+            </div>
+            <!-- End Card -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Pricing -->
+
+    <!-- Timeline -->
+    <div class="w-full py-16 flex flex-col items-center">
+        <div class="max-w-screen-xl text-center mb-16 lg:my-20 lg:pr-5">
+            <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+                Bio
+            </h2>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">That's my journey!</p>
+        </div>
+        <div>
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Qualified Teacher Status
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Pedagogical University of Cracow
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Mathematics with Oligophrenopedagogy, Specialization Teacher
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Pedagogical University of Cracow
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+        
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Mathematics, Specialization Teacher
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Pedagogical University of Cracow
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Financial Mathematics
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        AGH University of Science and Technology
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        The Main Organizer of the 1st Nationwide conference
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        BraveUp Toastmasters
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Lecturer at the Soft Skills Academy 6
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Workshop „An old good marriage – the heart and mind as a perfect couple”
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Lecturer at the IX Nationwide symposium academic circles 
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        „Mathematics – an endless challenge”
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Vice President Membership one of the local Toastmasters International Clubs
+                    </h3>
+                    <!-- <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        „Mathematics – an endless challenge”
+                    </p> -->
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Certificate of Attendance course „Stress – student’s friend or enemy?”
+                    </h3>
+                    <!-- <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        „Mathematics – an endless challenge”
+                    </p> -->
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Certificate „Competent Leader Award”
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Toastmasters International
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Certificate „Competent Communicator”
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Toastmasters International
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        Certificate „Advanced Communicator Bronze”
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Toastmasters International
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="flex gap-x-3">
+                <!-- Left Content -->
+                <div class="w-16 text-end">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">01.01.2010</span>
+                </div>
+                <!-- End Left Content -->
+            
+                <!-- Icon -->
+                <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                    <div class="relative z-10 size-7 flex justify-center items-center">
+                        <div class="size-2 rounded-full bg-gray-400 dark:bg-gray-600"></div>
+                    </div>
+                </div>
+                <!-- End Icon -->
+        
+                <!-- Right Content -->
+                <div class="grow pt-0.5 pb-8">
+                    <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white max-sm:w-64">
+                        CEO – BraveUp Toastmasters
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 max-sm:w-64">
+                        Toastmasters International
+                    </p>
+                </div>
+                <!-- End Right Content -->
+            </div>
+            <!-- End Item -->   
+        </div>
+    </div>
+    <!-- End Timeline -->
+    
+    <footer class="w-full bg-purple-400">
+        <div class="max-w-screen-xl py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5 text-center">
+            <div>
+                <a class="flex-none text-xl font-semibold text-black dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" aria-label="Brand">Brand</a>
+            </div>
+            <!-- End Col -->
+        
+            <ul class="text-center">
+                <li class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
+                <a class="inline-flex gap-x-2 text-sm text-gray-700 hover:text-gray-800 dark:text-gray-700 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                    About
+                </a>
+                </li>
+                <li class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
+                <a class="inline-flex gap-x-2 text-sm text-gray-700 hover:text-gray-800 dark:text-gray-700 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                    Services
+                </a>
+                </li>
+                <li class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
+                <a class="inline-flex gap-x-2 text-sm text-gray-700 hover:text-gray-800 dark:text-gray-700 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                    Blog
+                </a>
+                </li>
+            </ul>
+            <!-- End Col -->
+        
+            <!-- Social Brands -->
+            <div class="md:text-end space-x-2">
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                </svg>
+                </a>
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+                </a>
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                </a>
+                <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"/>
+                </svg>
+                </a>
+            </div>
+            <!-- End Social Brands -->
+            </div>
+            <!-- End Grid -->
+        </div>
+    </footer>
+
+    <script src="./node_modules/preline/dist/preline.js"></script>
+</body>
 </html>
