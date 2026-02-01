@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylwia Łachut | Expert Math Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-pattern {
+            background-color: #f0f9ff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="text-slate-700 antialiased">
+
+    <nav class="bg-white fixed w-full z-50 border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-sky-600 italic">
+                        Sylwia<span class="text-slate-800">Math</span>
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-sky-600 font-medium transition">About</a>
+                    <a href="#subjects" class="text-slate-600 hover:text-sky-600 font-medium transition">Subjects</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-sky-600 font-medium transition">Pricing</a>
+                    <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-full font-medium transition shadow-md hover:shadow-lg">
+                        Book a Session
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-sky-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 pb-4">
+            <a href="#about" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">About</a>
+            <a href="#subjects" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">Subjects</a>
+            <a href="#pricing" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">Pricing</a>
+            <a href="#contact" class="block px-4 py-3 text-sky-600 font-bold">Book a Session</a>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <div class="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-6">
+                        Accepting students for 2025/26 Academic Year
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+                        Master Maths with <span class="text-sky-600">Confidence</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                        Personalised maths tuition from primary school to A-level, where strong foundations, clear thinking, and growing confidence come together.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg hover:shadow-sky-200 text-center">
+                            Start Learning
+                        </a>
+                        <a href="#about" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold text-lg transition shadow-sm hover:shadow-md text-center">
+                            Meet Sylwia
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center justify-center md:justify-start gap-4 text-sm text-slate-500">
+                        <span class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> QTS Certified</span>
+                        <span class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Enhanced DBS</span>
+                        <span class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Online/In-Person</span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-sky-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Sylwia Tutoring Student" 
+                             class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Meet Your Tutor</h2>
+                <div class="w-20 h-1.5 bg-sky-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-1">
+                    <div class="sticky top-24">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Portrait of Sylwia Łachut" 
+                             class="w-full h-auto object-cover rounded-xl shadow-lg mb-6">
+                        
+                        <!-- <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="fas fa-graduation-cap text-sky-600 w-5"></i>
+                                <span class="text-sm font-medium">Master’s in Mathematics</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="fas fa-certificate text-sky-600 w-5"></i>
+                                <span class="text-sm font-medium">QTS Certified Professional</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700">
+                                <i class="fas fa-shield-alt text-sky-600 w-5"></i>
+                                <span class="text-sm font-medium">Enhanced DBS Checked</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Hi, I'm Sylwia Łachut.</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            I've always known that teaching was my calling. As a little girl, I loved to imagine <b>I was</b> a "teacher", and today that dream has become my career!
+                        </p>
+                        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+                            With over 10 years of tutoring experience (including time as a former school Maths teacher), I specialise in supporting GCSE and A-level students to build real confidence and achieve excellent results in Mathematics. I've helped students in both the UK and Poland through clear, personalised, and engaging lessons that make complex topics feel manageable and even enjoyable.
+                        </p>
+                    </div>
+
+                    <!-- <div class="bg-sky-50 p-6 rounded-xl border-l-4 border-sky-600">
+                        <h4 class="font-bold text-sky-900 mb-2 italic">"Master crawling before walking..."</h4>
+                        <p class="text-slate-700 leading-relaxed">
+                            I believe Maths skills develop just like learning to move: you must master crawling before walking, and walking before running. Skipping steps only leads to frustration—so I always start with strong foundations, then guide students step-by-step towards fluency and independence.
+                        </p>
+                    </div> -->
+
+                    <!-- <p class="text-slate-600 text-lg leading-relaxed">
+                        Every student is different, so I tailor lessons to fit your interests and circumstances—whether that’s connecting algebra to a favourite hobby or creating targeted practice that matches your learning style.
+                    </p> -->
+
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        Every student is different, so I tailor lessons to fit your interests and circumstances—whether that’s connecting algebra to a favourite hobby, using everyday examples, or creating targeted practice that matches your learning style. I’m friendly, honest, hardworking, and fully focused, and my supportive, proactive style has earned consistently positive feedback from students and parents alike.
+                    </p>
+
+                    <p class="text-slate-600 text-lg leading-relaxed font-medium">
+                        If you're looking to overcome challenges, boost confidence, and see those grades rise, I'd love to work with you (or your child)!
+                    </p>
+
+                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-4">
+                        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold">10+ Years Experience</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold">Former School Teacher</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-semibold">Special Education Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-sky-600 font-bold tracking-widest uppercase text-sm">My Teaching Philosophy</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-3 italic">
+                        "Master crawling before walking, and walking before running."
+                    </h2>
+                </div>
+
+                <div class="border-y border-slate-100 py-12">
+                    <p class="text-slate-600 text-lg leading-relaxed text-center mb-12">
+                        I believe Maths skills develop just like a child learning to move: you must master crawling before walking, and walking before running. Skipping steps only leads to frustration—so I always start with strong foundations, then guide students step by step towards fluency and independence.
+                    </p>
+
+                    <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center px-4">
+                            <div class="text-sky-600 font-bold text-4xl mb-2">01</div>
+                            <h4 class="text-slate-900 font-bold mb-1">Crawl</h4>
+                            <p class="text-slate-500 text-sm italic">Mastering the Foundations</p>
+                        </div>
+                        <div class="text-center px-4 border-slate-100 md:border-x">
+                            <div class="text-sky-600 font-bold text-4xl mb-2">02</div>
+                            <h4 class="text-slate-900 font-bold mb-1">Walk</h4>
+                            <p class="text-slate-500 text-sm italic">Developing Fluency</p>
+                        </div>
+                        <div class="text-center px-4">
+                            <div class="text-sky-600 font-bold text-4xl mb-2">03</div>
+                            <h4 class="text-slate-900 font-bold mb-1">Run</h4>
+                            <p class="text-slate-500 text-sm italic">Achieving Independence</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualifications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Professional Credentials</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Fully qualified and verified to provide the highest standard of mathematical education and student safety.</p>
+                <div class="w-20 h-1.5 bg-sky-600 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-sky-500 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-sky-600 transition-colors">
+                        <i class="fas fa-graduation-cap text-sky-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Master’s Degree</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Specialised in Mathematics, providing a deep theoretical and practical understanding of complex topics.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-indigo-500 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
+                        <i class="fas fa-user-graduate text-indigo-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Bachelor’s Degree</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Specialising in Mathematics and the Education of Children with Intellectual Disabilities.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-teal-500 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-600 transition-colors">
+                        <i class="fas fa-chalkboard-teacher text-teal-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Qualified Teacher Status</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Recognised QTS professional, ensuring pedagogical excellence and classroom-proven methods.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-rose-500 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-rose-600 transition-colors">
+                        <i class="fas fa-shield-check text-rose-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Enhanced DBS Check</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Full, up-to-date background check for total peace of mind regarding student safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="subjects" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tailored Tutoring Programs</h2>
+                <p class="text-lg text-slate-600">Specialised support designed for every stage of the mathematical journey.</p>
+                <div class="w-20 h-1.5 bg-sky-600 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-shapes text-teal-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Key Stage 3 Maths Support</h3>
+                    </div>
+                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Building strong foundations for future success</p>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-teal-500 mt-1"></i> Comprehensive help with Years 7–9 curriculum</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-teal-500 mt-1"></i> Filling gaps in core topics: fractions, algebra introduction, geometry, and statistics</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-teal-500 mt-1"></i> Preparation for end-of-Key-Stage assessments and building GCSE confidence</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-teal-500 mt-1"></i> Ideal for students finding the jump to secondary school challenging</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-book-open text-sky-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">GCSE Exam Preparation</h3>
+                    </div>
+                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Foundation & Higher Tier – Edexcel, AQA, OCR</p>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1"></i> Full syllabus coverage and targeted revision</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1"></i> Working through past papers under timed exam conditions</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1"></i> Focus on problem-solving techniques and exam technique</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-sky-500 mt-1"></i> Aiming for Grade 4–5 (Foundation) or Grade 6–9 (Higher)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-square-root-variable text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">A Level Maths Preparation</h3>
+                    </div>
+                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Edexcel, AQA, OCR – Pure, Statistics, Mechanics</p>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Support from start of Year 12 through to A2 exams</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Bridging difficult topics: proof, calculus, coordinate geometry, and more</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Advanced problem-solving and past paper mastery</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Suitable for students aiming for A–A* or university entrance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-square-root-variable text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">Summer Bridging Course</h3>
+                    </div>
+                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Get ready for the step up to A Level</p>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Intensive short course (4–8 weeks in summer)</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Essential GCSE revision + core A Level starting topics</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Algebra manipulation, trig identities, and differentiation basics</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Designed to prevent the common "A Level shock"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Investment in Success</h2>
+                <p class="text-lg text-slate-600">Competitive rates for high-quality, professional tuition.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="border border-slate-200 rounded-2xl p-8 hover:border-sky-300 transition relative">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Standard Session</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-slate-900">£45</span>
+                        <span class="text-slate-500 ml-2">/ hour</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-slate-600">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Tailored lesson planning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Exam board specific material</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Personalised homework</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-lg transition">Enquire Now</a>
+                </div>
+
+                <div class="border-2 border-sky-500 rounded-2xl p-8 shadow-xl relative bg-white">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-sky-600 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase">
+                        Most Popular
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Monthly Block</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-slate-900">£160</span>
+                        <span class="text-slate-500 ml-2">/ 4 hours</span>
+                    </div>
+                    <p class="text-sm text-green-600 mb-6 font-medium">Save £20 per month</p>
+                    <ul class="space-y-4 mb-8 text-slate-600">
+                        <li class="flex items-center"><i class="fas fa-check text-sky-500 mr-3"></i> Guaranteed weekly time-slot</li>
+                        <li class="flex items-center"><i class="fas fa-check text-sky-500 mr-3"></i> Detailed progress tracking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-sky-500 mr-3"></i> Email support for quick questions</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 rounded-lg transition shadow-lg">Book Block</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">What Students & Parents Say</h2>
+                <div class="flex items-center justify-center gap-1 mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <span class="ml-2 font-semibold text-slate-700">5.0 Rating on Google</span>
+                </div>
+                <div class="w-20 h-1.5 bg-sky-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Anna Kowalska</h4>
+                            <p class="text-xs text-slate-500">Parent of GCSE Student</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 ml-auto" alt="Google Logo">
+                    </div>
+                    <div class="flex text-yellow-400 text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed">
+                        "Sylwia is a fantastic teacher. She helped my son overcome his fear of algebra. Her 'crawling before walking' approach really works—his confidence has skyrocketed!"
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Mark Thompson</h4>
+                            <p class="text-xs text-slate-500">A-Level Mathematics</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 ml-auto" alt="Google Logo">
+                    </div>
+                    <div class="flex text-yellow-400 text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed">
+                        "I was struggling with Calculus until I started sessions with Sylwia. She explains complex topics in such a manageable way. Highly recommend her for A-levels."
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            K
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Karolina W.</h4>
+                            <p class="text-xs text-slate-500">University Applicant</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 ml-auto" alt="Google Logo">
+                    </div>
+                    <div class="flex text-yellow-400 text-xs mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed">
+                        "Professional, honest, and hardworking. Sylwia tailored every lesson to my learning style. I managed to get the grade I needed for my first-choice uni!"
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://google.com" target="_blank" class="text-sky-600 font-semibold hover:underline flex items-center justify-center gap-2">
+                    View all Google Reviews <i class="fas fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Let's Solve It Together</h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Ready to boost your grades and confidence? Contact me to discuss your needs or book a trial session.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-envelope text-sky-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-slate-900">Email</h4>
+                                <p class="text-slate-600">sylwia.lachut@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-video text-sky-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-slate-900">Session Location</h4>
+                                <p class="text-slate-600">Online (Zoom/Google Meet) or In-person</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name (Student or Parent)</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Tell me about your maths goals</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 rounded-lg transition shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="successMessage" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200">
+                        <p class="font-bold">Message Sent!</p>
+                        <p class="text-sm">I'll get back to you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="text-2xl font-bold text-white italic">SylwiaMath</span>
+                <p class="text-sm mt-2 text-slate-400">&copy; 2025 Sylwia Łachut Tutoring. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        // Contact Form Handling
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('successMessage');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.style.display = 'none';
+            successMsg.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
