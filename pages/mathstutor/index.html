@@ -30,8 +30,8 @@
                 
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about" class="text-slate-600 hover:text-sky-600 font-medium transition">About</a>
+                    <a href="#qualifications" class="text-slate-600 hover:text-sky-600 font-medium transition">Credentials</a>
                     <a href="#subjects" class="text-slate-600 hover:text-sky-600 font-medium transition">Subjects</a>
-                    <a href="#pricing" class="text-slate-600 hover:text-sky-600 font-medium transition">Pricing</a>
                     <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-full font-medium transition shadow-md hover:shadow-lg">
                         Book a Session
                     </a>
@@ -47,8 +47,8 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 pb-4">
             <a href="#about" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">About</a>
+            <a href="#qualifications" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">Credentials</a>
             <a href="#subjects" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">Subjects</a>
-            <a href="#pricing" class="block px-4 py-3 text-slate-600 hover:bg-slate-50 hover:text-sky-600">Pricing</a>
             <a href="#contact" class="block px-4 py-3 text-sky-600 font-bold">Book a Session</a>
         </div>
     </nav>
@@ -57,9 +57,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
-                    <div class="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-6">
-                        Accepting students for 2025/26 Academic Year
-                    </div>
+                    <div id="academic-year-badge" class="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-6"></div>
                     <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
                         Master Maths with <span class="text-sky-600">Confidence</span>
                     </h1>
@@ -105,21 +103,6 @@
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                              alt="Portrait of Sylwia Łachut" 
                              class="w-full h-auto object-cover rounded-xl shadow-lg mb-6">
-                        
-                        <!-- <div class="space-y-3">
-                            <div class="flex items-center gap-3 text-slate-700">
-                                <i class="fas fa-graduation-cap text-sky-600 w-5"></i>
-                                <span class="text-sm font-medium">Master’s in Mathematics</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-slate-700">
-                                <i class="fas fa-certificate text-sky-600 w-5"></i>
-                                <span class="text-sm font-medium">QTS Certified Professional</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-slate-700">
-                                <i class="fas fa-shield-alt text-sky-600 w-5"></i>
-                                <span class="text-sm font-medium">Enhanced DBS Checked</span>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
 
@@ -133,17 +116,6 @@
                             With over 10 years of tutoring experience (including time as a former school Maths teacher), I specialise in supporting GCSE and A-level students to build real confidence and achieve excellent results in Mathematics. I've helped students in both the UK and Poland through clear, personalised, and engaging lessons that make complex topics feel manageable and even enjoyable.
                         </p>
                     </div>
-
-                    <!-- <div class="bg-sky-50 p-6 rounded-xl border-l-4 border-sky-600">
-                        <h4 class="font-bold text-sky-900 mb-2 italic">"Master crawling before walking..."</h4>
-                        <p class="text-slate-700 leading-relaxed">
-                            I believe Maths skills develop just like learning to move: you must master crawling before walking, and walking before running. Skipping steps only leads to frustration—so I always start with strong foundations, then guide students step-by-step towards fluency and independence.
-                        </p>
-                    </div> -->
-
-                    <!-- <p class="text-slate-600 text-lg leading-relaxed">
-                        Every student is different, so I tailor lessons to fit your interests and circumstances—whether that’s connecting algebra to a favourite hobby or creating targeted practice that matches your learning style.
-                    </p> -->
 
                     <p class="text-slate-600 text-lg leading-relaxed">
                         Every student is different, so I tailor lessons to fit your interests and circumstances—whether that’s connecting algebra to a favourite hobby, using everyday examples, or creating targeted practice that matches your learning style. I’m friendly, honest, hardworking, and fully focused, and my supportive, proactive style has earned consistently positive feedback from students and parents alike.
@@ -177,24 +149,6 @@
                     <p class="text-slate-600 text-lg leading-relaxed text-center mb-12">
                         I believe Maths skills develop just like a child learning to move: you must master crawling before walking, and walking before running. Skipping steps only leads to frustration—so I always start with strong foundations, then guide students step by step towards fluency and independence.
                     </p>
-
-                    <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="text-center px-4">
-                            <div class="text-sky-600 font-bold text-4xl mb-2">01</div>
-                            <h4 class="text-slate-900 font-bold mb-1">Crawl</h4>
-                            <p class="text-slate-500 text-sm italic">Mastering the Foundations</p>
-                        </div>
-                        <div class="text-center px-4 border-slate-100 md:border-x">
-                            <div class="text-sky-600 font-bold text-4xl mb-2">02</div>
-                            <h4 class="text-slate-900 font-bold mb-1">Walk</h4>
-                            <p class="text-slate-500 text-sm italic">Developing Fluency</p>
-                        </div>
-                        <div class="text-center px-4">
-                            <div class="text-sky-600 font-bold text-4xl mb-2">03</div>
-                            <h4 class="text-slate-900 font-bold mb-1">Run</h4>
-                            <p class="text-slate-500 text-sm italic">Achieving Independence</p>
-                        </div> -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -235,7 +189,7 @@
 
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-rose-500 hover:bg-white hover:shadow-lg transition-all duration-300 group">
                     <div class="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-rose-600 transition-colors">
-                        <i class="fas fa-shield-check text-rose-600 text-2xl group-hover:text-white"></i>
+                        <i class="fas fa-user-shield text-rose-600 text-2xl group-hover:text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-2">Enhanced DBS Check</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Full, up-to-date background check for total peace of mind regarding student safety.</p>
@@ -255,12 +209,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
+                        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center">
                             <i class="fas fa-shapes text-teal-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800">Key Stage 3 Maths Support</h3>
                     </div>
-                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Building strong foundations for future success</p>
+                    <p class="text-teal-700 font-semibold mb-4 italic text-sm">Building strong foundations for future success</p>
                     <ul class="space-y-3 text-slate-600 text-sm">
                         <li class="flex items-start gap-2"><i class="fas fa-check text-teal-500 mt-1"></i> Comprehensive help with Years 7–9 curriculum</li>
                         <li class="flex items-start gap-2"><i class="fas fa-check text-teal-500 mt-1"></i> Filling gaps in core topics: fractions, algebra introduction, geometry, and statistics</li>
@@ -271,7 +225,7 @@
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center">
+                        <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center">
                             <i class="fas fa-book-open text-sky-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800">GCSE Exam Preparation</h3>
@@ -287,12 +241,12 @@
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center">
                             <i class="fas fa-square-root-variable text-indigo-600 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800">A Level Maths Preparation</h3>
                     </div>
-                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Edexcel, AQA, OCR – Pure, Statistics, Mechanics</p>
+                    <p class="text-indigo-700 font-semibold mb-4 italic text-sm">Edexcel, AQA, OCR – Pure, Statistics, Mechanics</p>
                     <ul class="space-y-3 text-slate-600 text-sm">
                         <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Support from start of Year 12 through to A2 exams</li>
                         <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Bridging difficult topics: proof, calculus, coordinate geometry, and more</li>
@@ -303,24 +257,24 @@
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-square-root-variable text-indigo-600 text-xl"></i>
+                        <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-sun text-amber-500 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800">Summer Bridging Course</h3>
                     </div>
-                    <p class="text-sky-700 font-semibold mb-4 italic text-sm">Get ready for the step up to A Level</p>
+                    <p class="text-amber-600 font-semibold mb-4 italic text-sm">Get ready for the step up to A Level</p>
                     <ul class="space-y-3 text-slate-600 text-sm">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Intensive short course (4–8 weeks in summer)</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Essential GCSE revision + core A Level starting topics</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Algebra manipulation, trig identities, and differentiation basics</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-indigo-500 mt-1"></i> Designed to prevent the common "A Level shock"</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1"></i> Intensive short course (4–8 weeks in summer)</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1"></i> Essential GCSE revision + core A Level starting topics</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1"></i> Algebra manipulation, trig identities, and differentiation basics</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1"></i> Designed to prevent the common "A Level shock"</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-20 bg-white">
+    <!-- <section id="pricing" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Investment in Success</h2>
@@ -361,9 +315,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section id="reviews" class="py-20 bg-slate-50">
+    <section id="reviews" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">What Students & Parents Say</h2>
@@ -382,10 +336,10 @@
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
-                            A
+                            JC
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Anna Kowalska</h4>
+                            <h4 class="font-bold text-slate-900 text-sm">Joanna Chlipala</h4>
                             <p class="text-xs text-slate-500">Parent of GCSE Student</p>
                         </div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 ml-auto" alt="Google Logo">
@@ -394,18 +348,18 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p class="text-slate-600 text-sm italic leading-relaxed">
-                        "Sylwia is a fantastic teacher. She helped my son overcome his fear of algebra. Her 'crawling before walking' approach really works—his confidence has skyrocketed!"
+                        "Sylwia was really helpful while my preparation for A-level! Her clear explanations and patient teaching made complex topics so much easier to grasp.❤️❤️"
                     </p>
                 </div>
 
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
-                            M
+                            E
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Mark Thompson</h4>
-                            <p class="text-xs text-slate-500">A-Level Mathematics</p>
+                            <h4 class="font-bold text-slate-900 text-sm">Egis</h4>
+                            <p class="text-xs text-slate-500">Parent of A-Level Student</p>
                         </div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 ml-auto" alt="Google Logo">
                     </div>
@@ -413,7 +367,8 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p class="text-slate-600 text-sm italic leading-relaxed">
-                        "I was struggling with Calculus until I started sessions with Sylwia. She explains complex topics in such a manageable way. Highly recommend her for A-levels."
+                        "I can’t thank Sylwia enough for the amazing help she gave my son with his A-level. She had a knack for breaking down tricky concepts in a way that just clicked, and her patience was incredible, never once making him feel rushed or stuck. Sylwia was always on time, super professional, and really cared about him doing well. I’d recommend her in a heartbeat.
+                        <br><br>Thank you so much, Sylwia!!!"
                     </p>
                 </div>
 
@@ -423,8 +378,8 @@
                             K
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Karolina W.</h4>
-                            <p class="text-xs text-slate-500">University Applicant</p>
+                            <h4 class="font-bold text-slate-900 text-sm">Natalia w</h4>
+                            <p class="text-xs text-slate-500">University Student</p>
                         </div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 ml-auto" alt="Google Logo">
                     </div>
@@ -432,20 +387,20 @@
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <p class="text-slate-600 text-sm italic leading-relaxed">
-                        "Professional, honest, and hardworking. Sylwia tailored every lesson to my learning style. I managed to get the grade I needed for my first-choice uni!"
+                        "Sylwia is the best tutor! Explains clearly and patiently, thanks to which math is no longer scary. Nice atmosphere and fast results - I highly recommend"
                     </p>
                 </div>
             </div>
             
             <div class="text-center mt-10">
-                <a href="https://google.com" target="_blank" class="text-sky-600 font-semibold hover:underline flex items-center justify-center gap-2">
+                <a href="https://www.google.com/maps/place/GCSE+%26+A-Level+Math+Tutoring+by+Sylwia/@51.4766629,-0.3682407,312m/data=!3m1!1e3!4m8!3m7!1s0x48760d284350db73:0x678a1f3559adf267!8m2!3d51.4766629!4d-0.3666237!9m1!1b1!16s%2Fg%2F11xkw_yqt9?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-sky-600 font-semibold hover:underline flex items-center justify-center gap-2">
                     View all Google Reviews <i class="fas fa-external-link-alt text-xs"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12">
                 <div>
@@ -509,14 +464,41 @@
                 <span class="text-2xl font-bold text-white italic">SylwiaMath</span>
                 <p class="text-sm mt-2 text-slate-400">&copy; 2025 Sylwia Łachut Tutoring. All rights reserved.</p>
             </div>
-            <div class="flex space-x-6">
+            <!-- <div class="flex space-x-6">
                 <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
                 <a href="#" class="hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
-            </div>
+            </div> -->
         </div>
     </footer>
 
     <script>
+        function updateAcademicYear() {
+            const badge = document.getElementById('academic-year-badge');
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth(); // 0 is January, 6 is June
+
+            let startYear, endYear;
+
+            // If we are in June (6) or later, the "Next" academic year 
+            // starts next year. If we are before June, the "Next" year 
+            // is the one starting this coming June.
+            if (currentMonth >= 6) { 
+                // It's currently June-Dec 2025: We are looking ahead to 2026/27
+                startYear = currentYear + 1;
+                endYear = (currentYear + 2).toString().slice(-2);
+            } else {
+                // It's currently Jan-May 2025: We are looking ahead to 2025/26
+                startYear = currentYear;
+                endYear = (currentYear + 1).toString().slice(-2);
+            }
+
+            badge.innerText = `Accepting students for ${startYear}/${endYear} Academic Year`;
+        }
+
+        // Run the function
+        updateAcademicYear();
+
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
