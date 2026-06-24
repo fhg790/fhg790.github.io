@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    setTimeout(
+        function(){
+            var d=document,
+                t="script",
+                p=d.getElementsByTagName(t)[0],
+                s=d.createElement(t);
+            s.async=true;
+            s.type="text/javascript";
+            s.src="http" + ("https:"==d.location.protocol?"s":"") + "://ssl.hurra.com/oti.js?cid=4321&skip_track=1"; 
+            p.parentNode.insertBefore(s,p)
+        }, 
+    0);
+
+    window.hc_tm = window.hc_tm || [];
+    window.hc_tm.push({"e":"track","p":{
+        "page_type":"__page_type__",
+        "event_type":"page_view", /* fixed value */
+    }});
+
+
+</script>
+</html>
