@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consent Lab — testowy CMP</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#192c43;background:#f3f6fa;line-height:1.5;font-size:16px}*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:0 auto;padding:40px 24px}header{border-bottom:1px solid #cdd6e2;padding-bottom:24px;margin-bottom:24px}.eyebrow{color:#245aba;font-weight:700;font-size:14px;letter-spacing:.12em}h1{font-size:36px;letter-spacing:-1px;margin:6px 0}h2{font-size:20px;margin:0 0 16px}p{margin:8px 0 16px}.muted{color:#53657b}.layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{background:white;border:1px solid #d4ddea;border-radius:14px;padding:24px;margin-bottom:20px}button{font:inherit;font-weight:600;border:1px solid #a9b9cc;border-radius:8px;padding:10px 16px;background:white;color:#192c43;cursor:pointer}button:hover{background:#edf3fc}button.primary{background:#245aba;color:white;border-color:#245aba}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #e69c21;outline-offset:3px}.actions{display:flex;gap:10px;flex-wrap:wrap}.vendor{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-top:1px solid #e3e9f0}.vendor small{display:block;color:#53657b;font-size:14px}.badge{font-size:14px;border-radius:6px;padding:4px 9px;background:#eef2f7;white-space:nowrap}.badge.on{background:#dbf3e7;color:#146139}pre{font:14px/1.65 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#102236;color:#d7e8ff;padding:18px;border-radius:8px;margin:0}code{font-family:ui-monospace,monospace;overflow-wrap:anywhere}summary{cursor:pointer;font-weight:600}details p{margin-top:16px}dialog{border:1px solid #cdd6e2;border-radius:16px;padding:24px;width:min(560px,calc(100% - 28px));max-height:90dvh;color:#192c43}dialog::backdrop{background:rgb(13 28 48 / .55)}input[type=checkbox]{width:24px;height:24px;accent-color:#245aba;flex-shrink:0}#events{max-height:200px;overflow:auto;padding-left:24px;font-size:14px}#storage{color:#95431b}footer{font-size:14px;color:#53657b;margin-top:20px}@media(max-width:720px){main{padding:24px 16px}.layout{grid-template-columns:1fr}.panel{padding:18px}h1{font-size:30px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">CONSENT LAB / DEMO</div><h1>Testuj przepływ zgód</h1><p class="muted">Czterech vendorów, edytowalne zgody i jeden interfejs do integracji z JavaScriptem.</p><div class="actions"><button class="primary" id="open">Zmień zgody</button><button id="reset">Resetuj zgody</button></div></header>
+<p id="storage" role="status"></p>
+<div class="layout"><section class="panel"><h2>Vendorzy testowi</h2><p id="decision" role="status"></p><div id="vendors"></div><p class="muted">To symulacja: vendorzy nie uruchamiają skryptów, nie zapisują cookies i nie wysyłają żądań.</p></section>
+<section class="panel"><h2>Aktualne zgody · JSON</h2><pre id="json" aria-label="Aktualny stan zgód"></pre><p class="muted">Odczyt w konsoli: <code>DemoCMP.getConsent()</code></p></section></div>
+<section class="panel"><h2>Odbiornik zgód</h2><p>Przykładowa druga biblioteka odbiera stan przy starcie i po każdej zmianie. Tutaj podłącz swój kod przekazujący zgody dalej.</p><pre>// Uruchom po skrypcie CMP (np. na końcu &lt;body&gt;).
+const unsubscribe = DemoCMP.subscribe((consent, reason) =&gt; {
+  mojaBiblioteka.setConsent(consent);
+});
+// subscribe od razu przekazuje również aktualny stan.
+// unsubscribe() wyłącza nasłuchiwanie.</pre><ol id="events" aria-label="Ostatnie zdarzenia"></ol></section>
+<details class="panel"><summary>Konfiguracja i publikacja</summary><p>Zapisz plik jako <code>index.html</code> i umieść w katalogu publikowanym przez GitHub Pages. Nie ma zależności, CDN ani kroku budowania.</p><p>Edytuj tablicę <code>VENDORS</code> w źródle, aby zmienić ID, nazwy i opisy vendorów. Po zmianie znaczenia zgód zwiększ <code>CONFIG_VERSION</code>, aby poprosić o nową decyzję.</p><p>API: <code>getConsent()</code>, <code>subscribe(callback)</code>, <code>setConsent({atlas: true})</code> (pozostałe wartości pozostają bez zmian), <code>acceptAll()</code>, <code>rejectAll()</code>, <code>open()</code> i <code>reset()</code>. Zapis programowy jest jawną decyzją; wywołuj go w odpowiedzi na wybór użytkownika.</p><p>Możesz też nasłuchiwać <code>window.addEventListener('demo-cmp:change', e =&gt; console.log(e.detail))</code>. Event obejmuje zmiany; do odczytu stanu na starcie użyj <code>subscribe()</code> lub <code>getConsent()</code>.</p><p>Zgody są zapisywane w localStorage dla tego katalogu strony i synchronizowane między kartami. <code>decisionMade: false</code> oznacza brak decyzji, a <code>false</code> u vendora — brak zgody. Reset usuwa zapis i powiadamia odbiorców. Przy niedostępnym zapisie stan działa do odświeżenia.</p></details>
+<footer>Własny CMP do testów integracyjnych. Nie implementuje IAB TCF, GPP ani Google Consent Mode. Zewnętrzna biblioteka musi obsługiwać poniższy format lub używać adaptera.</footer>
+</main>
+<dialog id="consent-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">Ustawienia zgód</h2><p>Wybierz vendorów, którym udzielasz zgody. Wszystkie opcje są domyślnie wyłączone.</p><form id="consent-form"><div id="choices"></div><div class="actions"><button type="button" id="reject">Odrzuć wszystkie</button><button type="button" id="accept">Akceptuj wszystkie</button><button type="submit" class="primary">Zapisz wybór</button><button type="button" id="close">Zamknij</button></div></form></dialog>
+<script>
+'use strict';
+// === KONFIGURACJA CMP: zmień vendorów tutaj ===
+const VENDORS = [
+  {id: 'atlas', name: 'Atlas Analytics', description: 'Testowy vendor analityczny'},
+  {id: 'beacon', name: 'Beacon Ads', description: 'Testowy vendor reklamowy'},
+  {id: 'canvas', name: 'Canvas Personalization', description: 'Testowa personalizacja treści'},
+  {id: 'delta', name: 'Delta Insights', description: 'Testowe badanie zachowań'}
+];
+const CONFIG_VERSION = 1;
+const STORAGE_KEY = 'consent-lab:' + new URL('.', location.href).pathname;
+const listeners = new Set();
+const clone = value => JSON.parse(JSON.stringify(value));
+const empty = () => ({schemaVersion: CONFIG_VERSION, decisionMade: false, updatedAt: null, vendors: Object.fromEntries(VENDORS.map(v => [v.id, false]))});
+function decode(raw) {
+  if (!raw) return empty();
+  try {
+    const value = JSON.parse(raw);
+    if (value.schemaVersion !== CONFIG_VERSION || value.decisionMade !== true || typeof value.updatedAt !== 'string' || !Number.isFinite(Date.parse(value.updatedAt)) || !value.vendors || Object.keys(value.vendors).length !== VENDORS.length || VENDORS.some(v => typeof value.vendors[v.id] !== 'boolean')) return empty();
+    return {schemaVersion: CONFIG_VERSION, decisionMade: true, updatedAt: value.updatedAt, vendors: Object.fromEntries(VENDORS.map(v => [v.id, value.vendors[v.id]]))};
+  } catch { return empty(); }
+}
+let state = empty();
+try { state = decode(localStorage.getItem(STORAGE_KEY)); } catch { storageWarning(); }
+function storageWarning() { document.querySelector('#storage').textContent = 'Pamięć przeglądarki jest niedostępna. Zgody działają w tej karcie, ale mogą nie przetrwać odświeżenia.'; }
+function notify(reason) {
+  for (const callback of [...listeners]) {
+    try { callback(clone(state), reason); } catch (error) { console.error('Błąd odbiornika zgód:', error); }
+  }
+  window.dispatchEvent(new CustomEvent('demo-cmp:change', {detail: {consent: clone(state), reason}}));
+}
+function setConsent(values) {
+  if (!values || typeof values !== 'object' || Array.isArray(values)) throw new TypeError('Oczekiwano mapy ID vendora → boolean.');
+  for (const [id, value] of Object.entries(values)) {
+    if (!VENDORS.some(v => v.id === id) || typeof value !== 'boolean') throw new TypeError('Nieznany vendor lub wartość inna niż boolean: ' + id);
+  }
+  state = {...state, decisionMade: true, updatedAt: new Date().toISOString(), vendors: {...state.vendors, ...values}};
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { storageWarning(); }
+  notify('update');
+}
+function setAll(allowed) { setConsent(Object.fromEntries(VENDORS.map(v => [v.id, allowed]))); }
+const dialog = document.querySelector('#consent-dialog');
+function openPreferences() {
+  for (const v of VENDORS) document.getElementById('choice-' + v.id).checked = state.vendors[v.id];
+  if (!dialog.open) dialog.showModal();
+}
+window.DemoCMP = Object.freeze({
+  getConsent: () => clone(state),
+  subscribe(callback) {
+    if (typeof callback !== 'function') throw new TypeError('Oczekiwano funkcji.');
+    listeners.add(callback);
+    try { callback(clone(state), 'initial'); } catch (error) { console.error('Błąd odbiornika zgód:', error); }
+    return () => listeners.delete(callback);
+  },
+  setConsent,
+  acceptAll: () => setAll(true),
+  rejectAll: () => setAll(false),
+  open: openPreferences,
+  reset() {
+    state = empty();
+    try { localStorage.removeItem(STORAGE_KEY); } catch { storageWarning(); }
+    notify('reset');
+    openPreferences();
+  }
+});
+// === UI ===
+for (const v of VENDORS) {
+  const row = document.createElement('div'); row.className = 'vendor';
+  const text = document.createElement('div');
+  const name = document.createElement('strong'); name.textContent = v.name;
+  const description = document.createElement('small'); description.textContent = v.description + ' · ' + v.id;
+  text.append(name, description);
+  const badge = document.createElement('span'); badge.id = 'status-' + v.id; badge.className = 'badge';
+  row.append(text, badge); document.querySelector('#vendors').append(row);
+  const label = document.createElement('label'); label.className = 'vendor';
+  label.append(text.cloneNode(true));
+  const input = document.createElement('input'); input.type = 'checkbox'; input.id = 'choice-' + v.id;
+  label.append(input); document.querySelector('#choices').append(label);
+}
+DemoCMP.subscribe(consent => {
+  document.querySelector('#json').textContent = JSON.stringify(consent, null, 2);
+  document.querySelector('#decision').textContent = consent.decisionMade ? 'Decyzja zapisana' : 'Brak decyzji — zgody wyłączone';
+  for (const v of VENDORS) {
+    const badge = document.getElementById('status-' + v.id);
+    badge.textContent = consent.vendors[v.id] ? 'Zgoda' : 'Brak zgody';
+    badge.className = 'badge' + (consent.vendors[v.id] ? ' on' : '');
+  }
+});
+document.querySelector('#open').onclick = openPreferences;
+document.querySelector('#reset').onclick = () => DemoCMP.reset();
+document.querySelector('#close').onclick = () => dialog.close();
+document.querySelector('#accept').onclick = () => { DemoCMP.acceptAll(); dialog.close(); };
+document.querySelector('#reject').onclick = () => { DemoCMP.rejectAll(); dialog.close(); };
+document.querySelector('#consent-form').onsubmit = event => {
+  event.preventDefault();
+  DemoCMP.setConsent(Object.fromEntries(VENDORS.map(v => [v.id, document.getElementById('choice-' + v.id).checked])));
+  dialog.close();
+};
+window.addEventListener('storage', event => {
+  if (event.key === STORAGE_KEY || event.key === null) {
+    state = decode(event.newValue); notify('storage');
+    if (dialog.open || !state.decisionMade) openPreferences();
+  }
+});
+// === INTEGRACJA: zastąp testowy odbiornik swoją biblioteką ===
+// Nic nie jest wysyłane do sieci. Tu możesz wywołać API innej biblioteki.
+const testReceiver = {
+  setConsent(consent, reason) {
+    const entry = document.createElement('li');
+    const count = Object.values(consent.vendors).filter(Boolean).length;
+    entry.textContent = new Date().toLocaleTimeString('pl-PL') + ' · ' + reason + ' · odebrano ' + count + '/4 zgód · decyzja: ' + consent.decisionMade;
+    const log = document.querySelector('#events'); log.prepend(entry);
+    while (log.children.length > 20) log.lastElementChild.remove();
+  }
+};
+DemoCMP.subscribe((consent, reason) => testReceiver.setConsent(consent, reason));
+if (!state.decisionMade) openPreferences();
+</script>
+</body>
+</html>
