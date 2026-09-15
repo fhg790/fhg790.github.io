@@ -196,18 +196,31 @@ if (!state.decisionMade) openPreferences();
 </script>
 <!-- OWATag: loader oraz page_view. -->
 <script type="text/javascript">
-  var owatagCid = 4321;
-  (function(){
-    function d(){b.qo33OrmjMAEReady=1}
-    var a=document,b=window;
-    b.addEventListener?b.addEventListener("load",d,false):b.attachEvent?b.attachEvent("onload",d):d();
-    var c=a.createElement("script");
-    c.type="text/javascript";
-    c.async=true;
-    c.src="https://ssl.hurra.com/owatag.js";
-    a=a.getElementsByTagName("script")[0];
-    a.parentNode.insertBefore(c,a);
-  })();
+  // var owatagCid = 4321;
+  // (function(){
+  //   function d(){b.qo33OrmjMAEReady=1}
+  //   var a=document,b=window;
+  //   b.addEventListener?b.addEventListener("load",d,false):b.attachEvent?b.attachEvent("onload",d):d();
+  //   var c=a.createElement("script");
+  //   c.type="text/javascript";
+  //   c.async=true;
+  //   c.src="https://ssl.hurra.com/owatag.js";
+  //   a=a.getElementsByTagName("script")[0];
+  //   a.parentNode.insertBefore(c,a);
+  // })();
+
+  setTimeout(
+    function(){
+        var d=document,
+               t="script",
+               p=d.getElementsByTagName(t)[0],
+               s=d.createElement(t);
+        s.async=true;
+        s.type="text/javascript";
+        s.src="http" + ("https:"==d.location.protocol?"s":"") + "://ssl.hurra.com/oti.js?cid=4321&skip_track=1"; 
+        p.parentNode.insertBefore(s,p)
+    },
+  0);
 </script>
 <script type="text/javascript">
   window.hc_tm = window.hc_tm || [];
