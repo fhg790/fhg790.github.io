@@ -10,9 +10,9 @@
 </head>
 <body>
 <main>
-<header><div class="eyebrow">CONSENT LAB / DEMO</div><h1>Testuj przepływ zgód</h1><p class="muted">Czterech vendorów, edytowalne zgody i jeden interfejs do integracji z JavaScriptem.</p><div class="actions"><button class="primary" id="open">Zmień zgody</button><button id="reset">Resetuj zgody</button></div></header>
+<header><div class="eyebrow">CONSENT LAB / DEMO</div><h1>Testuj przepływ zgód</h1><p class="muted">Siedmiu vendorów, edytowalne zgody i jeden interfejs do integracji z JavaScriptem.</p><div class="actions"><button class="primary" id="open">Zmień zgody</button><button id="reset">Resetuj zgody</button></div></header>
 <p id="storage" role="status"></p>
-<div class="layout"><section class="panel"><h2>Vendorzy testowi</h2><p id="decision" role="status"></p><div id="vendors"></div><p class="muted">Zgody dwóch pierwszych vendorów są przekazywane do OWATag. Canvas i Delta pozostają vendorami symulowanymi.</p></section>
+<div class="layout"><section class="panel"><h2>Vendorzy testowi</h2><p id="decision" role="status"></p><div id="vendors"></div><p class="muted">Zgody Google Ads i OWAPro są przekazywane do OWATag. Canvas i Delta pozostają vendorami symulowanymi.</p></section>
 <section class="panel"><h2>Aktualne zgody · JSON</h2><pre id="json" aria-label="Aktualny stan zgód"></pre><p class="muted">Odczyt w konsoli: <code>DemoCMP.getConsent()</code></p></section></div>
 <section class="panel"><h2>Odbiornik zgód</h2><p>Przykładowa druga biblioteka odbiera stan przy starcie i po każdej zmianie. Tutaj podłącz swój kod przekazujący zgody dalej.</p><pre>// Uruchom po skrypcie CMP (np. na końcu &lt;body&gt;).
 const unsubscribe = DemoCMP.subscribe((consent, reason) =&gt; {
@@ -21,7 +21,7 @@ const unsubscribe = DemoCMP.subscribe((consent, reason) =&gt; {
 // subscribe od razu przekazuje również aktualny stan.
 // unsubscribe() wyłącza nasłuchiwanie.</pre><ol id="events" aria-label="Ostatnie zdarzenia"></ol></section>
 <details class="panel"><summary>Konfiguracja i publikacja</summary><p>Zapisz plik jako <code>index.html</code> i umieść w katalogu publikowanym przez GitHub Pages. Nie ma kroku budowania. OWATag ładuje zewnętrzny skrypt z ssl.hurra.com.</p><p>Edytuj tablicę <code>VENDORS</code> w źródle, aby zmienić ID, nazwy i opisy vendorów. Po zmianie znaczenia zgód zwiększ <code>CONFIG_VERSION</code>, aby poprosić o nową decyzję.</p><p>API: <code>getConsent()</code>, <code>subscribe(callback)</code>, <code>setConsent({google_ads: true})</code> (pozostałe wartości pozostają bez zmian), <code>acceptAll()</code>, <code>rejectAll()</code>, <code>open()</code> i <code>reset()</code>. Zapis programowy jest jawną decyzją; wywołuj go w odpowiedzi na wybór użytkownika.</p><p>Możesz też nasłuchiwać <code>window.addEventListener('demo-cmp:change', e =&gt; console.log(e.detail))</code>. Event obejmuje zmiany; do odczytu stanu na starcie użyj <code>subscribe()</code> lub <code>getConsent()</code>.</p><p>Zgody są zapisywane w localStorage dla tego katalogu strony i synchronizowane między kartami. <code>decisionMade: false</code> oznacza brak decyzji, a <code>false</code> u vendora — brak zgody. Reset usuwa zapis i powiadamia odbiorców. Przy niedostępnym zapisie stan działa do odświeżenia.</p></details>
-<p class="muted">OWATag (cid=4321) jest ładowany przy każdym wejściu, niezależnie od zgód CMP. Kolejka otrzymuje zdarzenie page_view. Zgody 6024 i 6026 są synchronizowane przez hc_consent.changeConsents() po udostępnieniu API.</p>
+<p class="muted">OWATag (cid=4321) jest ładowany przy każdym wejściu, niezależnie od zgód CMP. Kolejka otrzymuje zdarzenie page_view. Zgody 6024, 6026, 6028, 6030 i 6032 są synchronizowane przez hc_consent.changeConsents() po udostępnieniu API.</p>
 <p id="owatag-status" class="muted" role="status">OWATag: inicjalizacja synchronizacji zgód…</p>
 <footer>Własny CMP do testów integracyjnych. Nie implementuje IAB TCF, GPP ani Google Consent Mode. Zewnętrzna biblioteka musi obsługiwać poniższy format lub używać adaptera.</footer>
 </main>
@@ -32,10 +32,13 @@ const unsubscribe = DemoCMP.subscribe((consent, reason) =&gt; {
 const VENDORS = [
   {id: 'google_ads', name: 'Google Ads Test', description: 'OWATag · consent ID 6024'},
   {id: 'google_ads_conversion', name: 'Google Ads Conversion Tracking Test', description: 'OWATag · consent ID 6026'},
+  {id: 'owapro_essential', name: 'OWAPro Essential Measurement (cookieless) Test', description: 'OWATag · consent ID 6028'},
+  {id: 'owapro_tag_manager', name: 'OWAPro Tag Manager (hurra.com) Test', description: 'OWATag · consent ID 6030'},
+  {id: 'owapro_performance', name: 'OWAPro Performance Measurement (hurra.com) Test', description: 'OWATag · consent ID 6032'},
   {id: 'canvas', name: 'Canvas Personalization', description: 'Testowa personalizacja treści'},
   {id: 'delta', name: 'Delta Insights', description: 'Testowe badanie zachowań'}
 ];
-const CONFIG_VERSION = 2;
+const CONFIG_VERSION = 3;
 const STORAGE_KEY = 'consent-lab:' + new URL('.', location.href).pathname;
 const listeners = new Set();
 const clone = value => JSON.parse(JSON.stringify(value));
@@ -136,7 +139,7 @@ const testReceiver = {
   setConsent(consent, reason) {
     const entry = document.createElement('li');
     const count = Object.values(consent.vendors).filter(Boolean).length;
-    entry.textContent = new Date().toLocaleTimeString('pl-PL') + ' · ' + reason + ' · odebrano ' + count + '/4 zgód · decyzja: ' + consent.decisionMade;
+    entry.textContent = new Date().toLocaleTimeString('pl-PL') + ' · ' + reason + ' · odebrano ' + count + '/' + VENDORS.length + ' zgód · decyzja: ' + consent.decisionMade;
     const log = document.querySelector('#events'); log.prepend(entry);
     while (log.children.length > 20) log.lastElementChild.remove();
   }
@@ -178,11 +181,14 @@ if (!state.decisionMade) openPreferences();
   }
 
   DemoCMP.subscribe(consent => {
-    // Przed decyzją i po resecie przekazujemy dwie odmowy.
+    // Przed decyzją i po resecie przekazujemy odmowy dla wszystkich pięciu zgód OWATag.
     // Gdy API ładuje się z opóźnieniem, przechowujemy najnowszy stan.
     pending = {
       6024: consent.decisionMade && consent.vendors.google_ads === true ? 1 : 0,
-      6026: consent.decisionMade && consent.vendors.google_ads_conversion === true ? 1 : 0
+      6026: consent.decisionMade && consent.vendors.google_ads_conversion === true ? 1 : 0,
+      6028: consent.decisionMade && consent.vendors.owapro_essential === true ? 1 : 0,
+      6030: consent.decisionMade && consent.vendors.owapro_tag_manager === true ? 1 : 0,
+      6032: consent.decisionMade && consent.vendors.owapro_performance === true ? 1 : 0
     };
     void flush();
   });
