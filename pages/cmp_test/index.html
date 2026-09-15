@@ -221,17 +221,5 @@ if (!state.decisionMade) openPreferences();
     }
   });
 </script>
-<script>
-  (function(c,d){
-    var _d = document, _l = _d.location, _s = document.createElement('script'), _p = [], _va = [], _vr = [], _k;
-    for(_k in d){ if (d.hasOwnProperty(_k) && (d[_k]!==undefined)){
-     if ((_k+'').match(/^\d+$/)) { (d[_k] ? _va : _vr).push(_k); } else { 
-      _p.push('&'+_k+'='+d[_k]) } } }
-        if(_va.length) {_p.push('&va='+_va.join(','))}
-        if(_vr.length) {_p.push('&vr='+_vr.join(','))}
-        _s.src = _l.protocol+'//ssl.hurra.com/ext_consent.js?cid='+c+_p.join('');
-        _d.body.appendChild(_s);
-  })(4321,{ac:1});
-</script>
 </body>
 </html>
