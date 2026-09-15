@@ -20,7 +20,8 @@ const unsubscribe = DemoCMP.subscribe((consent, reason) =&gt; {
 });
 // subscribe od razu przekazuje również aktualny stan.
 // unsubscribe() wyłącza nasłuchiwanie.</pre><ol id="events" aria-label="Ostatnie zdarzenia"></ol></section>
-<details class="panel"><summary>Konfiguracja i publikacja</summary><p>Zapisz plik jako <code>index.html</code> i umieść w katalogu publikowanym przez GitHub Pages. Nie ma zależności, CDN ani kroku budowania.</p><p>Edytuj tablicę <code>VENDORS</code> w źródle, aby zmienić ID, nazwy i opisy vendorów. Po zmianie znaczenia zgód zwiększ <code>CONFIG_VERSION</code>, aby poprosić o nową decyzję.</p><p>API: <code>getConsent()</code>, <code>subscribe(callback)</code>, <code>setConsent({atlas: true})</code> (pozostałe wartości pozostają bez zmian), <code>acceptAll()</code>, <code>rejectAll()</code>, <code>open()</code> i <code>reset()</code>. Zapis programowy jest jawną decyzją; wywołuj go w odpowiedzi na wybór użytkownika.</p><p>Możesz też nasłuchiwać <code>window.addEventListener('demo-cmp:change', e =&gt; console.log(e.detail))</code>. Event obejmuje zmiany; do odczytu stanu na starcie użyj <code>subscribe()</code> lub <code>getConsent()</code>.</p><p>Zgody są zapisywane w localStorage dla tego katalogu strony i synchronizowane między kartami. <code>decisionMade: false</code> oznacza brak decyzji, a <code>false</code> u vendora — brak zgody. Reset usuwa zapis i powiadamia odbiorców. Przy niedostępnym zapisie stan działa do odświeżenia.</p></details>
+<details class="panel"><summary>Konfiguracja i publikacja</summary><p>Zapisz plik jako <code>index.html</code> i umieść w katalogu publikowanym przez GitHub Pages. Nie ma kroku budowania. OWATag ładuje zewnętrzny skrypt z ssl.hurra.com.</p><p>Edytuj tablicę <code>VENDORS</code> w źródle, aby zmienić ID, nazwy i opisy vendorów. Po zmianie znaczenia zgód zwiększ <code>CONFIG_VERSION</code>, aby poprosić o nową decyzję.</p><p>API: <code>getConsent()</code>, <code>subscribe(callback)</code>, <code>setConsent({atlas: true})</code> (pozostałe wartości pozostają bez zmian), <code>acceptAll()</code>, <code>rejectAll()</code>, <code>open()</code> i <code>reset()</code>. Zapis programowy jest jawną decyzją; wywołuj go w odpowiedzi na wybór użytkownika.</p><p>Możesz też nasłuchiwać <code>window.addEventListener('demo-cmp:change', e =&gt; console.log(e.detail))</code>. Event obejmuje zmiany; do odczytu stanu na starcie użyj <code>subscribe()</code> lub <code>getConsent()</code>.</p><p>Zgody są zapisywane w localStorage dla tego katalogu strony i synchronizowane między kartami. <code>decisionMade: false</code> oznacza brak decyzji, a <code>false</code> u vendora — brak zgody. Reset usuwa zapis i powiadamia odbiorców. Przy niedostępnym zapisie stan działa do odświeżenia.</p></details>
+<p class="muted">OWATag (cid=4321) jest ładowany przy każdym wejściu, niezależnie od zgód CMP. Kolejka otrzymuje zdarzenie page_view; integracja OWATag ze zgodami nie została podłączona.</p>
 <footer>Własny CMP do testów integracyjnych. Nie implementuje IAB TCF, GPP ani Google Consent Mode. Zewnętrzna biblioteka musi obsługiwać poniższy format lub używać adaptera.</footer>
 </main>
 <dialog id="consent-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">Ustawienia zgód</h2><p>Wybierz vendorów, którym udzielasz zgody. Wszystkie opcje są domyślnie wyłączone.</p><form id="consent-form"><div id="choices"></div><div class="actions"><button type="button" id="reject">Odrzuć wszystkie</button><button type="button" id="accept">Akceptuj wszystkie</button><button type="submit" class="primary">Zapisz wybór</button><button type="button" id="close">Zamknij</button></div></form></dialog>
@@ -141,6 +142,27 @@ const testReceiver = {
 };
 DemoCMP.subscribe((consent, reason) => testReceiver.setConsent(consent, reason));
 if (!state.decisionMade) openPreferences();
+</script>
+<!-- OWATag: kod dostarczony przez użytkownika; niezależny od testowego CMP. -->
+<script>
+setTimeout(
+        function(){
+            var d=document,
+                t="script",
+                p=d.getElementsByTagName(t)[0],
+                s=d.createElement(t);
+            s.async=true;
+            s.type="text/javascript";
+            s.src="http" + ("https:"==d.location.protocol?"s":"") + "://ssl.hurra.com/oti.js?cid=4321&skip_track=1";
+            p.parentNode.insertBefore(s,p)
+        },
+    0);
+
+    window.hc_tm = window.hc_tm || [];
+    window.hc_tm.push({"e":"track","p":{
+        "page_type":"__page_type__",
+        "event_type":"page_view", /* fixed value */
+    }});
 </script>
 </body>
 </html>
